@@ -1,0 +1,43 @@
+@import url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.css');format('woff');
+/* 모든 태그는 body 태그로  감싸여 있음. 그래서 body 태그에 적용한 글자 관련 스타일은
+body태그 안에 있는 태그들이 상속을 받음 */
+body{
+    font-family:'Pretendard, sans-serif';
+    font-size:50px
+    line-height:1.5;
+    color : #55555;
+    font-weight: 400;
+}
+h1{
+    font-family:'Pretendard, sans-serif';
+    font-size:50px
+    line-height:1.5;
+    color : #1d1d1d;
+    font-weight: 700; .wrapper
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+h2{
+    font-size:50px
+    line-height:1.5;
+    color: #023088;
+    font-weight: 700;
+}
+.future{background-color: #f4f4f4;
+    text-align: center;
+
+}
+.tit{
+    font-size: 17px;
+    color: #023088;
+    font-weight: 400;
+
+}
+.sub_tit{
+    font-size: 50px;
+    color: #1d1d1d;
+    line-height: 1.2;
+
+}
