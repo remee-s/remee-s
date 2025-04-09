@@ -1,0 +1,26 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body{
+    font-family: "Pretendard Variable",sans-serif;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+
+}
+/* 와일드 카드 - 태그 전체를 뜻힘*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.about {
+    background-image: url(../images/about\ as.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 500px;
+    color: #ffffff;
+    text-align: center;
+}
+.about {
+    font-size: 30px;
+    margin: 160px 0 15px 0;
+}
