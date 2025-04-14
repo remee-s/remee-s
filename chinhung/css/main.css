@@ -13,6 +13,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-size: inherit; /*브라우저가 주는 값 무시*/
     font-weight: inherit;
+    
+}
+.color .tit p {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    height: 265px;
+    color: #00b900;
+    border-radius: 20px; /*도형 라운딩 하는 요소*/
+    padding: 40px 0 0 30px;
 }
 li {
     list-style: none; /* 앞에 동그라미 삭제 */
@@ -43,4 +54,11 @@ header .logo img {
     width: 130px;
     /*이미지는 넓이나 높이 둘중에 하나만 주면 나머지는 비율에 맞게 조절
     오히려 넓이/높이 모두 주면 찌그러짐*/
+}
+header.gnb ul li{
+    display: flex;
+
+}
+header .gnb ul li a{
+    display: block;
 }

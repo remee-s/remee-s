@@ -1,0 +1,118 @@
+/* html파일에서는 main.css만 호출, 
+   다른 필요한 css는 main.css가 부름 */
+@import url(font.css);
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666666;
+    word-break: keep-all;
+}
+/* START :: 태그의 기본 스타일 삭제(초기화) */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /*브라우저가 주는 값 무시*/
+    font-weight: inherit;
+}
+li {
+    list-style: none; /* 앞에 동그라미 삭제 */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* END :: 태그의 기본 스타일 삭제(초기화) */
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    /*logo와 gnb를 좌우로 배치*/
+}
+header .logo{
+    margin: 30px 0 0 0;
+}
+header .logo img {
+    width: 130px;
+    /*이미지는 넓이나 높이 둘중에 하나만 주면 나머지는 비율에 맞게 조절
+    오히려 넓이/높이 모두 주면 찌그러짐*/
+}
+.wrapper p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #00b900;
+    word-break: keep-all;
+}
+.wrapper h1{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.5;
+    color: #1d1d1d;
+    word-break: keep-all;
+    text-align: center;
+}
+.esg{
+    font-size: 17px;
+    background-image: url(../images/Untitled-2.png);
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+    background-size: auto; /*배경을 꽉 체워서 주는것 473*/ 
+    height: 352px 0 72px 0;
+    color: #ffffff;
+    padding: 200px 0 0 100px;
+
+}
+.esg .more a{
+    border: 1px solid #00b900;
+    border-radius : 0px;
+    padding : 7px 36px 7px 36px;
+    display : inline-block;
+    color : #00b900;
+    text-align:center
+}
+.wrapper h2 {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555555;
+    word-break: keep-all;
+    text-align: center;
+}
+.int .inner{
+    background-image: url(../images/image2.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    height: 400px;
+    color: #fff;
+    padding: 100px 0 0 48px;
+}
+.int .inner p {
+    border: 1px solid #fff;
+    border-radius: 0px;
+    display: inline-block;
+    color: #fff;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin: 30px 0 0 470px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+.inner .btn a{
+    border: 1px solid #fff;
+    border-radius : 0px;
+    padding : 7px 36px 7px 36px;
+    display : inline-block;
+    color : #fff;
+    margin: 30px 30px 0 470px;
+}
