@@ -28,7 +28,19 @@ a {
     color: inherit;
     text-decoration: none;
 }
+em, address {
+    font-style: normal; /*글자의 이탤릭 스타일 제거 (눕는거 방지)*/
+}
 /* END :: 태그의 기본 스타일 삭제(초기화) */
+#wrap {
+    min-width: 1300px;
+    /*홈페이지 넓이 1260px에 왼쪽/ 오른쪽 여백을 20px정도를 줌 (홈페이지 양쪽 여백 넓이 조정)
+    1260 + 20 + 20 =1300px
+    (브라우저가 줄어들었을때 가로스크롤바가 생겼을때 왼쪽/오른쪽 여백)
+    min-width은 늘어나는건 상관 없는데 줄어들때 이거보다 줄어들면 안돼..
+    */
+
+}
 .wrapper {
     width: 1260px;
     margin: 0 auto;
@@ -51,7 +63,7 @@ header .logo img {
     /*이미지는 넓이나 높이 둘중에 하나만 주면 나머지는 비율에 맞게 조절
     오히려 넓이/높이 모두 주면 찌그러짐*/
 }
-header .gnb ul li{
+header .gnb ul {
     display: flex;
 }
 header .gnb ul li a{
@@ -143,5 +155,20 @@ header .gnb ul li a{
 
 
 footer{
-    margin: 800px 0 0 0;
+    padding: 60px 0 68px 0;
+    background-color: #100e0b;
+    color: rgba(255,255,255,0.6);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 40px; /*글자 사이에 여백을 띄워 주는것 */
+    color: #fff;
+}
+footer .f_info {
+    margin: 30px 0 7px 0;
+    display: flex;
+    gap: 28px; /*위아래 좌우 여백 동일하게 들어가는 기호*/
+}
+footer .f_info strong{
+    font-weight: 800;
 }

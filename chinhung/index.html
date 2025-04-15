@@ -7,20 +7,22 @@
     <title>진흥기업</title>
 </head>
 <body>
-    <header>
-        <div class="wrapper">
-            <!--로고를 클릭하면 첫페이지로 이동-->
-            <h1 class="logo"><a href="index.html"><img src="images/logo.svg" alt="진흥기업 로고"></a></h1>
-            <nav class="gnb"><!--global navigation bar 의 약자-->
-                <ul>
-                    <li><a href="#">기업소개</a></li>
-                    <li><a href="#">사업분야</a></li>
-                    <li><a href="#">홍보센터</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
-            </nav>
-        </div><!--wrapper-->
-    </header>
+    <div id="wrap">
+        <header>
+            <div class="wrapper">
+                <!--로고를 클릭하면 첫페이지로 이동-->
+                <h1 class="logo"><a href="index.html"><img src="images/logo.svg" alt="진흥기업 로고"></a></h1>
+                <nav class="gnb"><!--global navigation bar 의 약자-->
+                    <ul>
+                        <li><a href="#">기업소개</a></li>
+                        <li><a href="#">사업분야</a></li>
+                        <li><a href="#">홍보센터</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </nav>
+            </div><!--wrapper-->
+       
+        </header>
     <!--홈페이지에 header/footer를 제외한 모든 영역을 cotainer로감쌈-->
     <main class="container">
         <section class="visual">
@@ -86,9 +88,25 @@
                         <!--content : cnt, cts, cont 이렇게 많이부름-->
             </div><!--wrapper-->
         </section><!--brand-->
-            <div class="wrapper"></div><!--wrapper-->
     </main>          
-    <footer></footer>
-
+    <footer>
+        <div class="wrapper">
+            <div class="f_nav">
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>                                  
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">사이버감사실</a></li>
+                </ul>
+            </div><!--f_nav-->   
+                <div class="f_info">
+                    <span>진흥기업</span>
+                    <address>ADD. 서울특별시 용산구 후암로27(후암동)</address>
+                    <span>TEL. 02-772-1200</span>
+                    <span>FAx. 02-754-2972</span>
+                </div><!--f_info-->    
+                    <div class="copyright">ⓒ2009 HOSUNG.ALL RIGHTS RESERVED</div><!--copyright-->          
+        </div><!--wrapper-->
+    </div><!--wrap-->    
+    </footer>
 </body>
 </html>
