@@ -1,0 +1,137 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header{
+    display: flex;
+    justify-content: space-around;
+    /*logo와 inner를 header 넓이 안에서 좌우 끝으로*/
+    height: 100px;
+    padding: 0 37px; /*위 아래 좌 우*/
+}
+header .logo{
+    margin: 28px 0 0 0;
+}
+header .inner{
+    gap: 20px ; /*????*/
+    display: flex; /*gnb shop 을 좌우로*/
+    align-items: center
+}
+header .inner .gnb ul{
+    display: flex;
+}
+header .inner .gnb ul li a{
+    display: block; /*a 필수 값*/
+    font-weight: 800;
+    color: #1d1d1d;
+    font-size: 17px;
+    line-height: 1.3;
+    padding: 34px 32px ;
+    line-height: 100px;
+    /*header 의 높이랑 1차 메뉴의 a의 높이는 같아야함 .. a에 행간을 header의 높이 값으로 줌
+    a의 높이가 생기고 글자는 위아래 가운데 정렬*/
+    padding: 0 32px;
+}
+header .inner .shop{
+    font-size: 20px;
+    color: #23330E;
+    font-weight: 400;    
+    border: 1px solid #23330E; /*사각형 도형 만들어 주는것 */
+    border-radius: 23px; /*사각형 도형 라운드 주는 기능*/
+    padding: 6px 37px;
+}
+.visual{
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    margin: 0 20px;
+    border-radius: 20px; /*사각형 도형 라운드 주는 기능*/
+    color: #fff;
+    text-align: center; /*글자 가운데로 정렬 */
+}
+.visual h2{
+    font-size: 50px;
+    color: #fff;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.03em; /*-30  자간*/
+    padding: 330px 0 19px 0;
+}
+.product{
+    margin: 180px 0 0 0;
+}
+.product .tit h2{
+    color: #23330E;
+}
+.product .tit p{
+    color: #1d1d1d;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+}
+.product .list{
+    margin: 30px 0 0 0;
+}
+.wrapper .list ul{
+    display: flex;
+    justify-content: space-around
+}
+.wrapper .list ul li{
+    width: 404px;    
+}
+.wrapper .list ul li a{
+    display: block;
+}    
+.wrapper .list ul li a .photo{
+    font-size: 0;
+    line-height: 0;
+    /* 여백을 주는이유 = 이미지 하단에 여백을 삭제 하기 위해서
+    -->img 태그에 직접 주면 적용 X 
+       img태그만 감싸는 요소애 줘야함*/
+}
+.wrapper .list ul li a h3{
+    color: #3d3d3d;
+    margin: 24px 0 0 0;
+    /*한줄로 제안 하는 코드*/
+    white-space: nowrap; /*1줄로 제안 (글자가 너무 길면 자르겠다는 말)*/
+    overflow: hidden; /*적용된 틀 안에 글자를 맞춰 주는것*/
+    text-overflow: ellipsis; /*글자가 잘리지 않게 틀에 맞춰서 적용 시키는것*/
+}
+.network{
+    background: url(../images/network01.jpg) no-repeat center center / cover;
+    height: 600px;
+    margin: 150px 0 0 0;
+    color: #fff;
+}
+.network h2{
+    padding: 125px 0 0 0;
+}
+.network .sub_tit{
+    font-size: 50px;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+    margin: 10px 0 0 0;
+    line-height: 1.3;
+
+}
+.network .cont{
+    color: rgba(200, 200, 200, 0.6);
+    margin: 30px 0 0 0;
+}
+.network a{
+    border: 1px solid rgba(200, 200, 200, 0.9);
+    display: inline-block; 
+    padding: 10px 40px; /* 위 아래 좌 우*/
+    border-radius: 30px;
+    color: rgba(200, 200, 200, 0.9) ;
+    margin: 28px 0 0 0 ;
+}
+
+
+
+
+
+
+footer{
+    margin: 400px 0 0 0; 
+}  
