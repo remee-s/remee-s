@@ -19,4 +19,6 @@ body {
    /* wrapper의 사이즈 + 좌우에 줄 최소여백 (가로스크롤바가 생겼을때 콘텐츠 좌우여백) 
       1260 + 30 + 30 = 1320px
    */
+   position: relative;
+   /*header가 wrap을 기준으로 정렬하기 위해서*/
 }

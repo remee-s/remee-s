@@ -1,0 +1,95 @@
+@import url(font.css);
+@import url(default.css);
+@import url(common.css);
+
+header{
+    position: absolute; /*wrap를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%; /* wrap의 넓이의 100%*/
+    height: 110px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+header .gnb ul{
+    display: flex;
+    justify-content: center;
+}
+header .gnb ul li a{
+    display: block;
+    line-height: 110px;
+    font-size: 17;
+    font-weight: 400;
+    padding: 0 26px;
+}
+.visual{
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    height: 800px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.5;
+    padding: 350px 0 10px 0;
+}
+.product{
+    margin: 173px 0 0 0;
+}
+.product .wrapper{
+    position: relative; /*more 정렬의 기준점*/
+}
+
+.product h2{
+    font-size: 50px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+}
+.product .list{
+    margin: 35px 0 0 0;
+    
+}
+.product .list ul{
+    display: flex;
+    justify-content: space-between;
+
+}
+.product .list ul li{
+    width: calc(33.33% - 16px);
+    /*
+    한줄에 한번 나오는 갯수 : 3= 100/3 =33.33%
+    여백의 총합 24+24= 48 / 3 =16
+    */
+}
+.product .list ul li a{
+    display: block;
+    position: relative; /*h3 정렬의 기준점*/
+}
+.product .list ul li a .photo{
+    font-size: 0; /*이미지 하단의 여백 삭제*/
+    line-height: 0;
+}
+.product .list ul li a h3{
+    position: absolute; /*a 정렬의 기준점*/
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.3;
+    font-weight: 800;
+    width:  calc(100% - 60px);
+}
+.product .more{
+    position: absolute; /*wrapper을 기준으로 정렬*/
+    right: 0;
+    top: 10px;
+    border: 1 solid #1d1d1d;
+    border-radius: 32px;
+    padding: 6px 42px;
+}
+
+body{
+    margin: 0 0 400px 0;
+}
