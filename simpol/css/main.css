@@ -126,12 +126,142 @@ header .inner .shop{
     color: rgba(200, 200, 200, 0.9) ;
     margin: 28px 0 0 0 ;
 }
+.community{
+    margin: 180px 0 0 0;
+}
+.community .tit h2{
+    color: #23330E;
+}
+.community .tit p{
+    color: #1d1d1d;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+    margin: 7px 0 0 0;
+}
+.community .list{
+    margin: 30px 0 0 0;
+    display: flex; /*group을 좌우로 배치*/
+    justify-content: space-between; /*양쪽끝에 배치*/
+}
+.community .list .group{
+    width: calc(50% - 6px);
+    /*
+       몇 개로 분할 : 2개 = 100/2 = 50% 
+       사이의 여백의 총합 / 분할하는 갯수로 나눔 = 12px / 2 = 6px
+    */
+}
+.community .list .group ul{
+    display: flex; /*li를 좌우로 배치*/
+    flex-wrap: wrap; /*li 가 2줄로 나타나는것을 허락*/
+    gap: 12px;
+}
 
+/*
+   1.li의 사이즈와 a의 사이즈가 동일해야 할때
+   2. height를 꼭 줘야하는 디자인일때 (위에 product는 높이가 필요없는 디자인)
+   --li에는 넓이를 주고 a에게는 높이를 준다.
+*/
+.community .list .group ul li.color
+.community .list .group ul li.gray{
+    width: calc(50% - 6px);
+}
+.community .list .group ul li.gray a{
+    background-color: #F4F4F4;
+}
+.community .list .group ul li.color.bg1 a{
+    background-color: #3D5718;
+}
+.community .list .group ul li.color.bg2 a{
+    background-color: #23330E;
+}
 
-
+.community .list .group li.review{
+    width: 100%; 
+    /* 나를 감싸는 요소 ul의 넓이의 100%가 들어가는것*/
+}
+.community .list .group ul li.review.bg1 a{
+    background: url(../images/community_bg1.jpg) no-repeat center center /cover;
+}
+.community .list .group ul li.review.bg2 a{
+    background: url(../images/community_bg2.jpg) no-repeat center center /cover;
+}
+.community .list .group ul li a{
+    display: flex;
+    padding: 0 30px 30px 30px;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+.community .list .group ul li a h3{
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin: 5px 0 30px 0;
+    /*1줄제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a{
+    height: 233px;
+    color: #ffffff;
+}
+.community .list .group ul li.gray a{
+    color: #1d1d1d;
+}    
+.community .list .group li.review a{
+    height: 387px;
+}
+.community .list .group ul li a .date{
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date{
+    color: rgba(200, 200, 200, 0.6);
+}
+.community .list .group ul li.gray a .date,
+.community .list .group ul li.gray a h3{
+    color: #1d1d1d;
+}
 
 
 
 footer{
-    margin: 400px 0 0 0; 
+    background-color: #1d1d1d;
+    padding: 75px 0 95px 10px;
+    color: rgba(200, 200, 200, 0.8);
+    margin: 152px 0 0 0;
 }  
+footer .f_nav{
+    border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+    padding: 0 0 35px 0;
+}
+footer .f_nav ul{
+    display: flex;
+    gap: 33px;
+}
+footer .f_infor{
+    margin: 36px 0 24px 0;
+}
+footer .f_infor .group{
+    display: flex;
+    gap: 30px;
+    margin: 0 0 5px 0;
+}
+footer .copyright{
+    color: rgba(200, 200, 200, 0.6);
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap { /*홈페이지 전체를 감싸는 요소 body로 하면안됨*/
+    min-width: 1320px;
+    /* wrapper 의 사이즈 + 좌우에 줄 최소 여백 (가로스크롤바가 생겼을때 콘텐츠 좌우여백)
+    1260+ 30 +30 = 1320px
+    */
+}
