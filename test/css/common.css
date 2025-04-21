@@ -22,3 +22,11 @@ body {
    position: relative;
    /*header가 wrap을 기준으로 정렬하기 위해서*/
 }
+.blind{
+   position: absolute; /* 기준 없음 ,사라지면 땡큐, 공간차지 X*/
+   clip: rect(0 0 0 0);
+   width: 1px;
+   height: 1px;
+   margin: -1px; /* 넓이가 1px이라 글자가 넘기면 숨김*/
+   overflow: hidden; /*글자 투명*/
+}
