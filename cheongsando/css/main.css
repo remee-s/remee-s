@@ -430,12 +430,82 @@ header .logo a{
     gap: 24px;
 }
 .community .inner .notice{
+    padding: 41px 38px 0 45px; /*높이로 제한하고 있기 때문에 하난 여백 안주는것.*/
     width: 511px;
     height: 421px;
     border-radius: 20px;
+    position: relative;
     background-color: rgba(25, 55, 42, 0.4);
     backdrop-filter: blur(10px)
     /*블러(뒷배경 흐릿하게) 효과 주는 것*/
+}   
+.community .inner .notice:hover{
+    background-color: #255440;
+    transition: 0.3s;
+}
+.community .inner .notice .more{
+    position: absolute; /*notice를 기준으로 정렬*/
+    right: 35px;
+    top: 45px;
+    padding: 0 24px 0 0; /*아이콘 의 오른쪽 여백을 주는것. 
+                           아이콘을 배치할 영역까지 more로 잡혀야하기 때문 */
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .inner .notice .more::after{
+    content: ""; /*필수 값*/
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_30_1701' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_30_1701)'%3E%3Cpath d='M11 13H5V11H11V5H13V11H19V13H13V19H11V13Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    position: absolute; /*more를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .notice h3{
+    font-weight: 800;
+    line-height: 1.2;
+    font-size: 20px;
+}
+.community .inner .notice .list {
+    margin: 24px 0 0 0;
+}
+.community .inner .notice .list ul li a{
+    display: flex; /*strong, span 태그 가운데 정렬*/
+    justify-content: space-between;
+    padding: 13px 0 13px 0
+}
+.community .inner .notice .list ul li{
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.community .inner .notice .list ul li:first-child{
+    border-top:  0;
+}
+.community .inner .notice .list ul li a strong{
+    width:  calc(100% - 90px);
+    /*100%에서 
+      옆에 날짜 넓이 + 둘사이 여백을 뺌 
+      (양 옆 span과 strong 태그 글씨가 너무 붙어 보이기 때문)
+      
+      1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .inner .notice .list ul li a:hover strong{
+    font-weight: 800;
+}
+.community .inner .notice .list ul li a span{
+    width: 80px; 
+    /*날짜는 자리수가 늘지 않음. 넓이를 반올림해서 넉넉히 넓이를 줌.
+      날짜표시는 대부분 01 02 로 함
+      25-1-1 이렇게 표시하면 자릿수가 변동됨
+      그래서 날짜 표기는 25-01-01 이렇게표시 - 자릿수 변동시키지 않기위해
+      제일 넓은 넓이를 가진 숫자를 기준으로 최대 넓이를 고정값으로 줌
+    */
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.8);
+    
 }
 .community .inner .link{
     width: 316px;
@@ -465,6 +535,18 @@ header .logo a{
     background-color: rgba(25, 55, 42, 0.4);
     backdrop-filter: blur(10px)
 }
+.community .inner .notice .list ul li a:hover{
+    background-color: #255440;
+}
+.community .inner .notice .more a:hover::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 5px);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
 .community .inner .link ul li a::after{
     content: "";
     position: absolute; /*a를 기준으로 정렬*/
@@ -489,9 +571,51 @@ header .logo a{
 }
 
 
-
-
-
 footer{
-    margin: 400px 0 0 0;
+    padding: 84px 0 99px 0;
 } 
+footer .f_nav ul{
+    display: flex;
+    gap: 42px;
+}
+footer .f_nav ul li{
+    position: relative; /*before 정렬의 기준*/
+}
+footer .f_nav ul li::before{
+    content: ""; /*필수값*/
+    position: absolute; /*li를 기준으로 정렬*/
+    left: -19px;
+    top: 4px;
+    width: 1px;
+    height: 14px;
+    background-color: #ccc;
+}
+footer .f_nav ul li:first-child:before{
+    display: none; /*숨김처리*/
+}
+footer .f_nav ul li a:hover{
+    text-decoration: underline;
+}
+footer .f_info{
+    margin: 16px 0 16px 0;
+    gap: 19px;
+    display: flex;
+}
+footer .f_info strong{
+    font-weight: 800px;
+}
+footer .f_info p strong{
+    text-decoration: underline;
+}
+footer .f_info p strong::after{
+    position: relative; /*after 정렬의 기준*/
+    content: "";
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+}
+footer .copyright p{
+    margin: 7px 0;
+}
