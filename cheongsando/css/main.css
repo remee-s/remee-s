@@ -602,7 +602,7 @@ footer .f_info{
     display: flex;
 }
 footer .f_info strong{
-    font-weight: 800px;
+    font-weight: 800;
 }
 footer .f_info p strong{
     text-decoration: underline;
