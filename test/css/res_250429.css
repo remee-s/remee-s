@@ -1,0 +1,165 @@
+@import url(res_common.css);
+@import url(default.css);
+@import url(font.css);
+
+.news{
+    margin: 189px 0 0 0;
+}
+.news .wrapper{
+    display: flex; /*h2,list를 좌우로 배치 -more는 absolute라 계산X*/
+    justify-content: space-between;
+    position: relative; /*more의 정렬의 기준 */
+}
+.news h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.news .list{
+    width: 74.52%;
+    /*
+        넓이는 %으로 계산 - 콘텐츠 넓이에서 몇 % 로 계산
+        939 / 1260 x 100 = 74.52 //소수점 둘째자리까지 씀.
+    */
+}
+.news ul li{
+    border-bottom: 1px solid #ccc;
+}
+.news ul li a{
+    display: flex; /*txt / photo 좌우로 배치*/
+    justify-content: space-between; /*양끝 정렬*/
+    padding: 20px 0;
+    align-items: center; /*위아래 가운데 정렬 하는것 */
+}
+.news ul li a .txt{
+    width: calc(100% - 225px);
+    /*사진의 넓이는 고정,
+      제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+      글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px
+    */
+}
+.news ul li a .txt strong{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    display: block;
+    margin: 0 0 11px 0;
+
+    /*1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news ul li a .photo{ /*사진은 %계산 안들어감*/
+    width: 190px;
+    height: 128px;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+.news ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .more{
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 4px; 
+    top: 85px; 
+    padding: 3px 35px 3px 11px; /*위 부터 시계방향임 */
+    border: 1px solid #3C42C3;
+    color: #1d1d1d;
+}
+.news .more::after{
+    content: ""; /*필수값*/
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 4px;
+    top: 5px;
+    width: 24px;  /*아이콘 사이즈 넓이*/
+    height: 24px; /*아이콘 사이즈 높이*/
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_10_82' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_10_82)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /*영역에 맞게 아이콘 안짤리게 꽉체우기*/
+    transition: 1s; /* 마우스 오버 후 속성이 변경면 1초동안 천천히 실행*/
+}
+.news .more:hover::after{
+    transform: rotate(360deg); /*360도(한바퀴) - 원하는 각도 = 아이콘이 원하는 만큼 돌아감*/
+}
+@media screen and (max-width:640px) {  /*********pc형과 겹치는 서식은 지워도 됨**********/
+    /* 브라우저 사이즈가 640px 이하 일때만 적용되는 스타일*/
+                        .news{
+                            margin: 95px 0 0 0; /*pc에게 준 여백의 절반 정도 들어감 보통은*/
+                        }
+                        .news .wrapper{
+                            display: block;  /*flex 안함*/
+                        }
+                        .news h2{
+                            font-size: 30px;
+                            font-weight: 800;
+                            line-height: 1.2;
+                            color: #1d1d1d;
+                        }
+                        .news .list{
+                            width: auto;
+                            /*
+                              원래 속성대로 주기 - div 블럭요소라서 100% 들어감
+                            */
+                            margin: 40px 0 0 0;
+                        }
+                        .news ul li a{
+                            padding: 27px 0;
+                            align-items: center; 
+                        }
+                        .news ul li a .txt{
+                            width: calc(100% - 225px);
+                            /*사진의 넓이는 고정,
+                            제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+                            글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px
+                            */
+                        }
+                        .news ul li a .txt strong{
+                            font-size: 16px;
+                            font-weight: 400;
+                            margin: 0 0 11px 0;
+                        
+                            /*pc형은 1줄 제한 → 모바일에선 무제한*/
+                            white-space: normal; /* nowrap 해제 */
+                            overflow: visible;  /* hidden 해제 */
+                        }
+                        .news ul li a .photo{ /*사진은 %계산 안들어감*/
+                            width: 100px;
+                            height: 70px;
+                            border-radius: 10px;
+                        
+                        }
+                        .news .more{
+                            right: 0; 
+                            left: auto;
+                            /* left 정렬에서 right 정렬로 변경하려면 
+                               left : auto ; 로 해제하고 right를 줘야함*/
+                            top: 11px; 
+                            padding: 3px 34px 3px 9px; /*위 부터 시계방향임 */
+                            border: 1px solid #3C42C3;
+                            color: #1d1d1d;
+                            font-size: 13px;
+                        }
+                        .news .more::after{
+                            right: 4px;
+                            top: 3px;
+                            width: 20px;  /*아이콘 사이즈 넓이*/
+                            height: 20px; /*아이콘 사이즈 높이*/
+                        }
+                        .news .more:hover::after{
+                            transform: rotate(360deg); /*360도(한바퀴) - 원하는 각도 = 아이콘이 원하는 만큼 돌아감*/
+                        }   
+}/*media*/
+
+
+
+
+body{
+    margin: 0 0 400px 0;
+}
