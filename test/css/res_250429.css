@@ -41,7 +41,7 @@
 }
 .news ul li a .txt strong{
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 400;
     line-height: 1.2;
     color: #1d1d1d;
     display: block;
@@ -102,6 +102,12 @@
                             line-height: 1.2;
                             color: #1d1d1d;
                         }
+                        .news .txt h2 br{
+                            display: none; /*br 태그로 인한 줄바꿈 삭제*/
+                        }
+                        .news .txt p br{
+                            display: none;
+                        }
                         .news .list{
                             width: auto;
                             /*
@@ -156,6 +162,79 @@
                             transform: rotate(360deg); /*360도(한바퀴) - 원하는 각도 = 아이콘이 원하는 만큼 돌아감*/
                         }   
 }/*media*/
+
+.global{
+    margin: 309px 0 0 0;
+}
+.global .wrapper{
+    display: flex; /*txt / photo 좌우 배치*/
+    justify-content: space-between; 
+}
+.global .txt{
+    width: calc(50% - 12px);
+    /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+    padding: 39px 0;
+    /*왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남*/
+}
+.global .txt h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 41px 0;
+    position: relative; /*after 정렬의 기준*/
+}
+.global .txt h2::after{
+    content: ""; /*필수값*/
+    position: absolute; /*h2를 기준으로 정렬*/
+    left: 3px;
+    bottom: -21px;
+    width: 98px;
+    border-bottom: 1px solid #ccc;
+}
+.global .photo{
+    width: calc(50% - 12px);
+    /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) { /*모바일 형 코딩 (반응형)*/
+                        .global{
+                            margin: 66px 0 0 0;
+                        }
+                        .global .txt{
+                            width: calc(50% - 8px);
+                            /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+                            padding: 22px 0;
+                            /*왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남*/
+                        }
+                        .global .txt h2{
+                            font-size: 25px;
+                        }
+                        .global .txt h2::after{
+                            content: ""; /*필수값*/
+                            width: 48px;
+                            height: 1px;
+                            border-bottom: 1px solid #ccc;
+                        }
+                        .global .txt h2 br{
+                            display: none; /*br 태그로 인한 줄바꿈 삭제*/
+                        }
+                        .global .txt p br{
+                            display: none;
+                        }
+                        .global .photo{
+                            width: calc(50% - 8px);
+                            border-radius: 10px; /*모바일에서는 반 정도 깎는게 좋음. pc형에서 반 */
+                        }
+}/*media*/ 
+
 
 
 
