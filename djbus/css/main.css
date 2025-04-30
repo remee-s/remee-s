@@ -134,6 +134,7 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
 .test .wrap ul li{
     display: flex;
     justify-content: space-between;
+    
 }
 .test .wrap .photo{
     padding: 0 130px 100px 0;
