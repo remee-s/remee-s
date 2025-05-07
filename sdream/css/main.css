@@ -257,7 +257,7 @@ header .tnb .lang{
 .project .list ul li a.hover .txt p{
     display: block; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
 }
-.project .list ul li a.on .txt span{
+.project .list ul li a.hover .txt span{
     display: inline-block; 
 } 
 
