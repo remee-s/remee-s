@@ -1,0 +1,375 @@
+@import url(res_common.css);
+@import url(default.css);
+@import url(font.css);
+
+.news{
+    margin: 189px 0 0 0;
+}
+.news .wrapper{
+    display: flex; /*h2,list를 좌우로 배치 -more는 absolute라 계산X*/
+    justify-content: space-between;
+    position: relative; /*more의 정렬의 기준 */
+}
+.news h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.news .list{
+    width: 74.52%;
+    /*
+        넓이는 %으로 계산 - 콘텐츠 넓이에서 몇 % 로 계산
+        939 / 1260 x 100 = 74.52 //소수점 둘째자리까지 씀.
+    */
+}
+.news ul li{
+    border-bottom: 1px solid #ccc;
+}
+.news ul li a{
+    display: flex; /*txt / photo 좌우로 배치*/
+    justify-content: space-between; /*양끝 정렬*/
+    padding: 20px 0;
+    align-items: center; /*위아래 가운데 정렬 하는것 */
+}
+.news ul li a .txt{
+    width: calc(100% - 225px);
+    /*사진의 넓이는 고정,
+      제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+      글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px
+    */
+}
+.news ul li a .txt strong{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1d1d1d;
+    display: block;
+    margin: 0 0 11px 0;
+
+    /*1줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news ul li a .photo{ /*사진은 %계산 안들어감*/
+    width: 190px;
+    height: 128px;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+.news ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .more{
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 4px; 
+    top: 85px; 
+    padding: 3px 35px 3px 11px; /*위 부터 시계방향임 */
+    border: 1px solid #3C42C3;
+    color: #1d1d1d;
+}
+.news .more::after{
+    content: ""; /*필수값*/
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 4px;
+    top: 5px;
+    width: 24px;  /*아이콘 사이즈 넓이*/
+    height: 24px; /*아이콘 사이즈 높이*/
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_10_82' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_10_82)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /*영역에 맞게 아이콘 안짤리게 꽉체우기*/
+    transition: 1s; /* 마우스 오버 후 속성이 변경면 1초동안 천천히 실행*/
+}
+.news .more:hover::after{
+    transform: rotate(360deg); /*360도(한바퀴) - 원하는 각도 = 아이콘이 원하는 만큼 돌아감*/
+}
+@media screen and (max-width:640px) {  /*********pc형과 겹치는 서식은 지워도 됨**********/
+    /* 브라우저 사이즈가 640px 이하 일때만 적용되는 스타일*/
+                        .news{
+                            margin: 95px 0 0 0; /*pc에게 준 여백의 절반 정도 들어감 보통은*/
+                        }
+                        .news .wrapper{
+                            display: block;  /*flex 안함*/
+                        }
+                        .news h2{
+                            font-size: 30px;
+                            font-weight: 800;
+                            line-height: 1.2;
+                            color: #1d1d1d;
+                        }
+                        .news .txt h2 br{
+                            display: none; /*br 태그로 인한 줄바꿈 삭제*/
+                        }
+                        .news .txt p br{
+                            display: none;
+                        }
+                        .news .list{
+                            width: auto;
+                            /*
+                              원래 속성대로 주기 - div 블럭요소라서 100% 들어감
+                            */
+                            margin: 40px 0 0 0;
+                        }
+                        .news ul li a{
+                            padding: 27px 0;
+                            align-items: center; 
+                        }
+                        .news ul li a .txt{
+                            width: calc(100% - 225px);
+                            /*사진의 넓이는 고정,
+                            제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜
+                            글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값 px
+                            */
+                        }
+                        .news ul li a .txt strong{
+                            font-size: 16px;
+                            font-weight: 400;
+                            margin: 0 0 11px 0;
+                        
+                            /*pc형은 1줄 제한 → 모바일에선 무제한*/
+                            white-space: normal; /* nowrap 해제 */
+                            overflow: visible;  /* hidden 해제 */
+                        }
+                        .news ul li a .photo{ /*사진은 %계산 안들어감*/
+                            width: 100px;
+                            height: 70px;
+                            border-radius: 10px;
+                        
+                        }
+                        .news .more{
+                            right: 0; 
+                            left: auto;
+                            /* left 정렬에서 right 정렬로 변경하려면 
+                               left : auto ; 로 해제하고 right를 줘야함*/
+                            top: 11px; 
+                            padding: 3px 34px 3px 9px; /*위 부터 시계방향임 */
+                            border: 1px solid #3C42C3;
+                            color: #1d1d1d;
+                            font-size: 13px;
+                        }
+                        .news .more::after{
+                            right: 4px;
+                            top: 3px;
+                            width: 20px;  /*아이콘 사이즈 넓이*/
+                            height: 20px; /*아이콘 사이즈 높이*/
+                        }
+                        .news .more:hover::after{
+                            transform: rotate(360deg); /*360도(한바퀴) - 원하는 각도 = 아이콘이 원하는 만큼 돌아감*/
+                        }   
+}/*media*/
+
+.global{
+    margin: 309px 0 0 0;
+}
+.global .wrapper{
+    display: flex; /*txt / photo 좌우 배치*/
+    justify-content: space-between; 
+}
+.global .txt{
+    width: calc(50% - 12px);
+    /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+    padding: 39px 0;
+    /*왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남*/
+}
+.global .txt h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 41px 0;
+    position: relative; /*after 정렬의 기준*/
+}
+.global .txt h2::after{
+    content: ""; /*필수값*/
+    position: absolute; /*h2를 기준으로 정렬*/
+    left: 3px;
+    bottom: -21px;
+    width: 98px;
+    border-bottom: 1px solid #ccc;
+}
+.global .photo{
+    width: calc(50% - 12px);
+    /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) { /*모바일 형 코딩 (반응형)*/
+                        .global{
+                            margin: 66px 0 0 0;
+                        }
+                        .global .txt{
+                            width: calc(50% - 8px);
+                            /*나눌것이 2개라서 50$ 둘 사이의 여백의 절반*/
+                            padding: 22px 0;
+                            /*왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어남*/
+                        }
+                        .global .txt h2{
+                            font-size: 25px;
+                        }
+                        .global .txt h2::after{
+                            content: ""; /*필수값*/
+                            width: 48px;
+                            height: 1px;
+                            border-bottom: 1px solid #ccc;
+                        }
+                        .global .txt h2 br{
+                            display: none; /*br 태그로 인한 줄바꿈 삭제*/
+                        }
+                        .global .txt p br{
+                            display: none;
+                        }
+                        .global .photo{
+                            width: calc(50% - 8px);
+                            border-radius: 10px; /*모바일에서는 반 정도 깎는게 좋음. pc형에서 반 */
+                        }
+}/*media*/ 
+
+.esg{
+    margin: 168px 0 0 0;
+}
+.esg .tit h2{
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 33px 0;
+}
+.esg .list{
+    margin: 52px 0 0 0;
+}
+.esg .list ul{
+    display: flex; /*li를 좌우로 배치*/
+    justify-content: space-between;
+}
+.esg .list ul li{
+    width: calc(25% - 18px);
+    /*
+      100% / 1줄에 나오는 갯수 = 100/4 =25%
+      1줄의 여백의 총합 / 1ㅁ줄에 나오는 갯수 = 24 + 24 + 24 / 4  = 74/4 =18 
+      (이렇게 해야 여백이 동일하게 들어가며 반응형이 적용되기 때문)
+    */
+}
+.esg .list ul li a{
+    display: flex;
+    align-items: flex-end; /* 아래정렬 */
+    justify-content: center; /* 좌 우 가운데 */
+    padding: 0 0 41px 0; /* 글자와 하단 여백 */
+    /* 위 처럼 줘도 되지만 상단 여백만 줘서 끌어 내려도 됨
+        (padding: 344px 0 0 0; 이런식으로)- 한줄일 경우만 */
+
+    height: 418px; /*높이는 a에게 주는게 좋음, (그래야 동일하게 들어감)*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.esg .list ul li.list01 a{
+    background-image: url(../images/esg_bg01.jpg) ;
+}
+.esg .list ul li.list02 a{
+    background-image: url(../images/esg_bg02.jpg) ;
+}
+.esg .list ul li.list03 a{
+    background-image: url(../images/esg_bg03.jpg) ;
+}
+.esg .list ul li.list04 a{
+    background-image: url(../images/esg_bg04.jpg) ;
+}
+
+
+@media screen and (max-width:640px) { /*모바일 형 코딩 (반응형) 유지하는값은 모두 지워도 됨.*/
+                        .esg{
+                            margin: 66px 0 0 0;
+                        }
+                        .esg .tit h2{
+                            font-size: 30px;
+                            font-weight: 800;
+                            line-height: 1.2;
+                            color: #1d1d1d;
+                            margin: 0 0 25px 0; 
+                        }
+                        .esg .list{ 
+                            margin: 25px 0 0 0;
+                        }
+                        .esg .list ul{
+                            justify-content: space-between; /*gap이랑 충돌 안나서 유지해도됨*/
+                            flex-wrap: wrap; /* 2줄 허용 */
+                            gap: 16px; 
+                            /*첫번째 좌우값 , 두번째는 위아래 값 (같으면 하나만 쓰면 됨)
+                              row-gap이라고 위아래 값만 주는것도 있음.*/
+                        }
+                        .esg .list ul li{
+                            width: calc(50% - 8px);
+                            /*
+                            100% / 1줄에 나오는 갯수 = 100/2 =50%
+                            1줄의 여백의 총합 / 1줄에 나오는 갯수 = 16/2 =8px
+                            (이렇게 해야 여백이 동일하게 들어가며 반응형이 적용되기 때문)
+                            */
+                        }
+                        .esg .list ul li a{
+                            align-items: center; /* 위아래 가운데 정렬 */
+                            padding: 0; /* 여백 삭제 0처리 해야 삭제 되는것임. pc형에서 모바일에서 삭제 하려면 */
+                            height: 152px;
+                            border-radius: 10px;
+                            font-size: 20px;    
+                        }
+    
+}/*media*/
+
+.esg_fix{
+    margin: 200px 0 0 0;
+}
+.esg_fix .wrapper{
+    display: flex; /* tit / list 좌우로 배치*/
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.esg_fix .tit{
+    width: 23%;
+    /* 297px / 1260 * 100 = 23%*/
+    position: sticky; 
+    /*tit이 너무 길기 때문에
+    align-items: flex-start; 를 코딩 해줘야 함 */
+    top: 20px;
+}
+.esg_fix .list{
+    width: 57.54%;
+    /* 725 / 1260 * 100 = 57.54*/
+}
+.esg_fix .list ul li a{
+    display: block;
+    height: 481px;
+}
+.esg_fix .list ul li.list01 a{
+    background-image: url(../images/esg_bg01.jpg) ;
+}
+.esg_fix .list ul li.list02 a{
+    background-image: url(../images/esg_bg02.jpg) ;
+}
+.esg_fix .list ul li.list03 a{
+    background-image: url(../images/esg_bg03.jpg) ;
+}
+.esg_fix .list ul li.list04 a{
+    background-image: url(../images/esg_bg04.jpg) ;
+}
+
+
+body{
+    margin: 0 0 400px 0;
+}
+

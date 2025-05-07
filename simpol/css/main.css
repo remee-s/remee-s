@@ -1,0 +1,267 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header{
+    display: flex;
+    justify-content: space-around;
+    /*logo와 inner를 header 넓이 안에서 좌우 끝으로*/
+    height: 100px;
+    padding: 0 37px; /*위 아래 좌 우*/
+}
+header .logo{
+    margin: 28px 0 0 0;
+}
+header .inner{
+    gap: 20px ; /*????*/
+    display: flex; /*gnb shop 을 좌우로*/
+    align-items: center
+}
+header .inner .gnb ul{
+    display: flex;
+}
+header .inner .gnb ul li a{
+    display: block; /*a 필수 값*/
+    font-weight: 800;
+    color: #1d1d1d;
+    font-size: 17px;
+    line-height: 1.3;
+    padding: 34px 32px ;
+    line-height: 100px;
+    /*header 의 높이랑 1차 메뉴의 a의 높이는 같아야함 .. a에 행간을 header의 높이 값으로 줌
+    a의 높이가 생기고 글자는 위아래 가운데 정렬*/
+    padding: 0 32px;
+}
+header .inner .shop{
+    font-size: 20px;
+    color: #23330E;
+    font-weight: 400;    
+    border: 1px solid #23330E; /*사각형 도형 만들어 주는것 */
+    border-radius: 23px; /*사각형 도형 라운드 주는 기능*/
+    padding: 6px 37px;
+}
+.visual{
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    margin: 0 20px;
+    border-radius: 20px; /*사각형 도형 라운드 주는 기능*/
+    color: #fff;
+    text-align: center; /*글자 가운데로 정렬 */
+}
+.visual h2{
+    font-size: 50px;
+    color: #fff;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.03em; /*-30  자간*/
+    padding: 330px 0 19px 0;
+}
+.product{
+    margin: 180px 0 0 0;
+}
+.product .tit h2{
+    color: #23330E;
+}
+.product .tit p{
+    color: #1d1d1d;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+}
+.product .list{
+    margin: 30px 0 0 0;
+}
+.wrapper .list ul{
+    display: flex;
+    justify-content: space-around
+}
+.wrapper .list ul li{
+    width: 404px;    
+}
+.wrapper .list ul li a{
+    display: block;
+}    
+.wrapper .list ul li a .photo{
+    font-size: 0;
+    line-height: 0;
+    /* 여백을 주는이유 = 이미지 하단에 여백을 삭제 하기 위해서
+    -->img 태그에 직접 주면 적용 X 
+       img태그만 감싸는 요소애 줘야함*/
+}
+.wrapper .list ul li a h3{
+    color: #3d3d3d;
+    margin: 24px 0 0 0;
+    /*한줄로 제안 하는 코드*/
+    white-space: nowrap; /*1줄로 제안 (글자가 너무 길면 자르겠다는 말)*/
+    overflow: hidden; /*적용된 틀 안에 글자를 맞춰 주는것*/
+    text-overflow: ellipsis; /*글자가 잘리지 않게 틀에 맞춰서 적용 시키는것*/
+}
+.network{
+    background: url(../images/network01.jpg) no-repeat center center / cover;
+    height: 600px;
+    margin: 150px 0 0 0;
+    color: #fff;
+}
+.network h2{
+    padding: 125px 0 0 0;
+}
+.network .sub_tit{
+    font-size: 50px;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+    margin: 10px 0 0 0;
+    line-height: 1.3;
+
+}
+.network .cont{
+    color: rgba(200, 200, 200, 0.6);
+    margin: 30px 0 0 0;
+}
+.network a{
+    border: 1px solid rgba(200, 200, 200, 0.9);
+    display: inline-block; 
+    padding: 10px 40px; /* 위 아래 좌 우*/
+    border-radius: 30px;
+    color: rgba(200, 200, 200, 0.9) ;
+    margin: 28px 0 0 0 ;
+}
+.community{
+    margin: 180px 0 0 0;
+}
+.community .tit h2{
+    color: #23330E;
+}
+.community .tit p{
+    color: #1d1d1d;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: -0.03em;
+    margin: 7px 0 0 0;
+}
+.community .list{
+    margin: 30px 0 0 0;
+    display: flex; /*group을 좌우로 배치*/
+    justify-content: space-between; /*양쪽끝에 배치*/
+}
+.community .list .group{
+    width: calc(50% - 6px);
+    /*
+       몇 개로 분할 : 2개 = 100/2 = 50% 
+       사이의 여백의 총합 / 분할하는 갯수로 나눔 = 12px / 2 = 6px
+    */
+}
+.community .list .group ul{
+    display: flex; /*li를 좌우로 배치*/
+    flex-wrap: wrap; /*li 가 2줄로 나타나는것을 허락*/
+    gap: 12px;
+}
+
+/*
+   1.li의 사이즈와 a의 사이즈가 동일해야 할때
+   2. height를 꼭 줘야하는 디자인일때 (위에 product는 높이가 필요없는 디자인)
+   --li에는 넓이를 주고 a에게는 높이를 준다.
+*/
+.community .list .group ul li.color
+.community .list .group ul li.gray{
+    width: calc(50% - 6px);
+}
+.community .list .group ul li.gray a{
+    background-color: #F4F4F4;
+}
+.community .list .group ul li.color.bg1 a{
+    background-color: #3D5718;
+}
+.community .list .group ul li.color.bg2 a{
+    background-color: #23330E;
+}
+
+.community .list .group li.review{
+    width: 100%; 
+    /* 나를 감싸는 요소 ul의 넓이의 100%가 들어가는것*/
+}
+.community .list .group ul li.review.bg1 a{
+    background: url(../images/community_bg1.jpg) no-repeat center center /cover;
+}
+.community .list .group ul li.review.bg2 a{
+    background: url(../images/community_bg2.jpg) no-repeat center center /cover;
+}
+.community .list .group ul li a{
+    display: flex;
+    padding: 0 30px 30px 30px;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+.community .list .group ul li a h3{
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin: 5px 0 30px 0;
+    /*1줄제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a{
+    height: 233px;
+    color: #ffffff;
+}
+.community .list .group ul li.gray a{
+    color: #1d1d1d;
+}    
+.community .list .group li.review a{
+    height: 387px;
+}
+.community .list .group ul li a .date{
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date{
+    color: rgba(200, 200, 200, 0.6);
+}
+.community .list .group ul li.gray a .date,
+.community .list .group ul li.gray a h3{
+    color: #1d1d1d;
+}
+
+
+
+footer{
+    background-color: #1d1d1d;
+    padding: 75px 0 95px 10px;
+    color: rgba(200, 200, 200, 0.8);
+    margin: 152px 0 0 0;
+}  
+footer .f_nav{
+    border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+    padding: 0 0 35px 0;
+}
+footer .f_nav ul{
+    display: flex;
+    gap: 33px;
+}
+footer .f_infor{
+    margin: 36px 0 24px 0;
+}
+footer .f_infor .group{
+    display: flex;
+    gap: 30px;
+    margin: 0 0 5px 0;
+}
+footer .copyright{
+    color: rgba(200, 200, 200, 0.6);
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap { /*홈페이지 전체를 감싸는 요소 body로 하면안됨*/
+    min-width: 1320px;
+    /* wrapper 의 사이즈 + 좌우에 줄 최소 여백 (가로스크롤바가 생겼을때 콘텐츠 좌우여백)
+    1260+ 30 +30 = 1320px
+    */
+}
