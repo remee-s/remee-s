@@ -8,7 +8,7 @@ body{
     word-break: keep-all;
 }
 .wrapper{
-    width: 1920px; /*1260*/
+    width: 1260px; /*1260*/
     margin: 0 auto; /*가운데*/
 }
 #wrap{

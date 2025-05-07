@@ -30,7 +30,6 @@ header .wrapper{
     display: flex; /* logo / gnb / tnb 좌우 배치 */
     justify-content: space-between; /* 좌우 끝 정렬 */
     align-items: center; /* 위아래 가운데 정렬 */
-
 }
 header .gnb .gnb_open,
 header .gnb .gnb_close{
@@ -74,12 +73,10 @@ header .tnb .lang{
 @media screen and (max-width:640px){
                         header{
                             height: 55px;
-                            z-index: 100; /* 밑위에 배치 */
                         }
                         header .wrapper{
                             margin-right: 0;
-                            /*오른쪽 여백만 삭제*/
-                        
+                            /* 오른쪽 여백만 삭제 - 메뉴열기 버튼이 오른쪽까지 배치되게 하려고 */
                         }
                         header .logo a img{
                             width: 78px;
@@ -109,11 +106,12 @@ header .tnb .lang{
     color: #fff;
     height: 950px;
     text-align: left;
+
 }   
 .visual h2{
     color: #fff;
     font-size: 70px;  
-    padding: 280px 0 5px 280px;
+    padding: 280px 0 5px 280px; /*???*/
 }
 .visual p{
     padding: 0 0 0 280px;
@@ -124,9 +122,9 @@ header .tnb .lang{
                         .visual{
                             height: auto;/*높이를 안준 것 처럼 - 콘텐츠 길이만큼 늘어남*/
                             padding: 0 0 150px 0;
+                            text-align: left;
                         }   
                         .visual h2{
-                            color: #fff;
                             font-size: 30px;  
                             padding: 215px 0 5px 47px;
                         }
@@ -139,3 +137,138 @@ header .tnb .lang{
                         }
 }/*@media*/
 
+.project{
+    margin: 171px 0 0 0;
+}
+.project .wrapper{
+    display: flex; /*tit/list 좌우 배치*/
+    justify-content: space-between;
+    align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서*/
+}   
+.project .tit{
+    position: sticky;/*감싸는 wrapper를 기준으로 정렬 무조건*/
+    top: 20px;
+    /*  
+        좌우 정렬 값 주면 안됨...
+        top값은 상단에 고정 되었을때 위치값
+        (list가 공간을 차지 하지 못하고 flex에서 벗어나 버리기 때문)
+
+        <<sticky의 단점>>
+        감싸는 요소중에 단 한개라도 overflow:hidden;값을 가지고 있으면
+        적용 안됨. 사실상 못쓴다고 생각하면 됨
+    */
+}
+.project .tit h2{
+    color: #354325;
+    margin: 0 0 10px 0;
+}
+.project .list{
+    width: 56.98%; /* 712/1260*100 = 56.98 소수점 두자리수 까지*/
+    margin: 16px 0 0 0;
+}
+.project .list ul{
+    display: flex;
+    flex-wrap: wrap;/*2줄 허용*/
+    gap: 24px 24px;
+    margin: 315px 0 0 0;
+}
+.project .list ul li{
+    width: calc(50% - 12px);
+    /* 100% / 한줄에 보일 li 갯수 = 100% / 2 = 50% 
+       한줄에 있는 여백의 총합 / 한줄에 보일 li의 갯수 = 24px / 2 = 12px*/
+}
+.project .list ul li:nth-child(even){ 
+    /*even - 짝수 , odd - 홀수 */
+    transform: translateY(-181px);
+}
+.project .list ul li a{
+    display: block;
+    position: relative; /* txt 정렬의 기준*/
+}
+.project .list ul li a .photo{
+    overflow: hidden;
+    border-radius: 10px;
+    height: 500px; /*photo의 라운드가 잘리는것을 해결하는 방법 (여백때문에 짤린거 복원됨)*/
+    position: relative; /* before 정렬의 기준!*/
+}
+.project .list ul li a .photo img{
+    /* 이미지를 감싸는 영역 photo 사이즈 만큼만 나오게 리사이즈*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .list ul li a .txt{
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 30px;
+    bottom: 50px;
+    width: 100%;
+    padding: 0 30px;
+    color: #fff;
+}
+.project .list ul li a .txt h3{
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #fff;
+    font-size: 30px;
+}
+.project .list ul li a .txt p{
+    display: none;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+.project .list ul li a .txt span{
+    display: none; 
+    /*숨김 - display : none;은 아예 태그가 존재하지 않는 것
+                             것 처럼 코딩됨*/
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 24px 0 0;
+    font-size: 16px;
+    position: relative; /*after 정렬의 기준*/
+}
+.project .list ul li a .txt span::after{
+    content: "";
+    position: absolute;
+    right: -7px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_23_1215' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_23_1215)'%3E%3Cpath d='M11 11.825V21C11 21.2833 11.0958 21.5208 11.2875 21.7125C11.4792 21.9042 11.7167 22 12 22C12.2833 22 12.5208 21.9042 12.7125 21.7125C12.9042 21.5208 13 21.2833 13 21V11.825L14.9 13.7C15.0833 13.8833 15.3125 13.9792 15.5875 13.9875C15.8625 13.9958 16.1 13.9 16.3 13.7C16.4833 13.5167 16.575 13.2833 16.575 13C16.575 12.7167 16.4833 12.4833 16.3 12.3L12.7 8.7C12.5 8.5 12.2667 8.4 12 8.4C11.7333 8.4 11.5 8.5 11.3 8.7L7.7 12.3C7.51667 12.4833 7.42083 12.7125 7.4125 12.9875C7.40417 13.2625 7.5 13.5 7.7 13.7C7.88333 13.8833 8.11667 13.975 8.4 13.975C8.68333 13.975 8.91667 13.8833 9.1 13.7L11 11.825ZM12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 12.55 4.05417 13.0917 4.1625 13.625C4.27083 14.1583 4.43333 14.675 4.65 15.175C4.76667 15.4583 4.80417 15.7417 4.7625 16.025C4.72083 16.3083 4.59167 16.5583 4.375 16.775C4.175 16.975 3.92917 17.0208 3.6375 16.9125C3.34583 16.8042 3.125 16.5917 2.975 16.275C2.65833 15.5917 2.41667 14.8958 2.25 14.1875C2.08333 13.4792 2 12.75 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 12.75 21.9208 13.4875 21.7625 14.2125C21.6042 14.9375 21.3583 15.6417 21.025 16.325C20.875 16.625 20.6542 16.825 20.3625 16.925C20.0708 17.025 19.825 16.975 19.625 16.775C19.425 16.575 19.2958 16.3333 19.2375 16.05C19.1792 15.7667 19.2083 15.4917 19.325 15.225C19.5583 14.7083 19.7292 14.1792 19.8375 13.6375C19.9458 13.0958 20 12.55 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.project .list ul li a .photo::before{ /*????*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 243, 243, 0);
+    transition: 0.5s;
+}
+/************************마우스오버 했을때 스타일 코딩*******************************/
+
+.project .list ul li a:hover .photo::before{
+    opacity: 0.9;
+}
+
+.project .list ul li a.hover .txt p{
+    display: block; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
+}
+.project .list ul li a.on .txt span{
+    display: inline-block; 
+} 
+
+
+@media screen and (max-width:640px){
+
+}/*@media*/
+
+
+
+
+footer{
+    margin: 1000px 0 0 0;
+}
