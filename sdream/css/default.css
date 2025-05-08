@@ -20,7 +20,6 @@ a{
 }
 button{
     border: none;
-    background-color: transparent; /*색을 투명하게 만드는것*/
     background: none; /* background-color: transparent 보다 background: none이게 더 쎈 의미임 */
     font-family: inherit;
     font-weight: inherit;
