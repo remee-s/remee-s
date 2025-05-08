@@ -250,25 +250,28 @@ header .tnb .lang{
     opacity: 0;
     transition: 0.5s;
 }
-/************************마우스오버 했을때 스타일 코딩*******************************/
-
-.project .list ul li a:hover .photo::before{
-    opacity: 0.9;
-}
-.project .list ul li a:hover .txt{
-    bottom: 52px;
-}
-.project .list ul li a:hover .txt p{
-    opacity: 1; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
-}
-.project .list ul li a:hover .txt span{
-    opacity: 1;
-} 
 
 
-@media screen and (max-width:640px){
+@media screen and (min-width:641px){
+            /***************오버했을때 (641px 이상)에서만 작동하는것*******************/
+            .project .list ul li a:hover .photo::before{
+                opacity: 0.9;
+            }
+            .project .list ul li a:hover .txt{
+                bottom: 52px;
+            }
+            .project .list ul li a:hover .txt p{
+                opacity: 1; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
+            }
+            .project .list ul li a:hover .txt span{
+                opacity: 1;
+            } 
+}/*@media min641*/
+
+
+@media screen and (max-width:640px){ /*640px 이하 (640포함)*/
                         .project{
-                            margin: 92px 0 0 0;
+                            margin: 108px 0 0 0;
                         }
                         .project .wrapper{
                             display: block; 
@@ -278,72 +281,65 @@ header .tnb .lang{
                             align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서*/
                         }   
                         .project .tit{
-                            position: sticky;/*감싸는 wrapper를 기준으로 정렬 무조건*/
-                            top: 20px;
-                            /*  
-                                좌우 정렬 값 주면 안됨...
-                                top값은 상단에 고정 되었을때 위치값
-                                (list가 공간을 차지 하지 못하고 flex에서 벗어나 버리기 때문)
-                        
-                                <<sticky의 단점>>
-                                감싸는 요소중에 단 한개라도 overflow:hidden;값을 가지고 있으면
-                                적용 안됨. 사실상 못쓴다고 생각하면 됨
-                            */
+                            position: relative;
+                            /*sticky를 해제하기 위해서 다른 속성을 줌*/
+                            top: auto; 
+                            /*auto = top값을 지정하지 않은 것 처럼 취소하는 값..0이랑은 다름
+                              0을 줘도 되지만, auto를 많이 사용함*/
+                        }
+                        .project .tit p{
+                            font-size: 20px;
+                        }
+                        .project .tit p br{
+                            display: none;
                         }
                         .project .tit h2{
                             color: #354325;
-                            margin: 0 0 10px 0;
+                            margin: 0 0 6px 0;
                         }
                         .project .list{
-                            width: 56.98%; /* 712/1260*100 = 56.98 소수점 두자리수 까지*/
-                            margin: 16px 0 0 0;
+                            width: auto; 
+                            /* block요소 이기 때문에 100%들어감.
+                               margin이 들어가기 때문에 auto로 적용해야함*/
                         }
                         .project .list ul{
-                            display: flex;
-                            flex-wrap: wrap;/*2줄 허용*/
-                            gap: 24px 24px;
-                            margin: 315px 0 0 0;
+                            gap: 20px 16px;/* 위아래 , 좌우 */
+                            margin: 16px 0 0 0; /*???*/
                         }
                         .project .list ul li{
-                            width: calc(50% - 12px);
+                            width: calc(50% - 8px);
                             /* 100% / 한줄에 보일 li 갯수 = 100% / 2 = 50% 
-                            한줄에 있는 여백의 총합 / 한줄에 보일 li의 갯수 = 24px / 2 = 12px*/
+                            한줄에 있는 여백의 총합 / 한줄에 보일 li의 갯수 = 16px / 2 = 8px*/
                         }
                         .project .list ul li:nth-child(even){ 
                             /*even - 짝수 , odd - 홀수 */
-                            transform: translateY(-181px);
+                            transform: none; /*짝수를 위로 올린 이동값을 취소 하는것*/
                         }
                         .project .list ul li a{
                             display: block;
                             position: relative; /* txt 정렬의 기준*/
                         }
                         .project .list ul li a .photo{
-                            overflow: hidden;
-                            border-radius: 10px;
-                            height: 500px; /*photo의 라운드가 잘리는것을 해결하는 방법 (여백때문에 짤린거 복원됨)*/
-                            position: relative; /* before 정렬의 기준!*/
-                        }
-                        .project .list ul li a .photo img{
-                            /* 이미지를 감싸는 영역 photo 사이즈 만큼만 나오게 리사이즈*/
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
+                            border-radius: 5px; /*모바일에서는 라운드를 pc형 의 반만 주는것이 좋음*/
+                            height: 88px; /*photo의 라운드가 잘리는것을 해결하는 방법 (여백때문에 짤린거 복원됨)*/
                         }
                         .project .list ul li a .txt{
-                            position: absolute; /* a를 기준으로 정렬 */
-                            left: 30px;
-                            bottom: 50px;
-                            width: 100%;
-                            padding: 0 30px;
-                            color: #fff;
+                            /* absolute ->해제 */
+                            position: relative; 
+                            left: auto;
+                            bottom: auto;
+                            width: auto;
+                            padding: 13px 0 0 0;
+                            color: #1d1d1d;
                         }
                         .project .list ul li a .txt h3{
                             font-family: 'Gmarket Sans';
-                            font-weight: 700;
-                            line-height: 1.2;
-                            letter-spacing: -0.05em;
-                            color: #fff;
-                            font-size: 30px;
+                            font-weight: 500;
+                            color: #1d1d1d;
+                            font-size: 17px;
+                        }
+                        .project .list ul li a .txt h3 br{
+                            display: none; /*줄바꿈 삭제*/
                         }
                         .project .list ul li a .txt p{
                             display: none;
