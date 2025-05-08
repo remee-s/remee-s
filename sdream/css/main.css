@@ -272,6 +272,8 @@ header .tnb .lang{
                         }
                         .project .wrapper{
                             display: block; 
+                            /*display에서 다른 값을 주면 flex가 해지됨
+                            tit/list좌우 정렬 */
                             justify-content: space-between;
                             align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서*/
                         }   
