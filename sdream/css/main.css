@@ -105,8 +105,6 @@ header .tnb .lang{
     background: url(../images/visual_bg02.jpg) no-repeat center center / cover;
     color: #fff;
     height: 950px;
-    text-align: left;
-
 }   
 .visual h2{
     color: #fff;
@@ -122,7 +120,6 @@ header .tnb .lang{
                         .visual{
                             height: auto;/*높이를 안준 것 처럼 - 콘텐츠 길이만큼 늘어남*/
                             padding: 0 0 150px 0;
-                            text-align: left;
                         }   
                         .visual h2{
                             font-size: 30px;  
@@ -200,10 +197,11 @@ header .tnb .lang{
 .project .list ul li a .txt{
     position: absolute; /* a를 기준으로 정렬 */
     left: 30px;
-    bottom: 50px;
+    bottom: -60px;
     width: 100%;
     padding: 0 30px;
     color: #fff;
+    transition: 0.5s;
 }
 .project .list ul li a .txt h3{
     font-family: 'Gmarket Sans';
@@ -214,18 +212,21 @@ header .tnb .lang{
     font-size: 30px;
 }
 .project .list ul li a .txt p{
-    display: none;
+    opacity: 0;
     margin: 10px 0;
     color: rgba(255, 255, 255, 0.8);
+    transition: 0.5s;
 }
 .project .list ul li a .txt span{
-    display: none; 
+    opacity: 0; 
+    display: inline-block;
     /*숨김 - display : none;은 아예 태그가 존재하지 않는 것
                              것 처럼 코딩됨*/
     color: rgba(255, 255, 255, 0.6);
     padding: 0 24px 0 0;
     font-size: 16px;
     position: relative; /*after 정렬의 기준*/
+    transition: 0.5s;
 }
 .project .list ul li a .txt span::after{
     content: "";
@@ -245,7 +246,8 @@ header .tnb .lang{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(243, 243, 243, 0);
+    background-color: #354325;
+    opacity: 0;
     transition: 0.5s;
 }
 /************************마우스오버 했을때 스타일 코딩*******************************/
@@ -253,12 +255,14 @@ header .tnb .lang{
 .project .list ul li a:hover .photo::before{
     opacity: 0.9;
 }
-
-.project .list ul li a.hover .txt p{
-    display: block; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
+.project .list ul li a:hover .txt{
+    bottom: 52px;
 }
-.project .list ul li a.hover .txt span{
-    display: inline-block; 
+.project .list ul li a:hover .txt p{
+    opacity: 1; /* none 으로 숨긴건 흔히 block으로 다시 보이게 함*/
+}
+.project .list ul li a:hover .txt span{
+    opacity: 1;
 } 
 
 
