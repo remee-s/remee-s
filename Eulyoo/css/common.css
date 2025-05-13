@@ -1,0 +1,48 @@
+/*모든페이지에 공통으로 들어가는 기본 스타일*/
+body{
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /*배수*/
+    color: #3d3d3d;
+    word-break: keep-all; /* 스페이스 기준 =단어별로 줄바꿈*/
+    word-wrap: break-word; 
+    /*단어가 너무 긴 경우 강제로 줄바꿈을 주는 경우*/
+}
+.wrapper{
+    width: 1260px; /*1260*/
+    margin: 0 auto; /*가운데*/
+}
+#wrap{
+    min-width: 1320px;
+    /*
+        1260 + 24(왼) + 24(오) = 1308 [동양생명 스타일]
+        1260 + 30(왼) + 30(오) = 1320 [네이버스타일]
+        1260 + 30 + 30 = 1320 을유문화사 개편 사이트 스타일 (왼쪽여백30 오른쪽여백30 최솟값)
+    */
+    position: relative; /*header 정렬의 기준*/
+}
+@media screen and (max-width:640px){
+    /*브라우저 넓이가 640px 이하에서만 작동 (유지하는 서식은 지움)*/
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: auto; /* 넓이는 알아서 좌우여백 20px */
+        margin: 0 20px; /* 레이아웃 그리드 좌우 여백 사이값*/
+    }
+    #wrap {
+        min-width: 0; /*최소넓이 없음*/
+    }
+}
+
+/*글자를 숨겨야 하는 경우 blind클래스를 적용*/
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
