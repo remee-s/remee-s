@@ -650,10 +650,6 @@ header .tnb .search{
     font-size: 20px;
     color: #1d1d1d;
     margin: 12px 0 16px 0;
-    transition: 0.5;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* 줄수 */
 }
 .story .list ul li a .txt p{
     /* 줄 제한 (제일 긴 텍스트) */
