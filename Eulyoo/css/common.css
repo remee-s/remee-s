@@ -46,3 +46,9 @@ body{
     overflow: hidden;
     color: transparent;
 }
+
+/* 글자를 드레그 해서 선택 했을때 색이 변하는 수식 */
+::selection {
+    color: #C2B299;
+    background-color: #645A4E;
+}
