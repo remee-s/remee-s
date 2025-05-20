@@ -9,6 +9,10 @@
     <title>메뉴 마우스 오버시 2차 메뉴 전체 나옴</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문 바로가기</a>
+        <!-- '내부 링크' = a를 클릭하면 id="#skip_content" 인 요소로 이동하는것 (스크롤된다) -->
+    </div>
     <div id="wrap">
         <!-- ################
             1. 브라우저가 스크롤이 되면 header에 fixed 클래스를 추가
@@ -19,7 +23,7 @@
             --fixed만 들어갈 수도 있고 fixed, menu_over가 동시에 들어갈 수도 있고
               menu_over만 들어갈 수도 있음.
          ##################-->
-        <header class="">
+        <header>
             <div class="wrapper">
                 <h1 class="logo"><a href="#"><span class="blind">로고</span></a></h1>
                 <nav class="gnb">
@@ -30,7 +34,7 @@
                                 1. pc버전에 메뉴에 마우스를 올리면 li에 over클래스가 추가
                                 2. 모바일 버전에 메뉴를 클릭하면 li에 open 클래스가 추가
                             -->
-                            <li class="">
+                            <li>
                                 <a href="https://www.naver.com/"><span>기업소개</span></a>
                                 <ul class="depth2"><!--2차메뉴-->
                                     <li><a href="#"><span>인사말</span></a></li>
@@ -81,7 +85,11 @@
                 </div>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="wrapper">
+                <p id="skip_content">여기가 본문이야~</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
