@@ -287,12 +287,20 @@ header.fixed .util .search .search_open{
     height: 100vh;
     background: url(../images/visual_bg01.jpg) no-repeat center center / cover;
     color: rgba(255, 255, 255, 0.8);
+    position: relative;
 }
 .visual p{
     font-size: 50px;
     line-height: 1.2;
     font-weight: 800;
     padding: 40vh 0 0 0;
+}
+.visual span{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 @media screen and (max-width:768px) { /* 모바일 visual*/
     .visual p{
