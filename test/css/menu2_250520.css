@@ -1,0 +1,172 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+::selection { /* 드레그 했을때 텍스트 색상 바뀌는 기법 */
+    color: #fff;
+    background-color: #CC008E;
+}
+
+header{
+    position: fixed; 
+    /* body을 기준으로 정렬 
+       wrap을 기준으로 정렬하려면 position: absolute;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    color: #fff;
+}
+header .wrapper{
+    display: flex; /* logo, gnb, util을 좌우로 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a{
+    display: block;
+    width: 250px;
+    height: 39px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util .search .search_open{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_74_37' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect x='0.5' y='0.5' width='29' height='29' fill='white' stroke='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_74_37)'%3E%3Cpath d='M11.875 3.7627C14.1426 3.7627 16.0613 4.54765 17.6318 6.11816C19.2024 7.68868 19.9873 9.6074 19.9873 11.875C19.9873 12.7903 19.8419 13.6538 19.5508 14.4648C19.2596 15.276 18.8643 15.9934 18.3652 16.6172L18.3584 16.626L26.2324 24.5L24.5 26.2324L16.626 18.3584L16.6172 18.3652C15.9934 18.8643 15.276 19.2596 14.4648 19.5508C13.6538 19.8419 12.7903 19.9873 11.875 19.9873C9.6074 19.9873 7.68868 19.2024 6.11816 17.6318C4.54765 16.0613 3.7627 14.1426 3.7627 11.875C3.7627 9.6074 4.54765 7.68868 6.11816 6.11816C7.68868 4.54765 9.6074 3.7627 11.875 3.7627ZM11.875 6.2373C10.3092 6.2373 8.97796 6.78572 7.88184 7.88184C6.78572 8.97796 6.2373 10.3092 6.2373 11.875C6.2373 13.4408 6.78572 14.772 7.88184 15.8682C8.97796 16.9643 10.3092 17.5127 11.875 17.5127C13.4408 17.5127 14.772 16.9643 15.8682 15.8682C16.9643 14.772 17.5127 13.4408 17.5127 11.875C17.5127 10.3092 16.9643 8.97796 15.8682 7.88184C14.772 6.78572 13.4408 6.2373 11.875 6.2373Z' fill='white' stroke='white' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/* **************header에 fixed클래스 추가시 ************ */               
+header.fixed{
+    background-color: #1d1d1d;
+    color: #CC008E;
+}
+header.fixed .logo a{
+    background: url(../images/logo_p.svg) no-repeat center center / contain;
+}
+header.fixed .util .search .search_open{
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_21_10' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_21_10)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='%23CC008E'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@media screen and (min-width:1025px){ 
+                /*################ 1025px 이상 pc모드 header 메뉴 #################*/
+                header .gnb .gnb_open,
+                header .gnb .gnb_close{
+                    display: none; /* 모바일에서만 보임 */
+                }
+                header .gnb .gnb_wrap ul.depth1{
+                    display: flex; /* 1차 메뉴 li를 좌우로 배치하기 위해 */
+                }
+                header .gnb .gnb_wrap ul.depth1 > li{
+                    width: 176px;
+                    text-align: center;
+                    position: relative; /* depth2의 정렬의 기준 */
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a{
+                    display: block;
+                    font-size: 25px;
+                    font-weight: 800;
+                    line-height: 100px; /* header의 높이와 동일하게 */
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{ /* 2차메뉴 */ 
+                    /* 꼭 absolute */
+                    position: absolute;
+                    left: 0;
+                    top: 100px; /* 1차메뉴의 a의 높이 만큼만 들어가야함 반드시!! (header의 높이) */
+                    width: 100%; /* li의 넓이와 같게 하기 위해 */
+                    display: none; /* 메뉴에 오버하면 보임 */
+                    padding: 27px 0 0 0; /* a태그와 2차메뉴 사이의 여백 반드시 padding으로 여백을 줘야함 
+                                            background-color 때문에 지금은 margin줘도 되지만 안전빵으로 padding주면 됨*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                    display: block;
+                    padding: 10px 0;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover{
+                    color: #CC008E; 
+                    font-weight: 800;
+                }
+
+                /********************메뉴에 마우스를 오버했을때************************/
+                header.menu_over{
+                    color: #fff;
+                }
+                header.menu_over::before{
+                    content: "";
+                    position: absolute; /* header를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    /*
+                        position들어간 요소와 안들어간 요소가 겹치면 position 속성이 있는 요소가 위
+                        position 속성이 있는 요소끼리 순서를 정할때는 z-index가 높은 요소가 위
+                        위로 배치되어야 할 요소 한테 모두 position, z-index를 주기 어려울 경우
+                        ->>>z-index: -1; 을 주면 position이 없는 요소 보다도 아래에 배치됨 ..
+                            내 정렬의 기준 안에서 맨 아래임..
+
+                        ->>> ex) header에 border를 줬음. header::before한테 z-index를 주고 배경색을 줌 
+                                 header에 준 border보다 before가 위에 있어서 border가 안보이게됨
+                                 그래서 ::after에 줘야 함 .  ((header.menu_over::after참고)) 
+                    */
+                    width: 100%;
+                    height: 300px;
+                    background-color: #1d1d1d;
+                    box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, 0.2);
+                }
+                header.menu_over::after{
+                    /* header에 들어간 중간 선 긋는방법 */
+                    content: "";
+                    position: absolute; /* header를 기준으로 정렬 */
+                    left: 0;
+                    top: 100px; /* header의 높이와 동일하게 */
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(255, 0, 178, 0.3);
+                }
+                header.menu_over .logo a{
+                    background: url(../images/logo_p.svg) no-repeat center center / contain;
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a{
+                    color: #CC008E;
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span{
+                    position: relative; /* after 정렬의 기준 */
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span::after{
+                    content: "";
+                    position: absolute; /* span 태그를 기준으로 정렬 */
+                    left: 0;
+                    bottom: -36px;
+                    z-index: 1;
+                    width: 100%;
+                    height: 2px; /* 내가 디자인한 두께 만큼 */
+                    background-color: #FF00B2;
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    display: block; /* none -> block */
+                }
+                header.menu_over .util .search .search_open{
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_21_10' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_21_10)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='%23CC008E'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+}/* media */
+
+.visual{
+    height: 100vh;
+    background: url(../images/visual_bg01.jpg) no-repeat center center / cover;
+    color: rgba(255, 255, 255, 0.8);
+}
+.visual p{
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 800;
+    padding: 40vh 0 0 0;
+}
+@media screen and (max-width:768px) { /* 모바일 visual*/
+    .visual p{
+        font-size: 20px;
+    }
+}/*media*/
+
+footer{
+    margin: 2000px 0 0 0;
+}

@@ -23,35 +23,7 @@ header .logo a{
     background: url(../images/logo_w.svg) no-repeat center center / contain;
     /* contain은 로고나 아이콘 처럼 짤리면 안되는 요소를 배경에 줬을대 적용함 */
 }
-header .gnb .gnb_open,
-header .gnb .gnb_close{
-    display: none; /* 모바일에서만 나옴 */
-}
-header .gnb .gnb_wrap ul.depth1{
-    display: flex;
-}
-header .gnb .gnb_wrap ul.depth1 > li{
-    position: relative;/* 2차 메뉴 정렬의 기준 */
-}   
-header .gnb .gnb_wrap ul.depth1 > li > a{ /* >를 안주면 적용이 안됨 */
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 100px;  /* header의 높이와 동일하게 줌 */
-    padding: 0 25px; /* 위아래 여백 없음 */
-}
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-    /* 2차메뉴 */
-    position: absolute; /* li를 기준으로 정렬 */
-    top: 87px;
-    /* 2차 메뉴가 일어도 1차메뉴와 가운데로 정렬 배치 */
-    left: 50%;
-    transform: translateX(-50%); /*2차메뉴 넓이의 절반*/
-    background-color: rgba(100, 21, 60, 0.8);
-    border-radius: 20px;
-    padding: 30px 25px;
-    text-align: center;
-    display: none;/* 마우스를 오버했을때만 나옴 */
-}
+
 header .tnb .search{
     display: block;
     width: 60px;
@@ -73,6 +45,7 @@ header .tnb .search{
             position: relative;/* 2차 메뉴 정렬의 기준 */
         }   
         header .gnb .gnb_wrap ul.depth1 > li > a{ /* >를 안주면 적용이 안됨 */
+            display: block;
             font-size: 25px;
             font-weight: 800;
             line-height: 100px;  /* header의 높이와 동일하게 줌 */
@@ -109,12 +82,11 @@ header .tnb .search{
             border-bottom: 0;
         }
         header.menu_over .logo a{
-            background: url(../images/logo_p.svg) no-repeat center center / contain;
+            background: url(../images/logo_p.svg);
             /* contain은 로고나 아이콘 처럼 짤리면 안되는 요소를 배경에 줬을대 적용함 */
         }
         header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a{
             color: #CC008E;
-            display: block; /*????*/
         }
         header.menu_over .tnb .search{
             background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_3_25' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_3_25)'%3E%3Cpath d='M24.5 26.25L16.625 18.375C16 18.875 15.2812 19.2708 14.4688 19.5625C13.6562 19.8542 12.7917 20 11.875 20C9.60417 20 7.68229 19.2135 6.10938 17.6406C4.53646 16.0677 3.75 14.1458 3.75 11.875C3.75 9.60417 4.53646 7.68229 6.10938 6.10938C7.68229 4.53646 9.60417 3.75 11.875 3.75C14.1458 3.75 16.0677 4.53646 17.6406 6.10938C19.2135 7.68229 20 9.60417 20 11.875C20 12.7917 19.8542 13.6562 19.5625 14.4688C19.2708 15.2812 18.875 16 18.375 16.625L26.25 24.5L24.5 26.25ZM11.875 17.5C13.4375 17.5 14.7656 16.9531 15.8594 15.8594C16.9531 14.7656 17.5 13.4375 17.5 11.875C17.5 10.3125 16.9531 8.98438 15.8594 7.89062C14.7656 6.79688 13.4375 6.25 11.875 6.25C10.3125 6.25 8.98438 6.79688 7.89062 7.89062C6.79688 8.98438 6.25 10.3125 6.25 11.875C6.25 13.4375 6.79688 14.7656 7.89062 15.8594C8.98438 16.9531 10.3125 17.5 11.875 17.5Z' fill='%23CC008E'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -157,8 +129,8 @@ header .tnb .search{
                         background-color: #1d1d1d;
                         color: #fff;
                     }
-                    header .gnb .gnb_wrap ul.depth1{    
-                        display: block;
+                    header .gnb .gnb_wrap ul.depth1{  
+                        height: calc(100% - 56px);  
                         overflow-y: auto; /* 위아래 스크롤바는 내부 콘텐츠가 더 길때만 생김 */
                         overflow-x: hidden; /* 좌우 스크롤바 숨김 */
                         margin: 65px 0 0 0; /* 스크롤에 해당하지 않는 상단영역 */
@@ -169,12 +141,13 @@ header .tnb .search{
                     header .gnb .gnb_wrap ul.depth1 > li:first-child{
                         border-top: 1px solid #fff;
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > a{
+                    header .gnb .gnb_wrap ul.depth1 > li > a{ /* 1차메뉴 */
                         display: block;
                         padding: 19px 30px 19px 19px ;
                         color: #fff;
                         line-height: 1.2;
                         font-weight: 400;
+                        position: relative; /* after 정렬의 기준 */
                     }
                     header .gnb .gnb_wrap ul.depth1 > li > a::after{
                         content: "";
@@ -188,9 +161,10 @@ header .tnb .search{
                         background-repeat: no-repeat;
                         background-size: contain;
                     }
-                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{ /* 2차메뉴 */
                         background-color: #1d1d1d;
                         padding: 20px 0 20px 45px; /*????????*/
+                        display: none;
                     }
                     header .gnb .gnb_wrap ul.depth2 > li > a{
                         display: block;
@@ -240,6 +214,11 @@ header .tnb .search{
     font-weight: 800;
     padding: 40vh 0 0 0;
     line-height: 1.2;
+}
+@media screen and (max-width:768px){
+    .visual p {
+        font-size: 20px;
+    }
 }
 
 
