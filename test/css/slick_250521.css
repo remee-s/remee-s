@@ -1,0 +1,103 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual .popup .popup_wrap .popup_item{
+    height: 900px;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .popup .popup_wrap .popup_item.bg1{
+    background-image: url(../images/popup01.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg2{
+    background-image: url(../images/popup02.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg3{
+    background-image: url(../images/popup03.jpg);
+}
+.visual .popup .popup_wrap .popup_item h3{
+    font-size: 50px;
+    line-height: 1.2;
+    font-family: 'OKCHAN';
+    padding: 420px 0 39px 0;
+}
+
+.visual .slick-prev,
+.visual .slick-next{
+    position: absolute; /* popup_wrap을 기준으로 정렬 */
+    left: 30px;
+    top: 426px;
+    width: 60px;
+    height: 60px;
+    color: transparent; /* 투명하게 */
+    z-index: 10;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_76' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_76)'%3E%3Cpath d='M25.375 40.375L16.75 31.75C16.25 31.25 16 30.6667 16 30C16 29.3333 16.25 28.75 16.75 28.25L25.375 19.625C25.7917 19.2083 26.25 19.1042 26.75 19.3125C27.25 19.5208 27.5 19.9167 27.5 20.5V39.5C27.5 40.0833 27.25 40.4792 26.75 40.6875C26.25 40.8958 25.7917 40.7917 25.375 40.375ZM32.5 50V10C32.5 9.29167 32.7396 8.69792 33.2188 8.21875C33.6979 7.73958 34.2917 7.5 35 7.5C35.7083 7.5 36.3021 7.73958 36.7812 8.21875C37.2604 8.69792 37.5 9.29167 37.5 10V50C37.5 50.7083 37.2604 51.3021 36.7812 51.7812C36.3021 52.2604 35.7083 52.5 35 52.5C34.2917 52.5 33.6979 52.2604 33.2188 51.7812C32.7396 51.3021 32.5 50.7083 32.5 50Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .slick-next{
+    left: auto;
+    right: 30px;
+    transform: rotate(180deg);
+} 
+.visual ul.slick-dots{
+    position: absolute; /* popup_wrap을 기준으로 정렬 */
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: center; /* 가운데 */
+    gap: 10px;
+}
+.visual ul.slick-dots li button{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: transparent; /* 투명하게 */
+}
+.visual ul.slick-dots li.slick-active button{
+    background-color: #fff;
+}
+.visual .btn_wrap .ctrl_stop{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.visual .btn_wrap .ctrl_play{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+@media screen and (max-width:1440px){
+    .visual .slick-prev,
+    .visual .slick-next{
+        display: none !important; 
+        /* css 적용 우선순위 상관없이 무조건 먼저 실행 하도록 명령
+           important -- 단 주의) 하나의 요소에 px버전에서 important,
+           모바일에서 important 이렇게 남발하면 스타일이 꼬임. */
+    }
+}/* media */
+@media screen and (max-width:768px){ /* 모바일 */
+    .visual .popup .popup_wrap .popup_item{
+        height: 700px;
+    }
+    .visual .popup .popup_wrap .popup_item h3{
+        font-size: 30px;
+        padding: 240px 0 34px 0;
+    }
+    .visual ul.slick-dots{
+        bottom: 24px;
+    }
+    .visual ul.slick-dots li button{
+        width: 10px;
+        height: 10px;
+    }
+}/* media */

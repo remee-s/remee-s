@@ -1,0 +1,246 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+::selection { /* 드레그 했을때 텍스트 색상 바뀌는 기법 */
+    color: #fff;
+    background-color: #851D5E;
+}
+
+.visual .swiper-slide{
+    height: 900px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.6);
+}
+.visual .swiper-slide.popup1{
+    background-image: url(../images/popup01.jpg);
+}
+.visual .swiper-slide.popup2{
+    background-image: url(../images/popup02.jpg);
+}
+.visual .swiper-slide.popup3{
+    background-image: url(../images/popup03.jpg);
+}
+.visual h3{
+    font-family: 'OKDDUNG';
+    font-size: 50px;
+    color: #fff;
+    line-height: 1.2;
+    padding: 420px 0 39px 0;
+}
+.visual .paging{
+    position: absolute; /* swiper를 기준으로 정렬 */
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.visual .paging .swiper-pagination-bullet{ /* 동그라미 스타일 */
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%; /* 동그라미 */
+    margin: 0;
+    background: none;
+    opacity: 1;
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    /* 현재 팝업 동그라미 */
+    background-color: #fff;
+}
+.visual .btn_prev{
+    position: absolute; /* swiper 기준으로 정렬 */
+    left: 30px;
+    top: 426px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_64' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_64)'%3E%3Cpath d='M25.375 40.375L16.75 31.75C16.25 31.25 16 30.6667 16 30C16 29.3333 16.25 28.75 16.75 28.25L25.375 19.625C25.7917 19.2083 26.25 19.1042 26.75 19.3125C27.25 19.5208 27.5 19.9167 27.5 20.5V39.5C27.5 40.0833 27.25 40.4792 26.75 40.6875C26.25 40.8958 25.7917 40.7917 25.375 40.375ZM32.5 50V10C32.5 9.29167 32.7396 8.69792 33.2188 8.21875C33.6979 7.73958 34.2917 7.5 35 7.5C35.7083 7.5 36.3021 7.73958 36.7812 8.21875C37.2604 8.69792 37.5 9.29167 37.5 10V50C37.5 50.7083 37.2604 51.3021 36.7812 51.7812C36.3021 52.2604 35.7083 52.5 35 52.5C34.2917 52.5 33.6979 52.2604 33.2188 51.7812C32.7396 51.3021 32.5 50.7083 32.5 50Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_next{
+    position: absolute; /* swiper 기준으로 정렬 */
+    right: 30px;
+    top: 426px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_64' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_64)'%3E%3Cpath d='M25.375 40.375L16.75 31.75C16.25 31.25 16 30.6667 16 30C16 29.3333 16.25 28.75 16.75 28.25L25.375 19.625C25.7917 19.2083 26.25 19.1042 26.75 19.3125C27.25 19.5208 27.5 19.9167 27.5 20.5V39.5C27.5 40.0833 27.25 40.4792 26.75 40.6875C26.25 40.8958 25.7917 40.7917 25.375 40.375ZM32.5 50V10C32.5 9.29167 32.7396 8.69792 33.2188 8.21875C33.6979 7.73958 34.2917 7.5 35 7.5C35.7083 7.5 36.3021 7.73958 36.7812 8.21875C37.2604 8.69792 37.5 9.29167 37.5 10V50C37.5 50.7083 37.2604 51.3021 36.7812 51.7812C36.3021 52.2604 35.7083 52.5 35 52.5C34.2917 52.5 33.6979 52.2604 33.2188 51.7812C32.7396 51.3021 32.5 50.7083 32.5 50Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);  /* 180도 좌우반전 */
+}
+
+@media screen and (max-width:1440px){ 
+    .visual .btn_prev,
+    .visual .btn_next{
+        display: none;
+    }
+}/* media */
+
+@media screen and (max-width:768px){
+    
+.visual .swiper-slide{
+    height: 700px;
+}
+.visual h3{
+    font-family: 'OKCHAN';
+    font-size: 30px;
+    padding: 249px 0 39px 0;
+}
+.visual .paging{    bottom: 15px;
+    bottom: 24px;
+}
+.visual .paging .swiper-pagination-bullet{ /* 동그라미 스타일 */
+    width: 10px;
+    height: 10px;
+}
+}/* media */
+
+.biz{
+    padding: 200px 0 135px 0;
+    background-color: #1d1d1d;
+}
+.biz h2{
+    font-family: 'OKDDUNG';
+    font-size: 50px;
+    font-weight: 1.2;
+    color: #851D5E;
+}
+.biz .list{
+    margin: 85px 0 0 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+.biz .list li a h3{
+    font-size: 20px;
+    font-family: 'OKDDUNG';
+    font-weight: 1.2;
+    margin: 30px 0 17px 0;
+    color: #fff;
+}
+.biz .list ul li a{
+    display: block;
+}
+.biz .list ul li a .photo{
+    overflow: hidden;
+    height: 274px; /* 높이만 줘도 넓이는 알아서 줌 */
+}
+.biz .list ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){ /* 모바일 biz */
+    .biz{
+        padding: 100px 0 50px 0;
+        background-color: #1d1d1d;
+    }
+    .biz h2{
+        font-size: 30px;
+        font-weight: 1.2;
+        text-align: center;
+    }
+    .biz .list{
+        margin: 37px 0 0 0;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .biz .list li a h3{
+        font-size: 20px;
+        margin: 24px 0 17px 0;
+        color: #fff;
+    }
+}/* media */
+
+.notice{
+    background-color: rgba(133, 29, 94, 0.8);
+    color: #1d1d1d;
+    padding: 200px 0 135px 0;
+}
+.notice h2{
+    font-family: 'OKDDUNG';
+    font-size: 50px;
+    font-weight: 1.2;
+    color: #1d1d1d;
+}
+.notice .list{
+    margin: 95px 0 0 0;
+    width: calc(50% + 630px);
+    /* wrapper 1260px의 절반 630px 더함 */
+    position: relative;
+    left: calc(50% - 630px);
+
+}
+.notice .list ul li{ /* 사진의 넓이를 무조건 내가 수동으로 줘야함 js X*/
+    width: 404px;
+}
+.notice .list ul li a{
+    display: block;
+    background-color: #fff;
+    color: #3d3d3d;
+    border-radius: 20px;
+}
+.notice .list ul li a .photo{
+    height: 323px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+.notice .list ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 위에 준(.notice .list ul li a .photo) 높이에 맞게 사진을 박아놓으려고 */
+}
+.notice .list ul li a .txt{
+    padding: 53px 97px 44px 47px;
+}
+.notice .list ul li a .txt h3{
+    font-family: 'OKDDUNG';
+    font-size: 20px;
+    font-weight: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 19px 0;
+}
+
+@media screen and (max-width:1300px){ 
+    .notice .list{
+        width: calc(100% - 20px);
+        left: 20px;
+    }
+}/* media */
+@media screen and (max-width:768px){
+    .notice{
+        padding: 95px 0 82px 0;
+    }
+    .notice h2{
+        font-size: 30px;
+    }
+    .notice .list{
+        margin: 53px 0 0 0;
+    
+    }
+    .notice .list ul li{ /* 사진의 넓이를 무조건 내가 수동으로 줘야함 js X*/
+        width: 262px;
+    }
+    .notice .list ul li a{
+        border-radius: 10px;
+    }
+    .notice .list ul li a .photo{
+        height: 209px;
+        border-radius: 10px 10px 0 0;
+    }
+    .notice .list ul li a .txt{
+        padding: 19px 27px 28px 34px;
+    }
+}/* media */
+
+
+
+footer{
+    margin: 1000px 0 0 0;
+}
