@@ -25,12 +25,13 @@ $(document).ready(function(){
 
     function device_chk(){
         win_w = $(window).width()
+        
         if(win_w > 1024){  //1025이상
             device_status = 'pc'
         }else{ //1024이하
             device_status = 'mobile'
         }
-        console.log(device_status)
+        //console.log(device_status)
     }
 
     /*
@@ -47,26 +48,27 @@ $(document).ready(function(){
 
 
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
-        //마우스를 오버했을때만 실행 (pc 일때만 실행)
-        if(device_status = 'pc'){
+        //마우스를 오버했을때만 실행 (pc일때만 실행)
+        if(device_status == 'pc'){
             $('header').addClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
             $(this).addClass('over')
-        } 
+        }//if
     })
     $('header').on('mouseleave', function(){
-        if(device_status = 'pc'){
+        if(device_status == 'pc'){
             $('header').removeClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         }
     })
 
     $('header .gnb .gnb_wrap ul.depth1 > li:last-child > ul.depth2 > li:last-child > a').on('focusout', function(){
-        if(device_status = 'pc'){
+        if(device_status == 'pc'){
             $('header').removeClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         }
     })
+    
 
     /*
         모바일에서만 적용됨
@@ -95,21 +97,22 @@ $(document).ready(function(){
                이전에 열려있던 메뉴를 닫고
                지금 클릭한 메뉴가 열림
     */
-    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){ //e = event
-        if(device_status == 'mobile'){
-            e.preventDefault()
-            //console.log('눌린거니? 나온거니?')
-            let depth1_open = $(this).parents('li').hasClass('open')
-            //console.log(depth1_open)
-            if(depth1_open == true){
-                //console.log('메뉴가 열려있네??')
-                $(this).parents('li').removeClass('open')
-            }else{
-                //console.log('메뉴가 닫혀있네??')
-                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-                $(this).parents('li').addClass('open')
-            }//if
+
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+    if(device_status == 'mobile'){
+        e.preventDefault()
+        //console.log('눌렸니???? 나오니???')
+        let depth1_open = $(this).parents('li').hasClass('open')
+        //console.log(depth1_open)
+        if(depth1_open == true){ //메뉴가 열렸을때
+            //console.log('메뉴가 열려있네??')
+            $(this).parents('li').removeClass('open')
+        }else{
+            //console.log('메뉴가 닫혀있네??')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).parents('li').addClass('open')
         }//if
-    })
+    }//if
+})
 
 })//$(document).ready
