@@ -18,7 +18,7 @@ $(document).ready(function(){
         마우스를 올리면 오버한 li에만 on클래스를 추가
         li에 마우스를 오버하지 않으면 on클래스를 삭제
     */
-    $('.tour.acc02 .list ul li').on('mouseenter', function(){
+    $('.tour.acc02 .list ul li').on('mouseenter', function(){ㄴ
         //console.log('(۳˚Д˚)۳= ▁▂▃▅▆▇█▓▒')
         $(this).addClass('on')
     })
