@@ -12,6 +12,7 @@ body{
 }
 #wrap{
     position: relative; /*header 정렬의 기준*/
+    overflow: hidden; /* 가로스크롤바를 없애기 위해서 */
 }
 @media screen and (max-width:1300px) { /*모바일 스타일 코딩*/
     /*브라우저 넓이가 640px 이하에서만 적용되는 스타일 */

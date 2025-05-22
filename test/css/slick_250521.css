@@ -2,6 +2,15 @@
 @import url(font.css);
 @import url(common_full.css);
 
+::selection{
+    color: #fff;
+    background-color: #851D5E;
+}
+
+.visual{
+    position: relative; /* btn_wrap의 정렬의 기준 */
+}
+
 .visual .popup .popup_wrap .popup_item{
     height: 900px;
     color: #fff;
@@ -34,7 +43,7 @@
     height: 60px;
     color: transparent; /* 투명하게 */
     z-index: 10;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_76' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_76)'%3E%3Cpath d='M25.375 40.375L16.75 31.75C16.25 31.25 16 30.6667 16 30C16 29.3333 16.25 28.75 16.75 28.25L25.375 19.625C25.7917 19.2083 26.25 19.1042 26.75 19.3125C27.25 19.5208 27.5 19.9167 27.5 20.5V39.5C27.5 40.0833 27.25 40.4792 26.75 40.6875C26.25 40.8958 25.7917 40.7917 25.375 40.375ZM32.5 50V10C32.5 9.29167 32.7396 8.69792 33.2188 8.21875C33.6979 7.73958 34.2917 7.5 35 7.5C35.7083 7.5 36.3021 7.73958 36.7812 8.21875C37.2604 8.69792 37.5 9.29167 37.5 10V50C37.5 50.7083 37.2604 51.3021 36.7812 51.7812C36.3021 52.2604 35.7083 52.5 35 52.5C34.2917 52.5 33.6979 52.2604 33.2188 51.7812C32.7396 51.3021 32.5 50.7083 32.5 50Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_76' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_76)'%3E%3Cpath d='M25.375 40.375L16.75 31.75C16.25 31.25 16 30.6667 16 30C16 29.3333 16.25 28.75 16.75 28.25L25.375 19.625C25.7917 19.2083 26.25 19.1042 26.75 19.3125C27.25 19.5208 27.5 19.9167 27.5 20.5V39.5C27.5 40.0833 27.25 40.4792 26.75 40.6875C26.25 40.8958 25.7917 40.7917 25.375 40.375ZM32.5 50V10C32.5 9.29167 32.7396 8.69792 33.2188 8.21875C33.6979 7.73958 34.2917 7.5 35 7.5C35.7083 7.5 36.3021 7.73958 36.7812 8.21875C37.2604 8.69792 37.5 9.29167 37.5 10V50C37.5 50.7083 37.2604 51.3021 36.7812 51.7812C36.3021 52.2604 35.7083 52.5 35 52.5C34.2917 52.5 33.6979 52.2604 33.2188 51.7812C32.7396 51.3021 32.5 50.7083 32.5 50Z' fill='white' fill-opacity='0.7'/%3E%3C/g%3E%3C/svg%3E%0A");
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -45,11 +54,9 @@
 } 
 .visual ul.slick-dots{
     position: absolute; /* popup_wrap을 기준으로 정렬 */
-    left: 0;
-    bottom: 15px;
-    width: 100%;
+    right: 50%;
+    bottom: 17px;
     display: flex; /* li를 좌우로 배치 */
-    justify-content: center; /* 가운데 */
     gap: 10px;
 }
 .visual ul.slick-dots li button{
@@ -60,44 +67,215 @@
     border-radius: 50%;
     color: transparent; /* 투명하게 */
 }
+.visual .btn_wrap{
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% + 10px);
+    bottom: 17px;
+    display: flex; /* js에서 요소에 dispaly : inline-block을 줘서 코딩이 틀어짐 그래서 flex을 준거 */
+}
 .visual ul.slick-dots li.slick-active button{
     background-color: #fff;
 }
 .visual .btn_wrap .ctrl_stop{
     display: block;
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_145_29' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_145_29)'%3E%3Cpath d='M6.28538 9.02692L8.96871 7.24775C9.05621 7.18942 9.09996 7.10678 9.09996 6.99984C9.09996 6.89289 9.05621 6.81025 8.96871 6.75192L6.28538 4.97275C6.18815 4.9047 6.0885 4.89741 5.98642 4.95088C5.88433 5.00435 5.83329 5.08942 5.83329 5.20609V8.79359C5.83329 8.91025 5.88433 8.99532 5.98642 9.0488C6.0885 9.10227 6.18815 9.09498 6.28538 9.02692ZM6.99996 12.8332C6.19302 12.8332 5.43468 12.68 4.72496 12.3738C4.01524 12.0675 3.39788 11.6519 2.87288 11.1269C2.34788 10.6019 1.93225 9.98456 1.626 9.27484C1.31975 8.56512 1.16663 7.80678 1.16663 6.99984C1.16663 6.68873 1.19093 6.37762 1.23954 6.0665C1.28815 5.75539 1.36107 5.44914 1.45829 5.14775C1.5069 4.9922 1.60656 4.88768 1.75725 4.83421C1.90795 4.78074 2.05135 4.79289 2.18746 4.87067C2.33329 4.94845 2.43781 5.06268 2.501 5.21338C2.5642 5.36407 2.57149 5.52206 2.52288 5.68734C2.46454 5.90123 2.41836 6.11755 2.38433 6.3363C2.35031 6.55505 2.33329 6.77623 2.33329 6.99984C2.33329 8.30262 2.78538 9.40609 3.68954 10.3103C4.59371 11.2144 5.69718 11.6665 6.99996 11.6665C8.30274 11.6665 9.40621 11.2144 10.3104 10.3103C11.2145 9.40609 11.6666 8.30262 11.6666 6.99984C11.6666 5.69706 11.2145 4.59359 10.3104 3.68942C9.40621 2.78525 8.30274 2.33317 6.99996 2.33317C6.76663 2.33317 6.53572 2.35018 6.30725 2.38421C6.07878 2.41824 5.85274 2.46928 5.62913 2.53734C5.46385 2.58595 5.30829 2.58109 5.16246 2.52275C5.01663 2.46442 4.90968 2.36234 4.84163 2.2165C4.77357 2.07067 4.77114 1.92241 4.83433 1.77171C4.89753 1.62102 5.0069 1.52137 5.16246 1.47275C5.45413 1.36581 5.75552 1.28803 6.06663 1.23942C6.37774 1.19081 6.68885 1.1665 6.99996 1.1665C7.8069 1.1665 8.56524 1.31963 9.27496 1.62588C9.98468 1.93213 10.602 2.34775 11.127 2.87275C11.652 3.39775 12.0677 4.01512 12.3739 4.72484C12.6802 5.43456 12.8333 6.19289 12.8333 6.99984C12.8333 7.80678 12.6802 8.56512 12.3739 9.27484C12.0677 9.98456 11.652 10.6019 11.127 11.1269C10.602 11.6519 9.98468 12.0675 9.27496 12.3738C8.56524 12.68 7.8069 12.8332 6.99996 12.8332ZM3.20829 4.08317C2.96524 4.08317 2.75864 3.9981 2.5885 3.82796C2.41836 3.65782 2.33329 3.45123 2.33329 3.20817C2.33329 2.96512 2.41836 2.75852 2.5885 2.58838C2.75864 2.41824 2.96524 2.33317 3.20829 2.33317C3.45135 2.33317 3.65795 2.41824 3.82808 2.58838C3.99822 2.75852 4.08329 2.96512 4.08329 3.20817C4.08329 3.45123 3.99822 3.65782 3.82808 3.82796C3.65795 3.9981 3.45135 4.08317 3.20829 4.08317Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .visual .btn_wrap .ctrl_play{
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    display: none; /* 처음에는 숨김 */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_145_35' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_145_35)'%3E%3Cpath d='M5.83342 8.74984C5.99869 8.74984 6.13723 8.69394 6.24904 8.58213C6.36085 8.47032 6.41675 8.33178 6.41675 8.1665V5.83317C6.41675 5.66789 6.36085 5.52935 6.24904 5.41755C6.13723 5.30574 5.99869 5.24984 5.83342 5.24984C5.66814 5.24984 5.5296 5.30574 5.41779 5.41755C5.30598 5.52935 5.25008 5.66789 5.25008 5.83317V8.1665C5.25008 8.33178 5.30598 8.47032 5.41779 8.58213C5.5296 8.69394 5.66814 8.74984 5.83342 8.74984ZM8.16675 8.74984C8.33203 8.74984 8.47057 8.69394 8.58237 8.58213C8.69418 8.47032 8.75008 8.33178 8.75008 8.1665V5.83317C8.75008 5.66789 8.69418 5.52935 8.58237 5.41755C8.47057 5.30574 8.33203 5.24984 8.16675 5.24984C8.00147 5.24984 7.86293 5.30574 7.75112 5.41755C7.63932 5.52935 7.58342 5.66789 7.58342 5.83317V8.1665C7.58342 8.33178 7.63932 8.47032 7.75112 8.58213C7.86293 8.69394 8.00147 8.74984 8.16675 8.74984ZM7.00008 12.8332C6.19314 12.8332 5.4348 12.68 4.72508 12.3738C4.01536 12.0675 3.398 11.6519 2.873 11.1269C2.348 10.6019 1.93237 9.98456 1.62612 9.27484C1.31987 8.56512 1.16675 7.80678 1.16675 6.99984C1.16675 6.68873 1.19105 6.37762 1.23966 6.0665C1.28828 5.75539 1.36119 5.44914 1.45841 5.14775C1.50703 4.9922 1.60668 4.88768 1.75737 4.83421C1.90807 4.78074 2.05147 4.79289 2.18758 4.87067C2.33341 4.94845 2.43793 5.06268 2.50112 5.21338C2.56432 5.36407 2.57161 5.52206 2.523 5.68734C2.46466 5.90123 2.41848 6.11755 2.38446 6.3363C2.35043 6.55505 2.33341 6.77623 2.33341 6.99984C2.33341 8.30262 2.7855 9.40609 3.68967 10.3103C4.59383 11.2144 5.6973 11.6665 7.00008 11.6665C8.30286 11.6665 9.40633 11.2144 10.3105 10.3103C11.2147 9.40609 11.6667 8.30262 11.6667 6.99984C11.6667 5.69706 11.2147 4.59359 10.3105 3.68942C9.40633 2.78525 8.30286 2.33317 7.00008 2.33317C6.76675 2.33317 6.53585 2.35018 6.30737 2.38421C6.0789 2.41824 5.85286 2.46928 5.62925 2.53734C5.46397 2.58595 5.30841 2.58109 5.16258 2.52275C5.01675 2.46442 4.9098 2.36234 4.84175 2.2165C4.77369 2.07067 4.77126 1.92241 4.83446 1.77171C4.89765 1.62102 5.00703 1.52137 5.16258 1.47275C5.45425 1.36581 5.75564 1.28803 6.06675 1.23942C6.37786 1.19081 6.68897 1.1665 7.00008 1.1665C7.80703 1.1665 8.56536 1.31963 9.27508 1.62588C9.9848 1.93213 10.6022 2.34775 11.1272 2.87275C11.6522 3.39775 12.0678 4.01512 12.374 4.72484C12.6803 5.43456 12.8334 6.19289 12.8334 6.99984C12.8334 7.80678 12.6803 8.56512 12.374 9.27484C12.0678 9.98456 11.6522 10.6019 11.1272 11.1269C10.6022 11.6519 9.9848 12.0675 9.27508 12.3738C8.56536 12.68 7.80703 12.8332 7.00008 12.8332ZM3.20841 4.08317C2.96536 4.08317 2.75876 3.9981 2.58862 3.82796C2.41848 3.65782 2.33341 3.45123 2.33341 3.20817C2.33341 2.96512 2.41848 2.75852 2.58862 2.58838C2.75876 2.41824 2.96536 2.33317 3.20841 2.33317C3.45147 2.33317 3.65807 2.41824 3.82821 2.58838C3.99835 2.75852 4.08342 2.96512 4.08342 3.20817C4.08342 3.45123 3.99835 3.65782 3.82821 3.82796C3.65807 3.9981 3.45147 4.08317 3.20841 4.08317Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 @media screen and (max-width:1440px){
-    .visual .slick-prev,
-    .visual .slick-next{
-        display: none !important; 
-        /* css 적용 우선순위 상관없이 무조건 먼저 실행 하도록 명령
-           important -- 단 주의) 하나의 요소에 px버전에서 important,
-           모바일에서 important 이렇게 남발하면 스타일이 꼬임. */
-    }
+        .visual .slick-prev,
+        .visual .slick-next{
+            display: none !important; 
+            /* css 적용 우선순위 상관없이 무조건 먼저 실행 하도록 명령
+            important -- 단 주의) 하나의 요소에 px버전에서 important,
+            모바일에서 important 이렇게 남발하면 스타일이 꼬임. */
+        }
 }/* media */
 @media screen and (max-width:768px){ /* 모바일 */
-    .visual .popup .popup_wrap .popup_item{
-        height: 700px;
+        .visual .popup .popup_wrap .popup_item{
+            height: 700px;
+        }
+        .visual .popup .popup_wrap .popup_item h3{
+            font-size: 30px;
+            padding: 240px 0 34px 0;
+        }
+        .visual ul.slick-dots{
+            bottom: 24px;
+        }
+        .visual ul.slick-dots li button{
+            width: 10px;
+            height: 10px;
+        }
+}/* media */
+.biz{
+    background-color: #1d1d1d;
+    padding: 200px 0 170px 0;
+}
+.biz .tit h2{
+    font-size: 50px;
+    line-height: 1.2;
+    font-family: 'OKCHAN';
+    color: rgba(216, 237, 64, 0.8);
+}
+.biz .list{
+    margin: 85px 0 0 0;
+    width: calc(100% + 24px);
+}
+.biz .list .list_item{
+    color: #fff;
+}
+.biz .list .list_wrap .list_item {
+    margin-right: 24px;
+}
+.biz .list .list_wrap .list_item a{
+    display: block;
+}
+.biz .list .list_wrap .list_item a .photo{
+    overflow: hidden;
+    height: 274px;
+}
+.biz .list .list_wrap .list_item a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list .list_wrap .list_item a h3{
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: 'OKCHAN';
+    color: #fff;
+    margin: 30px 0 19px 0; 
+}
+@media screen and (max-width:768px) {
+    .biz{
+        padding: 84px 0 62px 0;
     }
-    .visual .popup .popup_wrap .popup_item h3{
+    .biz .tit h2{
         font-size: 30px;
-        padding: 240px 0 34px 0;
     }
-    .visual ul.slick-dots{
-        bottom: 24px;
+    .biz .list{
+        margin: 39px 0 0 0;
+        width: calc(100% + 20px);
     }
-    .visual ul.slick-dots li button{
-        width: 10px;
-        height: 10px;
+    .biz .list .list_wrap .list_item {
+        margin-right: 20px;
+    }
+    .biz .list .list_wrap .list_item a .photo{
+        height: 242px;
+    }
+    .biz .list .list_wrap .list_item a h3{
+        margin: 24px 0 17px 0; 
+    }
+} /*media*/
+
+.notice{
+    background-color: rgba(216, 237, 64, 0.8);
+    padding: 200px 0 135px 0;
+}
+.notice .tit{
+    font-size: 50px;
+    line-height: 1.2;
+    font-family: 'OKCHAN';
+    color: #1d1d1d;
+}
+.notice .list{
+    margin: 95px 0 0 0;
+    width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+    /* wrapper 1260px 의 절반 630px */
+}
+.notice .list .list_wrap .list_item{
+    width: 404px;
+    margin-right: 24px;
+}
+.notice .list .list_wrap .list_item a{
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #1d1d1d;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.notice .list .list_wrap .list_item a .photo{
+    overflow: hidden;
+    height: 323px;
+    border-radius: 10px 10px 0 0;
+}
+.notice .list .list_wrap .list_item a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.notice .list .list_wrap .list_item a .txt{
+    padding: 53px 30px;
+}
+.notice .list .list_wrap .list_item a .txt h3{
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: 'OKCHAN';
+    color: #1d1d1d;
+    margin: 0 0 19px 0;
+}
+
+@media screen and (max-width:1300px) {
+    .notice .list{
+        width: calc(100% - 20px);
+        left: 20px;
     }
 }/* media */
+@media screen and (max-width:768px) {
+            .notice{
+                padding: 95px 0 82px 0;
+            }
+            .notice .tit{
+                font-size: 30px;
+            }
+            .notice .list{
+                margin: 53px 0 0 0;
+            }
+            .notice .list .list_wrap .list_item{
+                width: 262px;
+                margin-right: 20px;
+            }
+            .notice .list .list_wrap .list_item a{
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+            }
+            .notice .list .list_wrap .list_item a .photo{
+                height: 209px;
+                border-radius: 5px 5px 0 0;
+            }
+            .notice .list .list_wrap .list_item a .txt{
+                padding: 44px 19px;
+            }
+            .notice .list .list_wrap .list_item a .txt h3{
+                font-size: 20px;
+                line-height: 1.2;
+                font-family: 'OKCHAN';
+                color: #1d1d1d;
+                margin: 0 0 19px 0;
+            }
+}/* media */
+
+
+
+
+
+footer{
+    margin: 1000px 0 0 0;
+}
