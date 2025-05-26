@@ -1,0 +1,21 @@
+/*웹 폰드를 선언*/
+@font-face {
+    font-family: 'OKDDUNG';
+    src: url(../font/OKDDUNG.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url(../font/Ownglyph_ParkDaHyun.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTHakgyoansimTtwimteulR';
+    src: url(../font/TTHakgyoansimTtwimteulR.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
