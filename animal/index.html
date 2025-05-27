@@ -16,12 +16,19 @@
     <title>동물보호센터</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문바로가기</a>
+        <!-- id = '#skip_content' 인 요소로 바로가기 (내부링크) -->
+    </div>
     <div id="wrap">
         <!--
             header에 마우스를 오버하거나...스크롤을 내리면 - header에 fixed 클래스 추가
             메뉴에 마우스를 오버하면 오버한 li에만 - over라는 클래스를 추가
+
+            모바일에서 메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+            모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스를 추가
         -->
-        <header class="fixed">
+        <header class="">
             <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
@@ -47,7 +54,7 @@
                         <li>
                             <a href="https://papago.naver.com/"><span>재회성공담</span></a>
                         </li>
-                        <li class="over">
+                        <li class="">
                             <a href="https://papago.naver.com/"><span>대처방법</span></a>
                             <ul class="dapth2"><!-- 2차메뉴 -->
                                 <li><a href="#"><span>실종시 대처방법</span></a></li>
@@ -105,7 +112,265 @@
                     </div><!--//btn_wrap-->
                 </div><!--//swiper-->
             </section><!--//visual-->
-            <section class="find"></section><!--//find-->
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div><!--//tit-->
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!-- 선택됨 li에는 active 클래스 추가 , butten에 선택됨이라고 써줌
+                                    aria-selected가 ture가 선택된것 이고 false가 선택되지 않은것으로 구분함
+                                    data-content li룰 눌렀을때 나타날 탭 콘텐츠 id 값
+                                    li를 클릭 했을때 data-content값을 호출해서 id가 같은 요소만 보이게함
+                                    data-content 는 내 맘대로 속성을 추가...( 값을 저장할 공간이 필요해서 - 웹표준위배 )
+                                    ex) data-link라던가...data-value 이렇게 data가 들어간 속성은 퍼블리셔가 만든 속성-->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button><span class="">가족을</span><span class="blind">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2"><button><span>주인을</span></button></li>
+                            </ul>
+                        </div>
+                        <div class="tab_content">
+                            <!-- 가족을, 주인을 탭 콘텐츠를 구분 item1/ item2로 클래스명 구분
+                                 현재 선택된 탭 콘텐츠는 active 클래스 추가 -->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find01.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>미니피그/애완돼지</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청북도 청주시 서원구 사창시장</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-02-09</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>눈 위에 검정색 얼룩이 있는
+                                                        사랑스러운 애완 돼지예요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find02.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>레트</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 가평군 경기도 가평군 신천중앙로</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-12-07</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>회색과 흰색 젖소무늬 털을 가졌고,
+                                                        지적이고 호기심이 많아요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find03.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>아비니시안</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 하남시 미사c3단지 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-4-27</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>노란 눈을 가졌고, 갈색 단모 털과
+                                                        눈밑에 하얀 무늬가 있어요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find04.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>엄브렐러 코카투</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 고양시 덕양구 덕이초등학교</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-5-01</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>노란색 머리 깃에
+                                                        흰 털을 가진 큰 앵무새예요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab_item item2" id="tab_item2">
+                                <h3 class="blind">주인을찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find05.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>한국 고양이</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청북도 청주시 서원구</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-02-26</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>뱅갈과 비슷한 호피무늬를 가진
+                                                        개성있고 활발한 아이예요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find06.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">임보</strong>
+                                                <h4>페르시안 친칠라</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 오산시 보적사 입구 독산성로</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-02-02</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 무서워 하지 않고,
+                                                        삼색을 가진 장모 고양이예요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find07.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>진돗개 (호구)</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경상남도 김해시 김해시 이마트앞</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-09</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>호랑이같은 얼룩 무늬에 귀가
+                                                        쫑긋서있습니다</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find08.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>터키쉬 앙고라</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 가평군 경기도 가평군 신천중앙로</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-12-07</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>파란 눈과 하얀 장모 털을 가진
+                                                    3살 아이 예요</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--//tab_content-->
+                    </div><!--//list-->
+                </div>
+            </section><!--//find-->
             <section class="slogan"></section><!--//slogan-->
             <section class="adopt"></section><!--//adopt-->
             <section class="review"></section><!--//review-->

@@ -1,5 +1,100 @@
 //console.log('치치야')
 $(document).ready(function(){
+
+    /************************** header 와 메뉴 시작 *****************************
+     * pc인지 모바일인지 구분 - 브라우저 넓이로...
+     * 스크롤값 계산
+     * 공통사항 : 브라우저가 스크롤 되면 or header에 오버하면 fixed 클래스 추가
+     * pc 일때 : 마우스를 오버한 li에만 over클래스 추가
+     * 모바일일때 : 메뉴열기를 클릭하면 header에 menu_open 클래스 추가
+     *             1차메뉴를 클릭하면 (하위 메뉴가 있는 1차 메뉴만) 클릭한 li에 open 클래스 추가
+     * */  
+
+    let device_status //모바일인지 pc인지
+    let scrolling //스크롤한 값
+    let window_w //브라우저 넓이
+    let mobile_size = 1024 //모바일로 전환되는 사이즈
+
+    scroll_chk() //함수 실행 (문서가 로딩 되었을때 1번)
+    resize_chk()
+    $(window).resize(function(){ //브라우저가 리사이즈 될때마다 1번씩 실행
+        resize_chk() //함수 실행
+    })
+    $(window).scroll(function(){//브라우저를 스크롤 할때마다 1번씩 실행
+        scroll_chk() //함수 실행
+    })
+    function scroll_chk(){ //함수 선언
+        //console.log('스크롤!!!!!!!!!!!!!!')
+        scrolling = $(window).scrollTop()
+        //console.log(scrolling)
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+    function resize_chk(){
+        //console.log('리사이즈!!!!!!!!!!')
+        window_w = $(window).width()
+        if(window_w > mobile_size){
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        //console.log(device_status)
+    }
+     
+    /* header에 마우스를 오버했을때 -- 클릭했을때도 작종함*/
+    $('header').on('mouseenter', function(){
+        $('header').addClass('fixed')
+    })
+    $('header').on('mouseleave focusout', function(){
+        /* 브라우저가 스크롤된 상태에서는 header에 fixed 클래스를 삭제하면 안됨!!
+            맨위에 있을때만 삭제 해야함 */
+        if(scrolling == 0){ 
+            $('header').removeClass('fixed')
+        }//if종료
+    })
+    $('header .gnb .gnb_wrap ul.dapth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){
+            $(this).addClass('over')
+        }
+    })
+    $('header .gnb .gnb_wrap ul.dapth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over')
+    })
+    $('header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2 > li:last-child').on('focusout', function(){
+        $('header .gnb .gnb_wrap ul.dapth1 > li').removeClass('over')
+    })
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+    })
+    /*
+        닫힌 메뉴를 클릭하면 열리고, 열린 메뉴를 클릭하면 닫힘
+        동시에 여러개의 메뉴가 열려있을 수도 있음
+        toggleClass - 클래스가 없으면 추가하고, 있으면 삭제
+    */
+    $('header .gnb .gnb_wrap ul.depth1 > li:has(ul.dapth2) > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault()
+            $(this).parents('li').toggleClass('open')
+        }
+        
+    })
+
+    /************************** header 와 메뉴 끝 ******************************/  
+
+
+
+
+
+
+    /************************** visual swiper 시작 ******************************/   
+
     //console.log('안녕')
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -42,4 +137,26 @@ $(document).ready(function(){
         $(this).hide() //재생 버튼을 숨김
         $('.visual .btn_wrap button.btn_stop').show() // 정지버튼 나타남
     })
+    /************************** visual swiper 끝 ******************************/  
+
+    /*************************** find 탭 기능 : 시작 ********************************/
+    let find_content //클릭한 메뉴의 이름(id)
+    $('.find .list .tab_list ul li').on('click', function(){
+        //console.log('나 눌렀다')
+
+        if($(this).hasClass('active') == false){
+            //console.log('선택안된메뉴')
+            find_content = $(this).attr('data-content')
+            console.log(find_content)
+        }
+    })
+
+
+
+
+
+    /*************************** find 탭 기능 : 끝 ********************************/
+
+
+
 })//$(document).ready
