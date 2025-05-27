@@ -17,13 +17,17 @@
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!--
+            header에 마우스를 오버하거나...스크롤을 내리면 - header에 fixed 클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li에만 - over라는 클래스를 추가
+        -->
+        <header class="fixed">
             <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
                     <ul class="dapth1"><!-- 1차메뉴 -->
-                        <li>
+                        <li class="">
                             <a href="https://papago.naver.com/"><span>찾습니다</span></a>
                             <ul class="dapth2"> <!-- 2차메뉴 -->
                                 <li><a href="#"><span>실종신고</span></a></li>
@@ -33,7 +37,7 @@
                         <li>
                             <a href="https://papago.naver.com/"><span>구조 분양</span></a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="https://papago.naver.com/"><span>네트워크</span></a>
                             <ul class="dapth2"><!-- 2차메뉴 -->
                                 <li><a href="#"><span>동물찾기 네트워크</span></a></li>
@@ -43,7 +47,7 @@
                         <li>
                             <a href="https://papago.naver.com/"><span>재회성공담</span></a>
                         </li>
-                        <li>
+                        <li class="over">
                             <a href="https://papago.naver.com/"><span>대처방법</span></a>
                             <ul class="dapth2"><!-- 2차메뉴 -->
                                 <li><a href="#"><span>실종시 대처방법</span></a></li>
