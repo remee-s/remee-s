@@ -17,10 +17,13 @@
     background-color: #F0E7C6;
     color: #1d1d1d;
     font-family: 'TTHakgyoansimTtwimteulR';
-    transform: translateX(-120%);
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
 }
 .skip_nav a:focus{
-    transform: translateX(0);
+    top: 0;
 }
 /***************************************************/
 
@@ -528,9 +531,14 @@ header.fixed .logo a{
     text-overflow: ellipsis;
 }
 @media screen and (max-width:1024px){ 
+                .find .list .tab_list ul li button{
+                    font-size: 18px;
+                    border-radius: 35px;
+                    padding: 10px 23px;
+                }
                 .find .list .tab_content .tab_item > ul{
+                    flex-wrap: wrap; /* 줄바꿈 허용 */
                     gap: 20px 16px;
-                    flex: wrap; /* 줄바꿈 허용 */
                 }
                 .find .list .tab_content .tab_item > ul > li{
                     width: calc(50% - 8px);
@@ -540,6 +548,9 @@ header.fixed .logo a{
                 .find .list .tab_content .tab_item > ul > li a .photo{
                     height: 191px;
                     border-radius: 5px;
+                }
+                .find .list .tab_content .tab_item > ul > li a .subject h4{
+                    font-size: 20px;
                 }
 }
 @media screen and (max-width:768px){ /* 모바일 find */
@@ -565,19 +576,20 @@ header.fixed .logo a{
                         }
                         .find .list .tab_content .tab_item > ul > li a .subject{
                             display: block;
-                            margin: 20px 0 0 0;
                             position: relative; /* strong 정렬의 기준 (카테고리) */
                         }
                         .find .list .tab_content .tab_item > ul > li a .subject strong{
-                            padding: 5px 20px;
-                            border-radius: 20px;
+                            padding: 8px 20px;
+                            border-radius: 5px;
                             font-size: 16px;
                             line-height: 28px;
-                            margin: 20px 0 0 0;
+                            position: relative;
+                            top: -50px;
                         }
                         .find .list .tab_content .tab_item > ul > li a .subject h4{
-                            font-size: 16px;
-                            margin: 10px;
+                            font-size: 20px;
+                            padding: 0 0 10px 0;
+                            position: absolute;
                         }
                         .find .list .tab_content .tab_item > ul > li a ul.detail{
                             margin: 10px 0 0 0;
@@ -595,6 +607,135 @@ header.fixed .logo a{
                             display: block;
                         }
 }/* media 모바일 find */
+
+.slogan{
+    margin: 195px 0 0 0;
+}
+.slogan .sub_tit{
+    font-family: 'TTHakgyoansimTtwimteulR';
+    color: #1d1d1d;
+    font-size: 60px;
+    line-height: 2.0;
+    text-align: center;
+}
+.slogan .ex{
+    margin: 18px 0 0 0;
+    text-align: center;
+}
+.slogan .sub_tit span{
+    display: inline-block; /* 줄 안바꾸고 자기 넓이를 주기 위해 */
+    color: transparent; 
+    /* 글자를 투명하게 
+       이유 - 높이가 안잡히기 때문에 글자를 줘서 높이를 맞춘후 
+              투명하게 잡은것*/
+    position: relative; /* before 정렬의 기준 */
+}
+.slogan .sub_tit strong{
+    display: inline-block;
+    /* 글자를 태그로 감싸고 inline-block을 주면
+       줄 바꿈이 될때 inline-block으로 묶인 글자는 단락으로 줄바꿈이됨. 
+       글자가 찢어지지 않고 묶여서 줄바꿈이 된다는 말. */
+}
+.slogan .sub_tit span.item1{
+    width: 2.91em;
+    /* 사진 넓이 175  / 글자 크기 60
+        175/60= 2.91
+        1em은 현재 해당 요소에 상속된 글자크기를 1로 봄*/
+}
+.slogan .sub_tit span.item2{
+    width: 2.13em;
+}
+.slogan .sub_tit span.item3{
+    width: 2.4em;
+}
+.slogan .sub_tit span.item4{
+    width: 2.21em;
+}
+.slogan .sub_tit span::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* span의 영역에 위아래 가운데 좌우에 가운데 */
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: contain; /* 이미지 잘림 방지 */
+}
+.slogan .sub_tit span.item1::before{
+    width:  2.91em; /* 175 / 60 = 2.91em*/
+    height: 2em; /* 120 / 60 =  2em */
+    background-image: url(../images/slogan1.png);
+}
+.slogan .sub_tit span.item2::before{
+    width:  2.13em; 
+    height: 2.48em; 
+    background-image: url(../images/slogan2.png);
+}
+.slogan .sub_tit span.item3::before{
+    width:  2.4em;
+    height: 2.88em;
+    background-image: url(../images/slogan3.png);
+}
+.slogan .sub_tit span.item4::before{
+    width:  2.21em; 
+    height: 2.28em; 
+    background-image: url(../images/slogan4.png);
+}
+@media screen and (max-width:1300px){
+                .slogan{
+                    margin: 180px 0 0 0;
+                }
+                .slogan .sub_tit{
+                    font-size: 50px;
+                }
+                .slogan .sub_tit br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+                .slogan .ex{
+                    margin: 16px 0 0 0;
+                    text-align: center;
+                }
+                .slogan .ex br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+}
+@media screen and (max-width:1024px){
+                .slogan{
+                    margin: 160px 0 0 0;
+                }
+                .slogan .sub_tit{
+                    font-size: 40px;
+                }
+                .slogan .sub_tit br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+                .slogan .ex{
+                    margin: 16px 0 0 0;
+                    text-align: center;
+                }
+                .slogan .ex br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+}
+@media screen and (max-width:768px){ /* 모바일 slogan */
+                .slogan{
+                    margin: 100px 0 0 0;
+                }
+                .slogan .sub_tit{
+                    font-size: 30px;
+                }
+                .slogan .sub_tit br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+                .slogan .ex{
+                    margin: 15px 0 0 0;
+                    text-align: center;
+                }
+                .slogan .ex br{
+                    display: none; /* 줄바꿈 삭제 */
+                }
+}/* media 모바일 slogan */
 
 
 
