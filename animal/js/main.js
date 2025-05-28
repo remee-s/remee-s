@@ -46,7 +46,9 @@ $(document).ready(function(){
      
     /* header에 마우스를 오버했을때 -- 클릭했을때도 작종함*/
     $('header').on('mouseenter', function(){
+        if(device_status == 'pc'){
         $('header').addClass('fixed')
+        }
     })
     $('header').on('mouseleave focusout', function(){
         /* 브라우저가 스크롤된 상태에서는 header에 fixed 클래스를 삭제하면 안됨!!
@@ -88,11 +90,6 @@ $(document).ready(function(){
 
     /************************** header 와 메뉴 끝 ******************************/  
 
-
-
-
-
-
     /************************** visual swiper 시작 ******************************/   
 
     //console.log('안녕')
@@ -103,20 +100,9 @@ $(document).ready(function(){
             disableOnInteraction: true,
         },
 
-        effect: "fade", /* fade 효과 (부드럽게 넘어가는것) */
+        //effect: "fade", /* fade 효과 (부드럽게 넘어가는것) */
 
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-
-        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.swiper-pagination', /* 해당 요소의 class명 */
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-                return '<span class="' + className + '">' + (index + 1) + "</span>";
-            },
-        },
-        
-
         navigation: {  /* 이전, 다음 버튼 */
             nextEl: '.visual .btn_wrap button.btn_next',  /* 다음 버튼의 클래스명 */
             prevEl: '.visual .btn_wrap button.btn_prev',  
@@ -139,7 +125,14 @@ $(document).ready(function(){
     })
     /************************** visual swiper 끝 ******************************/  
 
-    /*************************** find 탭 기능 : 시작 ********************************/
+    /*************************** find 탭 기능 : 시작 *******************************
+     * 1. 클릭한 li에서 data - content 값을 가져와서
+     * ==> tab_item 중에 해당 값이 id인 요소를 찾아서 나타나게 해야함(다른요소는숨김)
+     * 2. 클릭한 li에만 active 클래스를 줌
+     * 3. 클릭한 li안에 있는 span에 선택됨이라고 글자를 써줌(다른 li에 있는 건 삭제)
+     * 4. 클릭한 li 속성 aria-selected 값을 true로 변경 (다른 li는 모두 false) 
+     ************************/
+
     let find_content //클릭한 메뉴의 이름(id)
     $('.find .list .tab_list ul li').on('click', function(){
         //console.log('나 눌렀다')
@@ -147,7 +140,19 @@ $(document).ready(function(){
         if($(this).hasClass('active') == false){
             //console.log('선택안된메뉴')
             find_content = $(this).attr('data-content')
-            console.log(find_content)
+            //console.log(find_content)
+
+            $('.find .list .tab_content .tab_item').removeClass('active')
+            $('.find .list .tab_content').find('#'+find_content).addClass('active')
+
+            $('.find .list .tab_list ul li').removeClass('active')
+            $(this).addClass('active')
+
+            $('.find .list .tab_list ul li button span').text('')
+            $(this).find('span').text('선택됨')
+
+            $('.find .list .tab_list ul li').attr('aria-selected', 'false')
+            $(this).attr('aria-selected', 'true')
         }
     })
 
