@@ -210,6 +210,23 @@ $(document).ready(function(){
     });
     // review_swiper.autoplay.stop();  /* 일시정지 기능 */
     // review_swiper.autoplay.start();  /* 재생 기능 */
+
     /*************************** 후기 swiper : 끝 ********************************/
+
+    /*************************** footer top : 시작 ********************************/
+    $('footer .top_wrapper').on('click', function(){
+        console.log('탑 눌렀니 ?????')
+        //$(window).scrollTop(0)
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500) /*대부분 0.5초로 함*/
+    })
+
+
+
+
+
+    /*************************** footer top : 끝 ********************************/
+
 
 })//$(document).ready

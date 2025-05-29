@@ -7,6 +7,7 @@ body{
     word-break: keep-all; /* 스페이스 기준 =단어별로 줄바꿈*/
     word-wrap: break-word; 
     /*단어가 너무 긴 경우 강제로 줄바꿈을 주는 경우*/
+    background-color: #fff; /* 블랜딩 모드를 주기 위해 넣은거임 */
 }
 .wrapper{
     width: 1260px; /*1260*/
