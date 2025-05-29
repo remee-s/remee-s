@@ -576,6 +576,12 @@ header.fixed .logo a{
                 .find .list .tab_content .tab_item > ul > li a .subject h4{
                     font-size: 20px;
                 }
+                .find .emblem{ /* 뱅글뱅글 돌아가는 문구 */
+                    display: none;
+                }
+                .find .emblem_wrapper{ /* 로고 사진 넣은거 */
+                    display: none;
+                }
 }
 @media screen and (max-width:768px){ /* 모바일 find */
                         .find{
@@ -628,6 +634,12 @@ header.fixed .logo a{
                         }
                         .find .list .tab_content .tab_item > ul > li a ul.detail li span{
                             display: block;
+                        }
+                        .find .emblem{ /* 뱅글뱅글 돌아가는 문구 */
+                            display: none;
+                        }
+                        .find .emblem_wrapper{ /* 로고 사진 넣은거 */
+                            display: none;
                         }
 }/* media 모바일 find */
 
