@@ -1,0 +1,132 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+
+html, body{
+    font-family: "Pretendard";
+    font-weight: 400;
+    line-height: 1.5; /*배수*/
+    color: #3d3d3d;
+    word-break: keep-all;
+    font-size: 17px;
+}
+/*html{
+    font-size: 16px;
+}
+body{
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width:1024px){
+    html{
+        font-size: 16px;
+    }
+    body{
+        font-size: 1.21rem;
+    }
+}
+@media screen and (max-width:768px){
+    html{
+        font-size: 10px;
+    }
+    body{
+        font-size: 10px;
+        fo
+    }
+}*/
+html, body
+
+.biz, .news, .banner{
+    margin: 50px 0;
+}
+
+
+
+
+.biz .tit h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+    background-color: var(--tit-background-color);
+}
+.biz .btn_wrap{
+    display: flex;
+    gap: 0.7em;
+    align-items: flex-start;
+}
+.biz .btn_wrap .view{
+    /* 글자 크기 25px 여백 24px 21px 라운드 64px */
+    font-size: 1.47rem; /* 25 / 17 = 1.47 rem */
+    border: 1px solid blue; 
+    border-radius: 3.76rem; /* 64 / 17 */
+    padding: 0.14rem; /* 24 / 17  */
+}
+.biz .btn_wrap .more{
+    font-size: 1.47rem; /* 25 / 17 = 1.47 rem */
+    border: 1px solid red; 
+    border-radius: 2.56em; /* 64 / 25 */
+    padding: 0.96em; /* 24/ 25 = */
+}
+@media screen and (max-width:1024px){
+    .biz .btn_wrap .view{
+        /* 글자 크기 25px 여백 24px 41px 라운드 64px */
+        font-size: 1.2rem; 
+    }
+    .biz .btn_wrap .more{
+        font-size: 1.2rem; 
+
+    }
+}
+@media screen and (max-width:768px){
+    .biz .btn_wrap .view{
+        /* 글자 크기 25px 여백 24px 41px 라운드 64px */
+        font-size: 0.8rem; 
+    }
+    .biz .btn_wrap .more{
+        font-size: 0.8rem;
+    }
+}
+
+
+.news .tit h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+    background-color: var(--tit-background-color);
+}
+.banner .tit h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+    background-color: var(--tit-background-color);
+}
+.biz .tit strong{
+    font-size: 2em;
+}
+.biz .tit em{
+    font-size: 2rem;
+}
+
+
+
+:root{ /* --내가 만든 변수 이름 : ;  */
+    --tit-font-size: 2.35rem;
+    --tit-font-weight:800;
+    --tit-color:red;
+    --tit-background-color:pink;
+}
+
+/*@media screen and (max-width:1024px){
+    :root{ /* --내가 만든 변수 이름 : ;  
+        --tit-font-size: 30px;
+        --tit-color:yellow;
+    }
+}/* 1024 media 
+/*@media screen and (max-width:768px){
+    :root{ /* --내가 만든 변수 이름 : ;  
+        --tit-font-size: 20px;
+        --tit-color:green;
+    }
+}/* 768 media */

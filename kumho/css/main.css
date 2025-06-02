@@ -1,0 +1,114 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); /* header와 footer 같이 모든 페이지 공통사항 저장 */
+
+.visual .swiper-slide .photo{
+    overflow: hidden;
+    height: 100dvh; /* 모바일까지 고려한 브라우저 높이 100% */
+}
+.visual .swiper-slide .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 배경 이미지 확대 fade in */
+    transition: 1.5s;
+}
+.visual .swiper-slide .txt{
+    overflow: hidden;
+}
+.visual .swiper-slide .txt_wrap .txt.mobile{
+    display: none;
+}
+.visual .swiper-slide.swiper-slide-active .photo img{
+    /* 배경 이미지 확대 fade in 확대 값 주는법 */
+    transform: scale3d(1.2, 1.2, 1); /* 1.2배 1.2배 마지막값 1 */
+}
+.visual .swiper-slide .txt_wrap{
+    position: absolute; /* swiper-slide을 기준으로 정렬 */
+    left: 0;
+    bottom: 38%; /* 380px / 100 */
+    width: 100%;
+    text-align: center;
+}
+.visual .swiper-slide .txt_wrap h3{
+    color: #ED1C24;
+    font-size: 1.76rem; /* 30px / 17 =  */
+    line-height: var(--line-height);
+    font-family: 'Special Gothic Expanded One';
+    text-transform: uppercase;
+    /* 제목 글자가 위로 올라오는 애니메이션을 주기 위한 조건 */
+    white-space: nowrap; /* 1줄로 표현 */
+    transform: translateY(100%);
+    /* 100% -> 0%으로 애니메이션 */
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    /*animation-name: visual_txt;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;*/
+}
+.visual .swiper-slide .txt_wrap .txt p{
+    font-size: 2.94rem; /*50px / 17 = */
+    line-height: var(--line-height);
+    font-family: 'Special Gothic Expanded One';
+    text-transform: uppercase;
+    /* 제목 글자가 위로 올라오는 애니메이션을 주기 위한 조건 */
+    white-space: nowrap; /* 1줄로 표현 */
+    transform: translateY(100%);
+    /* 100% -> 0%으로 애니메이션 */
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    /*animation-name: visual_txt;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;*/
+}
+.visual .swiper-slide .txt_wrap .txt.delay1 p{
+    transition-delay: 1s;
+}
+.visual .swiper-slide .txt_wrap .txt.delay2 p{
+    transition-delay: 1.2s;
+}
+.visual .swiper-slide .txt_wrap .txt.delay3 p{
+    transition-delay: 1.4s;
+}
+
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt p,
+.visual .swiper-slide.swiper-slide-active .txt_wrap h3{
+    transform: translateY(0);
+   /*animation-name: visual_txt;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;*/
+}
+@keyframes visual_txt {
+    0%{ transform: translateY(100%); }
+    100%{ transform: translateY(0); }
+}/* keyframes */
+@media screen and (max-width:1024px){
+    .visual .swiper-slide .txt_wrap{
+        position: absolute; /* swiper-slide을 기준으로 정렬 */
+        left: 0;
+        bottom: 38%; /* 380px / 100 */
+        width: 100%;
+        text-align: center;
+    }
+    .visual .swiper-slide .txt_wrap .txt.mobile{
+        display: block;
+    }
+    .visual .swiper-slide .txt_wrap .txt.pc{
+        display: none;
+    }
+    .visual .swiper-slide .txt_wrap .txt p{
+        font-size: 1.76rem; /*30px / 17 = */
+        text-align: left;
+    }
+    .visual .swiper-slide .txt_wrap h3{
+        font-size: 1rem; /* 17px / 17 =  */
+        text-align: left;
+        margin: 0 0 10px 0;
+    }
+}/* 1024 media */
+
+
+
