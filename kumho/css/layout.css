@@ -1,5 +1,255 @@
  /* header와 footer 같이 모든 페이지 공통사항 저장 */
 
- footer{
-    margin: 500px 0 0 0;
+header{
+    position: fixed; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: var(--header-h);
+    padding: 0 50px; /* 좌우 여백 */
+    display: flex; /* logo,gnb,utill 좌우 정렬 */
+    justify-content: space-between;
+    align-items: center;
+    /* 부드럽게 header가 들어갈 수 있게 
+        내려가는것만 부드러웠으면 좋겠다면 transition: top 0.5s; top값을 주면 됌*/
+    transition: 0.5s; 
+}
+header .logo a{
+    display: block;
+    width: 10.23em; /* 174/17 */
+    height: 2.52em;
+    background: url(../images/common/logo_w.svg) no-repeat center center /contain;
+    margin: 0 0 15px 0;
+}
+header .utill{
+    display: flex;
+    gap: 20px;
+    font-family: "PP Editorial Old";
+}
+header .utill .search .search_open,
+header .utill .lang .lang_open{
+    position: relative; /* before 정렬의 기준 */
+    margin: 9px 0 0 0; /* 위치 안맞아서 임의로 줬음 */
+}
+header .utill .lang .lang_open::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+header .utill .search .search_open::after,
+header .utill .lang .lang_open::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2em;
+    width: 100%;
+    height: 1px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/******************* 아래로 스크롤 내릴때 header가 사라짐***************************/
+
+header.fixed.gnb_up{
+    top: var(--header-h-m);
+}
+header.fixed.gnb_up.menu_over{
+    top: 0; /* 2차메뉴를 오버 하고 있을때 스크롤 해도 사라지지 않고 유지됨 */
+}
+
+/*********************** header에 fixed class 추가 *************************/
+header.fixed,
+header.menu_over{
+    background-color: rgba(255, 255, 255, 0.6);
+    color:var(--base-color);
+    font-weight: var(--bold-weight);
+}
+
+header.fixed .logo a,
+header.menu_over .logo a{
+    background-image: url(../images/common/logo_b.svg);
+}
+header.fixed .utill .search .search_open::after,
+header.fixed .utill .lang .lang_open::after,
+header.menu_over .utill .search .search_open::after,
+header.menu_over .utill .lang .lang_open::after{
+    background-color: #1d1d1d;
+}
+/******************************fixed 끝************************************/
+
+
+@media screen and (min-width:1025px){
+    header .gnb .gnb_utill,
+    header .gnb .gnb_open,
+    header .gnb .gnb_close{
+        display: none; /* 모바일에서만 숨김 */
+    }
+    header .gnb .gnb_wrap ul.depth1{
+        display: flex;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li{
+        width: 8rem; /* 137/17=8 (소숫점 나오면 반올림 하는것이 좋음) */
+        text-align: center;
+        position: relative; /* 2차 메뉴 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a{
+        display: block;
+        line-height: var(--header-h);
+        font-size: 1.47rem; /* 25/17 rem */
+        margin: 14px 0 0 0; /* 위치 안맞아서 임의로 줬음 */
+        font-weight: 800; /* 글자 굵기 일정하지 않아서 임의로 줘봤음 !! */
+        transition: 0.2s; /****??내가 임의로 텀 을 준것****/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+        display: none; /* 2차메뉴 숨김처리 */
+    }
+
+    /******************menu_over 추가시***************************/
+    header.menu_over::before{
+        content: "";
+        background-color: rgba(255, 255, 255, 0.6);
+        position: absolute; /* header의 fixed를 기준으로 정렬 */
+        left: 0;
+        top: 100px;
+        width: 100%;
+        height: 14.88em; /* 253/17 */
+        /* header안에있는 요소들 중에 가장 아래 
+           header에 배경색을 줘도 그거보다는 위에 존재함*/
+        z-index: -1; 
+        transition: 0.5s;
+    }
+    /*header.menu_over::after{   ( header 에 줄 만드는방법 )
+        content: "";
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        height: 1px;
+        background-color: var(--point-color);
+    }*/
+    header .gnb .gnb_wrap ul.depth1 > li.over > a{
+        color: var(--point-color);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span{
+        position: relative; /* after정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::after{
+        content: "";
+        position: absolute;
+        left: 1px;
+        bottom: -23px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--point-color);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+        display: none;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+        display: block; /* 2차 메뉴 나타남 */
+        position: absolute; /* li를 기준으로 정렬 */
+        left: 0;
+        top: var(--header-h); /* header의 높이값만큼만 */
+        width: 100%; /* li와 넓이가 동일해져야 위치가 동일하게 들어감 */
+        padding: 17px;
+        font-weight: 400;
+        font-family: 'Pretendard';
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li >a{
+        color: var(--base-color);
+        display: block;
+        line-height: 2.0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li >a:hover{
+        color: var(--point-color);
+        font-weight: var(--bold-weight);
+    }
+
+
+}/* media min1025 */
+@media screen and (min-width:1025px) and (max-width:1137px){
+    /******1025~1137px의 사잇 값*********/
+    header .gnb .gnb_wrap ul.depth1 > li{
+        width: 7rem; /* 브라우저 사이즈가 줄어들때 글자 충돌 방지용으로 넓이를 줄여준것 */
+    }
+}/*media*/
+@media screen and (max-width:1024px){ /* 1024 모바일 버전 */
+                header{
+                    padding: 0 0 0 20px; /* 좌우 여백 */
+                }
+                header .logo a{
+                    margin: 0 0 5px 0;
+                    display: block;
+                    width: 7.25em; /* 116/16 모바일값은 16이라 */
+                    height: 1.81em; /* 29/16 */
+                }
+                header .utill{
+                    display: none;
+                }
+                header .gnb .gnb_utill{
+                    display: none;
+                }
+                header .gnb .gnb_open{
+                    display: block;
+                    width: var(--header-h);
+                    height: var(--header-h);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_500' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_500)'%3E%3Cpath d='M6.21875 18.75C5.86458 18.75 5.57292 18.6302 5.34375 18.3906C5.11458 18.151 5 17.8542 5 17.5C5 17.1458 5.11979 16.849 5.35938 16.6094C5.59896 16.3698 5.89583 16.25 6.25 16.25H23.7812C24.1354 16.25 24.4271 16.3698 24.6562 16.6094C24.8854 16.849 25 17.1458 25 17.5C25 17.8542 24.8802 18.151 24.6406 18.3906C24.401 18.6302 24.1042 18.75 23.75 18.75H6.21875ZM6.21875 23.75C5.86458 23.75 5.57292 23.6302 5.34375 23.3906C5.11458 23.151 5 22.8542 5 22.5C5 22.1458 5.11979 21.849 5.35938 21.6094C5.59896 21.3698 5.89583 21.25 6.25 21.25H23.7812C24.1354 21.25 24.4271 21.3698 24.6562 21.6094C24.8854 21.849 25 22.1458 25 22.5C25 22.8542 24.8802 23.151 24.6406 23.3906C24.401 23.6302 24.1042 23.75 23.75 23.75H6.21875ZM6.21875 13.75C5.86458 13.75 5.57292 13.6302 5.34375 13.3906C5.11458 13.151 5 12.8542 5 12.5C5 12.1458 5.11979 11.849 5.35938 11.6094C5.59896 11.3698 5.89583 11.25 6.25 11.25H23.7812C24.1354 11.25 24.4271 11.3698 24.6562 11.6094C24.8854 11.849 25 12.1458 25 12.5C25 12.8542 24.8802 13.151 24.6406 13.3906C24.401 13.6302 24.1042 13.75 23.75 13.75H6.21875ZM6.21875 8.75C5.86458 8.75 5.57292 8.63021 5.34375 8.39062C5.11458 8.15104 5 7.85417 5 7.5C5 7.14583 5.11979 6.84896 5.35938 6.60938C5.59896 6.36979 5.89583 6.25 6.25 6.25H23.7812C24.1354 6.25 24.4271 6.36979 24.6562 6.60938C24.8854 6.84896 25 7.14583 25 7.5C25 7.85417 24.8802 8.15104 24.6406 8.39062C24.401 8.63021 24.1042 8.75 23.75 8.75H6.21875Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+                header.fixed .gnb .gnb_open{
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_72_37' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_72_37)'%3E%3Cpath d='M6.21875 18.75C5.86458 18.75 5.57292 18.6302 5.34375 18.3906C5.11458 18.151 5 17.8542 5 17.5C5 17.1458 5.11979 16.849 5.35937 16.6094C5.59896 16.3698 5.89583 16.25 6.25 16.25H23.7813C24.1354 16.25 24.4271 16.3698 24.6563 16.6094C24.8854 16.849 25 17.1458 25 17.5C25 17.8542 24.8802 18.151 24.6406 18.3906C24.401 18.6302 24.1042 18.75 23.75 18.75H6.21875ZM6.21875 23.75C5.86458 23.75 5.57292 23.6302 5.34375 23.3906C5.11458 23.151 5 22.8542 5 22.5C5 22.1458 5.11979 21.849 5.35937 21.6094C5.59896 21.3698 5.89583 21.25 6.25 21.25H23.7813C24.1354 21.25 24.4271 21.3698 24.6563 21.6094C24.8854 21.849 25 22.1458 25 22.5C25 22.8542 24.8802 23.151 24.6406 23.3906C24.401 23.6302 24.1042 23.75 23.75 23.75H6.21875ZM6.21875 13.75C5.86458 13.75 5.57292 13.6302 5.34375 13.3906C5.11458 13.151 5 12.8542 5 12.5C5 12.1458 5.11979 11.849 5.35937 11.6094C5.59896 11.3698 5.89583 11.25 6.25 11.25H23.7813C24.1354 11.25 24.4271 11.3698 24.6563 11.6094C24.8854 11.849 25 12.1458 25 12.5C25 12.8542 24.8802 13.151 24.6406 13.3906C24.401 13.6302 24.1042 13.75 23.75 13.75H6.21875ZM6.21875 8.75C5.86458 8.75 5.57292 8.63021 5.34375 8.39062C5.11458 8.15104 5 7.85417 5 7.5C5 7.14583 5.11979 6.84896 5.35937 6.60937C5.59896 6.36979 5.89583 6.25 6.25 6.25H23.7813C24.1354 6.25 24.4271 6.36979 24.6563 6.60937C24.8854 6.84896 25 7.14583 25 7.5C25 7.85417 24.8802 8.15104 24.6406 8.39062C24.401 8.63021 24.1042 8.75 23.75 8.75H6.21875Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+                header .gnb .gnb_wrap{
+                    position: fixed;
+                    right: -100%;
+                    top: 0;
+                    width: 90%; /* 남은 여백을 제외한 값을 넣는것 
+                    calc ( 100% - 남은 여백값 ) 이렇게 해도됨*/
+                    height: 100%;
+                    background-color: #fff;
+                    color: var(--base-color);
+                    font-family: 'Pretendard';
+                    transition: 0.5s;
+                }
+                header .gnb .gnb_close{
+                    display: none;
+                    position: absolute; /* gnb_wrap기준으로 정렬 */
+                    right: 0;
+                    top: 0;
+                    width: var(--header-h);
+                    height: var(--header-h);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_650' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_650)'%3E%3Cpath d='M15 16.75L8.875 22.875C8.64583 23.1042 8.35417 23.2188 8 23.2188C7.64583 23.2188 7.35417 23.1042 7.125 22.875C6.89583 22.6458 6.78125 22.3542 6.78125 22C6.78125 21.6458 6.89583 21.3542 7.125 21.125L13.25 15L7.125 8.875C6.89583 8.64583 6.78125 8.35417 6.78125 8C6.78125 7.64583 6.89583 7.35417 7.125 7.125C7.35417 6.89583 7.64583 6.78125 8 6.78125C8.35417 6.78125 8.64583 6.89583 8.875 7.125L15 13.25L21.125 7.125C21.3542 6.89583 21.6458 6.78125 22 6.78125C22.3542 6.78125 22.6458 6.89583 22.875 7.125C23.1042 7.35417 23.2188 7.64583 23.2188 8C23.2188 8.35417 23.1042 8.64583 22.875 8.875L16.75 15L22.875 21.125C23.1042 21.3542 23.2188 21.6458 23.2188 22C23.2188 22.3542 23.1042 22.6458 22.875 22.875C22.6458 23.1042 22.3542 23.2188 22 23.2188C21.6458 23.2188 21.3542 23.1042 21.125 22.875L15 16.75Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+                /*****메뉴가 열렸을때!!!*******/
+                header.menu_open .gnb .gnb_wrap{
+                    right: -1px;
+                }
+                /*header.menu_open::before{ /* 메뉴 열렸을때 뒷배경 흐려지는것 
+                    content: "";
+                    position: fixed; /* body 를 기준으로 정렬 
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(29, 29, 29, 0.8);
+                }*/
+                header.menu_open .gnb .gnb_close{
+                    display: block;
+                }
+
+}/* media 1024 모바일 */
+
+
+
+
+
+
+
+footer{
+    margin: 1000px 0 0 0;
 }

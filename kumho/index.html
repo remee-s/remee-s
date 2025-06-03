@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- jquary 라이브러리 -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- swiper 라이브러리 -->
@@ -11,18 +12,103 @@
 
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
-    <title>금호건설</title>
+    <script src="js/common.js"></script>
+    <title>금호건설html</title>
 </head>
 <body>
     <div id="wrap">
-        <header></header>
+        <!--
+            고정 될때 (fixed class)
+            메뉴가 상단으로 사라질때 : gnb_up
+            pc 버전에서 메뉴에 마우스를 오버하면 : menu_over
+            mobile 버전에서 메뉴를 클릭하면 : menu_open
+        -->
+        <header class="">
+            <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
+            <nav class="gnb">  
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <div class="gnb_utill">
+                        <div class="lang">
+                            <button class="lang_open"><span>KR</span></button>
+                        </div>
+                        <div class="search">
+                            <button class="search_open"><span>검색</span></button>
+                        </div>
+                    </div><!--//gnb_utill-->  
+                    <ul class="depth1">
+                        <!-- pc버전에서 over 클래스 추가, 모바일에서는 open 클래스 추가 -->
+                        <li class="">
+                            <a href="#"><span>회사소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>기업정보</span></a></li>
+                                <li><a href="#"><span>CEO인사말</span></a></li>
+                                <li><a href="#"><span>연혁</span></a></li>
+                                <li><a href="#"><span>조직도</span></a></li>
+                                <li><a href="#"><span>기술혁신</span></a></li>
+                                <li><a href="#"><span>찾아오시는길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>ESG</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>윤리경영</span></a></li>
+                                <li><a href="#"><span>품질경영</span></a></li>
+                                <li><a href="#"><span>안전경영</span></a></li>
+                                <li><a href="#"><span>환경경영</span></a></li>
+                                <li><a href="#"><span>상생경영</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>사업분야</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>건축사업</span></a></li>
+                                <li><a href="#"><span>토목사업</span></a></li>
+                                <li><a href="#"><span>주택사업</span></a></li>
+                                <li><a href="#"><span>플랜트/환경사업</span></a></li>
+                                <li><a href="#"><span>사업실적검색</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>IR</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>기업지배구조</span></a></li>
+                                <li><a href="#"><span>경영정보</span></a></li>
+                                <li><a href="#"><span>재무정보</span></a></li>
+                                <li><a href="#"><span>주가정보</span></a></li>
+                                <li><a href="#"><span>IR Contact</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>홍보센터</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>금호뉴스</span></a></li>
+                                <li><a href="#"><span>분양뉴스</span></a></li>
+                                <li><a href="#"><span>CI/BI</span></a></li>
+                                <li><a href="#"><span>PR갤러리</span></a></li>
+                                <li><a href="#"><span>금호역사관</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div><!--//gnb_wrap-->
+            </nav>
+            <div class="utill">
+                <div class="lang">
+                    <button class="lang_open"><span>KR</span></button>
+                </div>
+                <div class="search">
+                    <button class="search_open"><span>Search</span></button>
+                </div>
+            </div><!--//utill-->
+        </header>
         <main class="container">
             <section class="visual">
                 <h2 class="blind">팝업</h2>
                 <div class="swiper">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
-                            <div class="photo"><img src="images/visual_kumho01.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/visual_kumho01.jpg" alt=""></div>
                             <div class="txt_wrap">
                                 <div class="wrapper">
                                     <h3>Kumho E&C</h3>
@@ -36,7 +122,7 @@
                             </div>
                         </li>
                         <li class="swiper-slide">
-                            <div class="photo"><img src="images/visual_kumho02.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/visual_kumho02.jpg" alt=""></div>
                             <div class="txt_wrap">
                                 <div class="wrapper">
                                     <h3>ART + TERA</h3>
@@ -49,7 +135,7 @@
                             </div>    
                         </li>
                         <li class="swiper-slide">
-                            <div class="photo"><img src="images/visual_kumho03.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/visual_kumho03.jpg" alt=""></div>
                             <div class="txt_wrap">
                                 <div class="wrapper">
                                     <h3>Kumho Engineering</h3>
@@ -57,12 +143,13 @@
                                     <div class="txt pc delay2"><p>industry Global standard</p></div>
 
                                     <div class="txt mobile delay1"><p>In construction</p></div>
-                                    <div class="txt mobile delay2"><p>industry Global standard</p></div>
+                                    <div class="txt mobile delay2"><p>industry Global</p></div>
+                                    <div class="txt mobile delay3"><p>standard</p></div>
                                 </div>
                             </div>
                         </li>
                         <li class="swiper-slide">
-                            <div class="photo"><img src="images/visual_kumho04.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/visual_kumho04.jpg" alt=""></div>
                             <div class="txt_wrap">
                                 <div class="wrapper">
                                     <h3>Architecture & Culture</h3>
@@ -78,12 +165,12 @@
                     </ul>
                 </div><!--//swiper-->
                 <div class="ctrl_wrap">
-                    <button class="btn-prev"><span>이전팝업보기</span></button>
-                    <button class="btn-next"><span>다음팝업보기</span></button>
-                    <button class="btn-stop"><span>일시정지</span></button>
-                    <button class="btn-play"><span>재생</span></button>
+                    <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                    <button class="btn_stop"><span class="blind">일시정지</span></button>
+                    <button class="btn_play"><span class="blind">재생</span></button>
+                    <button class="btn_next"><span class="blind">다음팝업보기</span></button>
                 </div>
-                <div class="scroll_down"><a href="#">Scroll to explore</a></div>
+                <div class="scroll_down">Scroll to explore</div>
             </section>
             <section class="biz"></section>
             <section class="news"></section>
