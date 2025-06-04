@@ -441,12 +441,40 @@ section .tit strong::after{
 }
 .news .list .swiper-slide a h3{
     line-height: var(--line-height);
+    font-size: 1.76rem; /* 30/17 rem */
 
     /* 2줄제한 */
     height: 2.4em; /* 행간 * 줄수 (단위는 em) */
     overflow: hidden;
+    
     /* 길어서 짤리면 ...추가 */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; /* 줄수 */
+
+    word-break: normal; /* 단어별로 줄바꾸는 것을 해지하는것 */
+}
+.news .list .swiper-slide a p{
+    /* 3 줄제한 */
+    height: 4.5em;
+    overflow: hidden;
+
+    /* 길어서 짤리면 ...추가 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; /* 줄수 */
+    
+    word-break: normal; /* 단어별로 줄바꾸는 것을 해지하는것 */
+
+    margin: 1.47em 0 1.47 0; /* 25/17 */
+
+}
+.news .list .swiper-slide a .photo{
+    overflow: hidden;
+    height: 12.88em; /* 219 / 17 */
+}
+.news .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
