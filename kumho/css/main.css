@@ -232,4 +232,221 @@
                     height: 1.25em;
                 }
 }
+/*tit 제목의 공통 스타일*/
+section .tit{
+    margin: 3.36em 0 1.6em 0 ; /* 168/50=3.36em 현재 글자 크기를 1em으로 바라보기 때문에*/
+    font-size: var(--tit-font-size); /* 50/17 */
+    font-weight: var(--bold-weight);
+}
+section .tit h2{
+    margin: 0 0 30px 0;
+}
+section .tit strong{
+    font-size: 1rem; /* 미리 셋팅해둔 사이즈 (17px = 1rem) */
+    padding: 0 0.76em 0 0; /* 13/17 */
+    display: inline-block; /* 사이즈가 딱 글자 만하게 떨어져야 하기 때문에 */
+    position: relative; /* after 정렬의 기준 */
+    left: 0.29em; /* 5/17 */
+    top: 0.5em;
+}
+section .tit strong::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -0.23em; /* 4/17 */  
+    width: 0.88em;/* 15/17 */
+    height: 0.88em;
+    background: var(--tit-ico);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 
+}
+@media screen and (max-width:768px){
+    section .tit{
+        margin: 3em 0 0.26em 0; 
+    }
+}/* media 768  section*/
+.biz .list ul{
+    display: flex;
+}
+.biz .list ul li{
+    width: 25%; /* 사진이 4개니까 100/4 */
+    position: relative; /* txt 정렬의 기준 */
+    transition: 0.5s;
+}
+.biz .list ul li .more{
+    display: none;
+}
+.biz .list ul li .photo{
+    overflow: hidden;
+    height: 41.29em; /*702/17 여기에 글자크기를 준적이 없으니까 17*/
+    position: relative; /* before 정렬의 기준 */
+}
+.biz .list ul li.on .photo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%; /* 그라데이션 얼마나 줬는지 */
+    background: linear-gradient(0deg,#A60000,rgba(166, 0, 0, 0));
+}
+.biz .list ul li .photo::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; /* 그라데이션 얼마나 줬는지 */
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.5s;
+}
+.biz .list ul li .photo img{ /* 사진을 꽉차게 넣기 위해 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list ul li .txt{ /* bottom값이 마이너스면  overflow: hidden을 줘야함 안그러면 버튼 잘려서 눌림 */
+    position: absolute;
+    left: 1.76em;/* 30/17 */
+    bottom: 1.23em; 
+    white-space: nowrap; /* 줄바꿈 금지 */
+    transition: 0.5s;
+}
+.biz .list ul li .txt h3{
+    font-size: 2.05rem; /* 35/17*/
+    margin: 0.26em 0 0.68em 0;
+    line-height: var(--line-height);
+    font-weight: var(--bold-weight);
+}
+.biz .list ul li .txt a{
+    color: rgba(255, 255, 255, 0.8);
+    position: relative; /* after 기준으로 정렬 */
+    left: 19px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.biz .list ul li .txt a::after{
+    content: "";
+    position: absolute;
+    left: -24px;
+    bottom: -1px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_517' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_517)'%3E%3Cpath d='M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18C4 17.45 4.19583 16.9792 4.5875 16.5875C4.97917 16.1958 5.45 16 6 16C6.55 16 7.02083 16.1958 7.4125 16.5875C7.80417 16.9792 8 17.45 8 18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18C10 17.45 10.1958 16.9792 10.5875 16.5875C10.9792 16.1958 11.45 16 12 16C12.55 16 13.0208 16.1958 13.4125 16.5875C13.8042 16.9792 14 17.45 14 18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18C16 17.45 16.1958 16.9792 16.5875 16.5875C16.9792 16.1958 17.45 16 18 16C18.55 16 19.0208 16.1958 19.4125 16.5875C19.8042 16.9792 20 17.45 20 18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20ZM6 14C5.45 14 4.97917 13.8042 4.5875 13.4125C4.19583 13.0208 4 12.55 4 12C4 11.45 4.19583 10.9792 4.5875 10.5875C4.97917 10.1958 5.45 10 6 10C6.55 10 7.02083 10.1958 7.4125 10.5875C7.80417 10.9792 8 11.45 8 12C8 12.55 7.80417 13.0208 7.4125 13.4125C7.02083 13.8042 6.55 14 6 14ZM12 14C11.45 14 10.9792 13.8042 10.5875 13.4125C10.1958 13.0208 10 12.55 10 12C10 11.45 10.1958 10.9792 10.5875 10.5875C10.9792 10.1958 11.45 10 12 10C12.55 10 13.0208 10.1958 13.4125 10.5875C13.8042 10.9792 14 11.45 14 12C14 12.55 13.8042 13.0208 13.4125 13.4125C13.0208 13.8042 12.55 14 12 14ZM18 14C17.45 14 16.9792 13.8042 16.5875 13.4125C16.1958 13.0208 16 12.55 16 12C16 11.45 16.1958 10.9792 16.5875 10.5875C16.9792 10.1958 17.45 10 18 10C18.55 10 19.0208 10.1958 19.4125 10.5875C19.8042 10.9792 20 11.45 20 12C20 12.55 19.8042 13.0208 19.4125 13.4125C19.0208 13.8042 18.55 14 18 14ZM6 8C5.45 8 4.97917 7.80417 4.5875 7.4125C4.19583 7.02083 4 6.55 4 6C4 5.45 4.19583 4.97917 4.5875 4.5875C4.97917 4.19583 5.45 4 6 4C6.55 4 7.02083 4.19583 7.4125 4.5875C7.80417 4.97917 8 5.45 8 6C8 6.55 7.80417 7.02083 7.4125 7.4125C7.02083 7.80417 6.55 8 6 8ZM12 8C11.45 8 10.9792 7.80417 10.5875 7.4125C10.1958 7.02083 10 6.55 10 6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6C14 6.55 13.8042 7.02083 13.4125 7.4125C13.0208 7.80417 12.55 8 12 8ZM18 8C17.45 8 16.9792 7.80417 16.5875 7.4125C16.1958 7.02083 16 6.55 16 6C16 5.45 16.1958 4.97917 16.5875 4.5875C16.9792 4.19583 17.45 4 18 4C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6C20 6.55 19.8042 7.02083 19.4125 7.4125C19.0208 7.80417 18.55 8 18 8Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+}   
+/******************* 마우스를 오버했을때 on 클래스 **********************/
+
+@media screen and (min-width:1025px){/* 1025px 까지만 적용 되는 biz효과 pc*/
+    .biz .list ul li:hover{
+        width: 50%;
+    }
+    .biz .list ul li:hover .txt{
+        bottom: 3.11em;/* 53 / 17 */
+    }
+    .biz .list ul li:hover .txt a{
+        opacity: 1;
+    }
+    .biz .list ul:hover li:not(:hover) .photo::before{ /* :not() 는 css로만 할 수 있음 */
+        opacity: 0;
+        background: linear-gradient(0deg,#A60000,rgba(166, 0, 0, 0));
+    }
+    .biz .list ul:hover li:not(:hover) .photo::after{ /* :not() 는 css로만 할 수 있음 */
+        opacity: 1;
+    }
+} /* media */
+@media screen and (max-width:1024px){ /* 1024px 이하에서 적용되는 biz효과 mobile */
+                .biz .tit h2{
+                    margin: 0 0 30px 0;
+                }
+                .biz .list ul{
+                    display: block;
+                }
+                .biz .list ul li{
+                    width: auto; /* 사진이 4개니까 100/4 */
+                }
+                /*.biz .list ul li + li{ /* 두번째 li부터 라는 말(인접형제선택자) // 밑 여백을 주기위해서 넣는것
+                    margin-top: 1px;
+                }*/
+                .biz .list ul li .more{
+                    display: block;
+                    position: absolute; /* li를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 101;
+                }
+                .biz .list ul li .photo{
+                    height: 14.37em; /*230/16*/
+                }
+                .biz .list ul li.on .photo::before{
+                    height: 100%; /* 그라데이션 얼마나 줬는지 */
+                    background: rgba(0, 0, 0, 0.5);
+                }
+                .biz .list ul li .photo::after{
+                    display: none;
+                }
+                .biz .list ul li .txt{ /* bottom값이 마이너스면  overflow: hidden을 줘야함 안그러면 버튼 잘려서 눌림 */
+                    left: 1em;/* 30/17 */
+                    bottom: 0.06em; 
+                    white-space: nowrap; /* 줄바꿈 금지 */
+                    transition: 0.5s;
+                }
+                .biz .list ul li .txt h3{
+                    font-size: 1.25rem; /* 20/16*/
+                    margin: 0.26em 0 1.56em 0;
+                    line-height: var(--line-height);
+                    font-weight: var(--bold-weight);
+                }
+                .biz .list ul li .txt a{
+                    display: none;
+                }
+                .biz .list ul li .txt a::after{
+                    content: "";
+                    position: absolute;
+                    left: -24px;
+                    bottom: -1px;
+                    width: 24px;
+                    height: 24px;
+                    background-size: contain;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_517' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_517)'%3E%3Cpath d='M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18C4 17.45 4.19583 16.9792 4.5875 16.5875C4.97917 16.1958 5.45 16 6 16C6.55 16 7.02083 16.1958 7.4125 16.5875C7.80417 16.9792 8 17.45 8 18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18C10 17.45 10.1958 16.9792 10.5875 16.5875C10.9792 16.1958 11.45 16 12 16C12.55 16 13.0208 16.1958 13.4125 16.5875C13.8042 16.9792 14 17.45 14 18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18C16 17.45 16.1958 16.9792 16.5875 16.5875C16.9792 16.1958 17.45 16 18 16C18.55 16 19.0208 16.1958 19.4125 16.5875C19.8042 16.9792 20 17.45 20 18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20ZM6 14C5.45 14 4.97917 13.8042 4.5875 13.4125C4.19583 13.0208 4 12.55 4 12C4 11.45 4.19583 10.9792 4.5875 10.5875C4.97917 10.1958 5.45 10 6 10C6.55 10 7.02083 10.1958 7.4125 10.5875C7.80417 10.9792 8 11.45 8 12C8 12.55 7.80417 13.0208 7.4125 13.4125C7.02083 13.8042 6.55 14 6 14ZM12 14C11.45 14 10.9792 13.8042 10.5875 13.4125C10.1958 13.0208 10 12.55 10 12C10 11.45 10.1958 10.9792 10.5875 10.5875C10.9792 10.1958 11.45 10 12 10C12.55 10 13.0208 10.1958 13.4125 10.5875C13.8042 10.9792 14 11.45 14 12C14 12.55 13.8042 13.0208 13.4125 13.4125C13.0208 13.8042 12.55 14 12 14ZM18 14C17.45 14 16.9792 13.8042 16.5875 13.4125C16.1958 13.0208 16 12.55 16 12C16 11.45 16.1958 10.9792 16.5875 10.5875C16.9792 10.1958 17.45 10 18 10C18.55 10 19.0208 10.1958 19.4125 10.5875C19.8042 10.9792 20 11.45 20 12C20 12.55 19.8042 13.0208 19.4125 13.4125C19.0208 13.8042 18.55 14 18 14ZM6 8C5.45 8 4.97917 7.80417 4.5875 7.4125C4.19583 7.02083 4 6.55 4 6C4 5.45 4.19583 4.97917 4.5875 4.5875C4.97917 4.19583 5.45 4 6 4C6.55 4 7.02083 4.19583 7.4125 4.5875C7.80417 4.97917 8 5.45 8 6C8 6.55 7.80417 7.02083 7.4125 7.4125C7.02083 7.80417 6.55 8 6 8ZM12 8C11.45 8 10.9792 7.80417 10.5875 7.4125C10.1958 7.02083 10 6.55 10 6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6C14 6.55 13.8042 7.02083 13.4125 7.4125C13.0208 7.80417 12.55 8 12 8ZM18 8C17.45 8 16.9792 7.80417 16.5875 7.4125C16.1958 7.02083 16 6.55 16 6C16 5.45 16.1958 4.97917 16.5875 4.5875C16.9792 4.19583 17.45 4 18 4C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6C20 6.55 19.8042 7.02083 19.4125 7.4125C19.0208 7.80417 18.55 8 18 8Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }   
+}/* media */
+
+.news .list{
+    position: relative;
+    left: calc(50% - 630px); /* 50% - 화면 넓이의 반땡 1260/2 */
+    width: calc(50% + 630px);
+}
+.news .list .swiper-slide{
+    /*width: 30.70em; /* 522/17 swiper 사진이 wrapper 밖으로 나가는 경우에만 넓이를 주면됨*/
+}
+.news .list .swiper-slide a{
+    display: block;
+}
+.news .list .swiper-slide a .date{
+    display: block;
+    font-size: var(--tit-font-size);
+    border-top: 1px solid #fff;
+    padding: 1.18em 0 0.5em 0; /* 59/50 , 25/50 */
+    line-height: var(--line-height);
+}
+.news .list .swiper-slide a h3{
+    line-height: var(--line-height);
+
+    /* 2줄제한 */
+    height: 2.4em; /* 행간 * 줄수 (단위는 em) */
+    overflow: hidden;
+    /* 길어서 짤리면 ...추가 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; /* 줄수 */
+}

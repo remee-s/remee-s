@@ -76,7 +76,7 @@ html, body{
     top: 0;
 }
 
-/* css 변수 */
+/* css 변수 내맘대로 커스텀 하는거*/
 :root{
     --header-h: 100px; /* header의 높이 */
     --header-h-m: -100px; /* header 높이의 반대값 */
@@ -87,15 +87,20 @@ html, body{
     --tit-font-size: 2.94rem;  /* 50/ 17 = 2.94 */
     --tit-ico: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5.95855C0 6.16898 0.0295412 6.38311 0.114475 6.58246C0.483751 7.49064 1.41064 8.04811 2.59232 7.57556C2.87666 7.46111 10.7053 4.30832 10.7053 4.30832C10.7053 4.30832 7.62186 12.1238 7.50739 12.4155C7.05687 13.5341 7.59601 14.5493 8.51551 14.8927C8.71861 14.9665 8.9291 15.0034 9.13959 14.9997C9.88553 14.9961 10.5465 14.553 10.8678 13.6744C10.9195 13.5415 14.7747 2.95712 14.8597 2.6987C14.9077 2.55103 15 2.19662 15 1.94927C15 1.42503 14.8043 0.930331 14.4313 0.55746C14.062 0.188281 13.5783 0 13.0576 0C12.8102 0 12.6034 0.0443015 12.2932 0.14398C12.1086 0.203049 2.16765 3.90222 1.31832 4.21972C0.465291 4.53721 0 5.21281 0 5.95855Z' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
     --line-height: 1.2;
+    --font-family-h: 'HelveticaNeue';
+    --font-family-h-b: 'HelveticaNeue-Bold';
 }
 @media screen and (max-width:1024px){
     :root{
-        --header-h: 65px; /* header의 높이 */
-        --header-h-m: -65px;
+        --header-h: 90px; /* header의 높이 */
+        --header-h-m: -90px;
+        --tit-font-size: 2.35rem;  /* 40/ 17 = 2.35 */
     }
 }
 @media screen and (max-width:768px){
     :root{
+        --header-h: 65px; /* header의 높이 */
+        --header-h-m: -65px;
         --tit-font-size: 1.87rem;  /* 30/ 16 = 2.94 */
     }
 }

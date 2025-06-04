@@ -81,6 +81,7 @@ header.menu_over .utill .lang .lang_open::after{
 
 
 @media screen and (min-width:1025px){
+    header .gnb .gnb_bg,
     header .gnb .gnb_utill,
     header .gnb .gnb_open,
     header .gnb .gnb_close{
@@ -103,7 +104,11 @@ header.menu_over .utill .lang .lang_open::after{
         transition: 0.2s; /****??내가 임의로 텀 을 준것****/
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-        display: none; /* 2차메뉴 숨김처리 */
+        display: none !important; /* 2차메뉴 숨김처리 / !important 는 내가 무조건 우선순위*/
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
     }
 
     /******************menu_over 추가시***************************/
@@ -148,7 +153,7 @@ header.menu_over .utill .lang .lang_open::after{
         display: none;
     }
     header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-        display: block; /* 2차 메뉴 나타남 */
+        display: block !important; /* 2차 메뉴 나타남 */
         position: absolute; /* li를 기준으로 정렬 */
         left: 0;
         top: var(--header-h); /* header의 높이값만큼만 */
@@ -191,6 +196,30 @@ header.menu_over .utill .lang .lang_open::after{
                 header .gnb .gnb_utill{
                     display: none;
                 }
+                header .gnb_wrap .gnb_utill{
+                    display: block;
+                    position: absolute; /* gnb_wrap을 기준으로 정렬 */
+                    left: 30px;
+                    top: 25px;
+                    gap: 1.87em; /*30/16*/
+                }   
+                header .gnb_wrap .gnb_utill .lang .lang_open,
+                header .gnb_wrap .gnb_utill .search .search_open{
+                    position: relative; /* before 정렬의 기준 */
+                    color: var(--base-color);
+                    font-family: var(--font-family-h);
+                }
+                header .gnb_wrap .gnb_utill .lang .lang_open::before,
+                header .gnb_wrap .gnb_utill .search .search_open::before{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0.2em;
+                    width: 100%;
+                    height: 1px;
+                    height: 1px;
+                    background-color: #1d1d1d;
+                }
                 header .gnb .gnb_open{
                     display: block;
                     width: var(--header-h);
@@ -208,11 +237,53 @@ header.menu_over .utill .lang .lang_open::after{
                     top: 0;
                     width: 90%; /* 남은 여백을 제외한 값을 넣는것 
                     calc ( 100% - 남은 여백값 ) 이렇게 해도됨*/
+                    max-width: 28.12em; /* 메뉴 넓이의 최대 넓이를 줘서 많이 안늘어 나게 고정하는것 */
                     height: 100%;
                     background-color: #fff;
                     color: var(--base-color);
                     font-family: 'Pretendard';
                     transition: 0.5s;
+                    z-index: 10; /* 메뉴 뒤 배경색 보다 올라가야 되기때문에 주는 값 */
+                }
+                header .gnb .gnb_wrap ul.depth1{ /* 메뉴 안에 위 여백 높이 */
+                    margin-top: var(--header-h);
+                    padding: 0 40px;
+                    height: calc(100% - var(--header-h));
+                    overflow-x: hidden; /* 좌우스크롤바 삭제 */
+                    overflow-y: auto; /* 브라우저 높이가 줄어들면 스크롤이 될 수 있도록 */
+                    border-top: 1px solid rgba(237, 237, 237, 0.8);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li{
+                    border-bottom: 1px solid rgba(237, 237, 237, 0.8);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a{
+                    display: block;
+                    font-size: 1.25rem; /* 20/16 글자 크기는 rem*/
+                    font-weight: var(--bold-weight);
+                    line-height: var(--line-height);
+                    padding: 1.15em 0;/* 23/20 <-- em 단위는 자신이 준 글자 크기를 나누는것.*/
+                    position: relative; /* after 정렬의 기준 */
+
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a::after{
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 1.2em; 
+                    width: 1.2em; /* 24 / a의 글자 크기 20 */
+                    height: 1.2em; 
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_674' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_674)'%3E%3Cpath d='M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    background-color: rgba(29, 29, 29, 0.1);
+                    border-radius: 0.31em; /* 5/16 */
+                    padding: 1.18em 0 1.25em 0 ;  /* 19/16 */
+                    display: none;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                    display: block;
+                    line-height: 2;
+                    padding: 0 20px;
                 }
                 header .gnb .gnb_close{
                     display: none;
@@ -225,7 +296,30 @@ header.menu_over .utill .lang .lang_open::after{
                     background-repeat: no-repeat;
                     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_650' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_650)'%3E%3Cpath d='M15 16.75L8.875 22.875C8.64583 23.1042 8.35417 23.2188 8 23.2188C7.64583 23.2188 7.35417 23.1042 7.125 22.875C6.89583 22.6458 6.78125 22.3542 6.78125 22C6.78125 21.6458 6.89583 21.3542 7.125 21.125L13.25 15L7.125 8.875C6.89583 8.64583 6.78125 8.35417 6.78125 8C6.78125 7.64583 6.89583 7.35417 7.125 7.125C7.35417 6.89583 7.64583 6.78125 8 6.78125C8.35417 6.78125 8.64583 6.89583 8.875 7.125L15 13.25L21.125 7.125C21.3542 6.89583 21.6458 6.78125 22 6.78125C22.3542 6.78125 22.6458 6.89583 22.875 7.125C23.1042 7.35417 23.2188 7.64583 23.2188 8C23.2188 8.35417 23.1042 8.64583 22.875 8.875L16.75 15L22.875 21.125C23.1042 21.3542 23.2188 21.6458 23.2188 22C23.2188 22.3542 23.1042 22.6458 22.875 22.875C22.6458 23.1042 22.3542 23.2188 22 23.2188C21.6458 23.2188 21.3542 23.1042 21.125 22.875L15 16.75Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
                 }
+                header .gnb .gnb_bg{ /* 모바일 메뉴 열렸을때 뒷배경 까맣게 처리 하는 방법 */
+                    display: none;
+                    position: fixed; /* 어디에 있든 신경쓰지 않고 body를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+                /*************** ~~~~2차메뉴가 열렸을때~~~ **********************/
+                header .gnb .gnb_wrap ul.depth1 > li.open > a{
+                    color: var(--point-color);
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.open > a::after{ /* 아이콘 방향은 똑같음 */
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_81_2' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_81_2)'%3E%3Cpath d='M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z' fill='%23ED1C24' fill-opacity='0.933333'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    transform: rotate(180deg); /* 180도 회전 시키는것 */
+                    position: absolute;
+                    right: 3px;
+                }
                 /*****메뉴가 열렸을때!!!*******/
+
+                header.menu_open .gnb .gnb_utill{
+                    display: flex; /* display : none; 으로 숨깃거 나타내기 */
+                }
                 header.menu_open .gnb .gnb_wrap{
                     right: -1px;
                 }
@@ -240,6 +334,18 @@ header.menu_over .utill .lang .lang_open::after{
                 }*/
                 header.menu_open .gnb .gnb_close{
                     display: block;
+                }
+                header.menu_open .gnb .gnb_bg{
+                    display: block;
+
+                    animation-name: gnb_bg;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                }
+                @keyframes gnb_bg { /* 배경 나타나는것 자연스럽게 만들기 위해 넣은 애니 */
+                    0%{opacity: 0;}
+                    100%{opacity: 1;}
                 }
 
 }/* media 1024 모바일 */
