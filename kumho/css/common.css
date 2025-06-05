@@ -10,6 +10,7 @@ html, body{
     /*단어가 너무 긴 경우 강제로 줄바꿈을 주는 경우*/
     background-color: #000; /* 블랜딩 모드를 주기 위해 넣은거임 */
 }
+
 .wrapper{
     width: 1260px; /*1260*/
     margin: 0 auto; /*가운데*/
@@ -24,7 +25,7 @@ html, body{
     overflow-x: hidden;  /* 가로 스크롤바 삭제 */
     width: 100%; /* 안전빵으로 주는 편 */
 }
-@media screen and (max-width:1386px){ 
+@media screen and (max-width:1386px){  /* wrapper 가 해지되는 사이즈 */
     .wrapper{
         width: auto; 
         /* %로 넓이 조정하는 방법 width: auto;로두고
@@ -32,7 +33,7 @@ html, body{
         margin: 0 5%; /* 0.05 */ 
         /* 퍼센트로 주기 싫으면 원하는 넓이를 px로 주면 됨
         ex) margin: 0 24px; 일때 
-        24 + 24 = 58 + 1260 = 1308 px를 넓이로 주면 됨. */
+        24 + 24 = 48 + 1260 = 1308 px를 넓이로 주면 됨. */
     }
 }
 @media screen and (max-width:768px){
@@ -51,6 +52,10 @@ html, body{
     margin: -1px;
     overflow: hidden;
     color: transparent;
+}
+
+.txt_upper{ /* 소문자 -> 대문자로 바꾸는 서식 만든거 */
+    text-transform: uppercase;
 }
 
 .skip_nav{
@@ -108,5 +113,9 @@ html, body{
 /* 글자를 드레그 해서 선택 했을때 색이 변하는 수식 */
 ::selection {
     color: #fff;
-    background-color: #ED1C24;
+    background-color: #A60000;
+}
+ /* 스크롤바 색상 변경 할 수 있는 방법 */
+html {
+    scrollbar-color: #A60000 #000;
 }

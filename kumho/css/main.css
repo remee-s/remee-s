@@ -420,15 +420,27 @@ section .tit strong::after{
                     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_517' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_517)'%3E%3Cpath d='M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18C4 17.45 4.19583 16.9792 4.5875 16.5875C4.97917 16.1958 5.45 16 6 16C6.55 16 7.02083 16.1958 7.4125 16.5875C7.80417 16.9792 8 17.45 8 18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18C10 17.45 10.1958 16.9792 10.5875 16.5875C10.9792 16.1958 11.45 16 12 16C12.55 16 13.0208 16.1958 13.4125 16.5875C13.8042 16.9792 14 17.45 14 18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18C16 17.45 16.1958 16.9792 16.5875 16.5875C16.9792 16.1958 17.45 16 18 16C18.55 16 19.0208 16.1958 19.4125 16.5875C19.8042 16.9792 20 17.45 20 18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20ZM6 14C5.45 14 4.97917 13.8042 4.5875 13.4125C4.19583 13.0208 4 12.55 4 12C4 11.45 4.19583 10.9792 4.5875 10.5875C4.97917 10.1958 5.45 10 6 10C6.55 10 7.02083 10.1958 7.4125 10.5875C7.80417 10.9792 8 11.45 8 12C8 12.55 7.80417 13.0208 7.4125 13.4125C7.02083 13.8042 6.55 14 6 14ZM12 14C11.45 14 10.9792 13.8042 10.5875 13.4125C10.1958 13.0208 10 12.55 10 12C10 11.45 10.1958 10.9792 10.5875 10.5875C10.9792 10.1958 11.45 10 12 10C12.55 10 13.0208 10.1958 13.4125 10.5875C13.8042 10.9792 14 11.45 14 12C14 12.55 13.8042 13.0208 13.4125 13.4125C13.0208 13.8042 12.55 14 12 14ZM18 14C17.45 14 16.9792 13.8042 16.5875 13.4125C16.1958 13.0208 16 12.55 16 12C16 11.45 16.1958 10.9792 16.5875 10.5875C16.9792 10.1958 17.45 10 18 10C18.55 10 19.0208 10.1958 19.4125 10.5875C19.8042 10.9792 20 11.45 20 12C20 12.55 19.8042 13.0208 19.4125 13.4125C19.0208 13.8042 18.55 14 18 14ZM6 8C5.45 8 4.97917 7.80417 4.5875 7.4125C4.19583 7.02083 4 6.55 4 6C4 5.45 4.19583 4.97917 4.5875 4.5875C4.97917 4.19583 5.45 4 6 4C6.55 4 7.02083 4.19583 7.4125 4.5875C7.80417 4.97917 8 5.45 8 6C8 6.55 7.80417 7.02083 7.4125 7.4125C7.02083 7.80417 6.55 8 6 8ZM12 8C11.45 8 10.9792 7.80417 10.5875 7.4125C10.1958 7.02083 10 6.55 10 6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6C14 6.55 13.8042 7.02083 13.4125 7.4125C13.0208 7.80417 12.55 8 12 8ZM18 8C17.45 8 16.9792 7.80417 16.5875 7.4125C16.1958 7.02083 16 6.55 16 6C16 5.45 16.1958 4.97917 16.5875 4.5875C16.9792 4.19583 17.45 4 18 4C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6C20 6.55 19.8042 7.02083 19.4125 7.4125C19.0208 7.80417 18.55 8 18 8Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
                 }   
 }/* media */
-
 .news .list{
     position: relative;
-    left: calc(50% - 630px); /* 50% - 화면 넓이의 반땡 1260/2 */
-    width: calc(50% + 630px);
+    /* left: calc(50% - 630px); /* 50% - 화면 넓이의 반땡 1260/2*/
+    /* width: calc(50% + 630px - 24px); 이렇게 주면 화면 밖으로 나가는 슬라이드가 됨 */ 
+    width: 1260px;
+    margin: 0 auto; 
 }
-.news .list .swiper-slide{
-    /*width: 30.70em; /* 522/17 swiper 사진이 wrapper 밖으로 나가는 경우에만 넓이를 주면됨*/
+@media screen and (max-width:1386px){ /* wrapper가 해지되는 싸이즈 */
+    .news .list{
+        position: relative;
+        width: calc(100% - 48px);
+        margin: 0 auto; 
+        left: 5%;
+    }
 }
+/*.news .list .swiper{
+    /* overflow: visible; hidden을 해제 ( swiper가 밖으로 나가는 경우에만 이렇게 줘야함 ) 
+}*/
+/*.news .list .swiper-slide{
+    /*width: 30.70em; /* 522/17 swiper 사진이 wrapper 밖으로 나가는 경우에만 넓이를 주면됨
+}*/
 .news .list .swiper-slide a{
     display: block;
 }
@@ -438,10 +450,27 @@ section .tit strong::after{
     border-top: 1px solid #fff;
     padding: 1.18em 0 0.5em 0; /* 59/50 , 25/50 */
     line-height: var(--line-height);
+    position: relative; /* before 정렬의 기준 */
+}
+.news .list .swiper-slide a .date::before{ /*????????????*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.11em;
+    width: 0; /* 선의 길이 */
+    height: 2px;
+    background-color: #A60000;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .date::before{/*????????????*/
+    width: 100%;
 }
 .news .list .swiper-slide a h3{
     line-height: var(--line-height);
     font-size: 1.76rem; /* 30/17 rem */
+    margin: 0 0 0.5em 0;
+    font-weight: var(--bold-weight);
 
     /* 2줄제한 */
     height: 2.4em; /* 행간 * 줄수 (단위는 em) */
@@ -466,8 +495,7 @@ section .tit strong::after{
     
     word-break: normal; /* 단어별로 줄바꾸는 것을 해지하는것 */
 
-    margin: 1.47em 0 1.47 0; /* 25/17 */
-
+    margin: 1.47em 0 1.47em 0; /* 25/17 */
 }
 .news .list .swiper-slide a .photo{
     overflow: hidden;
@@ -477,4 +505,210 @@ section .tit strong::after{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img{
+    transform: scale3d(1.2, 1.2, 1); /* 사진 자연스럽게 확대 하는 방법 */
+}
+.news .ctrl_wrap{
+    margin: 3.17em 0 0 0;
+}
+.news .ctrl_wrap .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.news .ctrl_wrap .group1{
+    position: relative;
+    width: calc(100% - 25.17em); /* 전체 넓이 % - 오른쪽 고정값(view more랑 숫자들)을 빼는것(428px) */
+}
+.news .ctrl_wrap .group1 .swiper-scrollbar{
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 50;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.news .ctrl_wrap .group1 .swiper-scrollbar .swiper-scrollbar-drag{
+    height: 5px;
+    position: relative;
+    background: #A60000;
+    border-radius: 10px;
+}
+/* 넘어가는 숫자 디자인 시작 */
+.news .ctrl_wrap .group2{ 
+    display: flex;
+    align-items: center;
+    gap: 0.29em; 
+}
+.news .ctrl_wrap .group2 .count{ /* 숫자 가운데 슬라이스 색상 변경 */
+    color: #A60000;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    padding: 0 0.94em 0 0;
+}
+.news .ctrl_wrap .group2 .count .swiper-pagination-current{ /* 앞에 숫자 */
+    color: #A60000;
+    font-weight: var(--bold-weight);
+}
+.news .ctrl_wrap .group2 .count .swiper-pagination-total{ /* 뒤에 숫자 */
+    color: #A60000;
+    font-weight: var(--bold-weight);
+}
+/* 끝 */
+.news .ctrl_wrap .btn_prev,
+.news .ctrl_wrap .btn_next{
+    display: block;
+    width: 1.41em;
+    height: 1.41em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_407' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_407)'%3E%3Cpath d='M10 22L0 12L10 2L11.775 3.775L3.55 12L11.775 20.225L10 22Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.news .ctrl_wrap .btn_next{
+    transform: rotate(180deg);
+}
+.news .ctrl_wrap .more{
+    display: block;
+    position: relative;
+    padding: 0 0 0 2.11em;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: var(--bold-weight);
+}
+.news .ctrl_wrap .more::before{ /* 왼쪽에 아이콘이 들어가니까 before */
+    content: "";
+    position: absolute;
+    left: 0.45em;
+    top: 0;
+    width: 1.41em;
+    height: 1.41em;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_404' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_404)'%3E%3Cpath d='M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18C4 17.45 4.19583 16.9792 4.5875 16.5875C4.97917 16.1958 5.45 16 6 16C6.55 16 7.02083 16.1958 7.4125 16.5875C7.80417 16.9792 8 17.45 8 18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18C10 17.45 10.1958 16.9792 10.5875 16.5875C10.9792 16.1958 11.45 16 12 16C12.55 16 13.0208 16.1958 13.4125 16.5875C13.8042 16.9792 14 17.45 14 18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18C16 17.45 16.1958 16.9792 16.5875 16.5875C16.9792 16.1958 17.45 16 18 16C18.55 16 19.0208 16.1958 19.4125 16.5875C19.8042 16.9792 20 17.45 20 18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20ZM6 14C5.45 14 4.97917 13.8042 4.5875 13.4125C4.19583 13.0208 4 12.55 4 12C4 11.45 4.19583 10.9792 4.5875 10.5875C4.97917 10.1958 5.45 10 6 10C6.55 10 7.02083 10.1958 7.4125 10.5875C7.80417 10.9792 8 11.45 8 12C8 12.55 7.80417 13.0208 7.4125 13.4125C7.02083 13.8042 6.55 14 6 14ZM12 14C11.45 14 10.9792 13.8042 10.5875 13.4125C10.1958 13.0208 10 12.55 10 12C10 11.45 10.1958 10.9792 10.5875 10.5875C10.9792 10.1958 11.45 10 12 10C12.55 10 13.0208 10.1958 13.4125 10.5875C13.8042 10.9792 14 11.45 14 12C14 12.55 13.8042 13.0208 13.4125 13.4125C13.0208 13.8042 12.55 14 12 14ZM18 14C17.45 14 16.9792 13.8042 16.5875 13.4125C16.1958 13.0208 16 12.55 16 12C16 11.45 16.1958 10.9792 16.5875 10.5875C16.9792 10.1958 17.45 10 18 10C18.55 10 19.0208 10.1958 19.4125 10.5875C19.8042 10.9792 20 11.45 20 12C20 12.55 19.8042 13.0208 19.4125 13.4125C19.0208 13.8042 18.55 14 18 14ZM6 8C5.45 8 4.97917 7.80417 4.5875 7.4125C4.19583 7.02083 4 6.55 4 6C4 5.45 4.19583 4.97917 4.5875 4.5875C4.97917 4.19583 5.45 4 6 4C6.55 4 7.02083 4.19583 7.4125 4.5875C7.80417 4.97917 8 5.45 8 6C8 6.55 7.80417 7.02083 7.4125 7.4125C7.02083 7.80417 6.55 8 6 8ZM12 8C11.45 8 10.9792 7.80417 10.5875 7.4125C10.1958 7.02083 10 6.55 10 6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6C14 6.55 13.8042 7.02083 13.4125 7.4125C13.0208 7.80417 12.55 8 12 8ZM18 8C17.45 8 16.9792 7.80417 16.5875 7.4125C16.1958 7.02083 16 6.55 16 6C16 5.45 16.1958 4.97917 16.5875 4.5875C16.9792 4.19583 17.45 4 18 4C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6C20 6.55 19.8042 7.02083 19.4125 7.4125C19.0208 7.80417 18.55 8 18 8Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width:768px){
+        .news .list .swiper-slide{
+            width: 14em; /* 224/16 = 14em*/
+        }
+        .news .list .swiper-slide a .date{
+            padding: 1.23em 0 0.66em 0; /* 37/30 , 20/30 */
+        }
+        .news .list .swiper-slide a h3{
+            font-size: 1.87rem; 
+            margin: 0 0 0.73em 0;
+        }
+        .news .list .swiper-slide a p{    
+            margin: 1.37em 0 2.31em 0; /* 22  37 */
+        }
+        .news .list .swiper-slide a .photo{
+            height: 8.75em; /* 140 / 16 */
+        }
+        .news .ctrl_wrap{
+            margin: 2.87em 0 0 0; /* 46 /16 */
+        }
+        .news .ctrl_wrap .group1{
+            position: relative;
+            width: calc(100% - 7.43em); /* 전체 넓이 % - 오른쪽 고정값(view more랑 숫자들)을 빼는것(183px) */
+            left: 0;
+        }
+        .news .ctrl_wrap .group1 .swiper-scrollbar{
+            position: absolute;
+            left: -1.31em;
+            bottom: 50%;
+            transform: translateY(50%);
+            z-index: 50;
+            width: 100%;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        /* 넘어가는 숫자 디자인 시작 */
+        .news .ctrl_wrap .group2{ 
+            gap: 0.31em; /*5*/
+        }
+        .news .ctrl_wrap .group2 .count{ /* 숫자 가운데 슬라이스 색상 변경 */
+            display: none;
+        }
+        /* 끝 */
+        .news .ctrl_wrap .btn_prev,
+        .news .ctrl_wrap .btn_next{
+            display: none;
+        }
+        .news .ctrl_wrap .more{
+            padding: 0 0 0 2.11em;
+            right: 0.75em; /* 12 */
+        }
+}/*media*/
+
+.service .list{
+    background: url(../images/main/service01.jpg) no-repeat center center / cover;
+    text-align: center;
+    height: 29.41em;/* 500 */
+    display: flex; /* ul을 list 의 높이에 위아래 가운데 정렬 */
+    align-items: center;
+}
+.service .list[data-bg="bg1"] {
+    background-image: url(../images/main/service02.jpg);
+}
+.service .list[data-bg="bg2"] {
+    background-image: url(../images/main/service03.jpg);
+}
+.service .list[data-bg="bg3"] {
+    background-image: url(../images/main/service04.jpg);
+}
+.service .list ul{
+    display: flex;
+    width: 100%; /* list 가 flex의 영향으로 넓이가 필요 */
+    align-items: center;
+}
+.service .list ul li{
+    width: 33.34%; /* 100% 의 3등분 */
+    position: relative;
+}
+.service .list ul li + li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.41em;
+    width: 1px;
+    height: 13.41em;
+    background-color: rgba(255, 255, 255, 0.6);
+
+}
+.service .list ul li a{
+    display: block;
+    /* 좌우넓이 고정값=px을 주거나 %를 계산해서 적용하면됨. 글자 밖에 상자 있는 경우에만 적용하면 됨 %,px 둘다 가능*/
+    margin: 0 15%; /* 상자 넓이 130px / 640 * 100 = 20.31% 여기서 절반을 나누면 원하는 사이즈 나옴. */
+    padding: 4.82em 0 5em 0;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    backdrop-filter: blur(10px);
+}
+.service .list ul li a h3{
+    font-size: 2.64rem;
+    line-height: var(--line-height);
+    margin: 0.05em 0 0.77em 0;
+}
+.service .list ul li a .more{
+    display: inline-block;
+    padding: 0 0 0 0.23em;
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+}
+.service .list ul li a .more::before{
+    content: "";
+    position: absolute;
+    left: -1.35em; /* -23 */
+    top: 0;
+    width: 1.41em;
+    height: 1.41em;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_404' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_404)'%3E%3Cpath d='M6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18C4 17.45 4.19583 16.9792 4.5875 16.5875C4.97917 16.1958 5.45 16 6 16C6.55 16 7.02083 16.1958 7.4125 16.5875C7.80417 16.9792 8 17.45 8 18C8 18.55 7.80417 19.0208 7.4125 19.4125C7.02083 19.8042 6.55 20 6 20ZM12 20C11.45 20 10.9792 19.8042 10.5875 19.4125C10.1958 19.0208 10 18.55 10 18C10 17.45 10.1958 16.9792 10.5875 16.5875C10.9792 16.1958 11.45 16 12 16C12.55 16 13.0208 16.1958 13.4125 16.5875C13.8042 16.9792 14 17.45 14 18C14 18.55 13.8042 19.0208 13.4125 19.4125C13.0208 19.8042 12.55 20 12 20ZM18 20C17.45 20 16.9792 19.8042 16.5875 19.4125C16.1958 19.0208 16 18.55 16 18C16 17.45 16.1958 16.9792 16.5875 16.5875C16.9792 16.1958 17.45 16 18 16C18.55 16 19.0208 16.1958 19.4125 16.5875C19.8042 16.9792 20 17.45 20 18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20ZM6 14C5.45 14 4.97917 13.8042 4.5875 13.4125C4.19583 13.0208 4 12.55 4 12C4 11.45 4.19583 10.9792 4.5875 10.5875C4.97917 10.1958 5.45 10 6 10C6.55 10 7.02083 10.1958 7.4125 10.5875C7.80417 10.9792 8 11.45 8 12C8 12.55 7.80417 13.0208 7.4125 13.4125C7.02083 13.8042 6.55 14 6 14ZM12 14C11.45 14 10.9792 13.8042 10.5875 13.4125C10.1958 13.0208 10 12.55 10 12C10 11.45 10.1958 10.9792 10.5875 10.5875C10.9792 10.1958 11.45 10 12 10C12.55 10 13.0208 10.1958 13.4125 10.5875C13.8042 10.9792 14 11.45 14 12C14 12.55 13.8042 13.0208 13.4125 13.4125C13.0208 13.8042 12.55 14 12 14ZM18 14C17.45 14 16.9792 13.8042 16.5875 13.4125C16.1958 13.0208 16 12.55 16 12C16 11.45 16.1958 10.9792 16.5875 10.5875C16.9792 10.1958 17.45 10 18 10C18.55 10 19.0208 10.1958 19.4125 10.5875C19.8042 10.9792 20 11.45 20 12C20 12.55 19.8042 13.0208 19.4125 13.4125C19.0208 13.8042 18.55 14 18 14ZM6 8C5.45 8 4.97917 7.80417 4.5875 7.4125C4.19583 7.02083 4 6.55 4 6C4 5.45 4.19583 4.97917 4.5875 4.5875C4.97917 4.19583 5.45 4 6 4C6.55 4 7.02083 4.19583 7.4125 4.5875C7.80417 4.97917 8 5.45 8 6C8 6.55 7.80417 7.02083 7.4125 7.4125C7.02083 7.80417 6.55 8 6 8ZM12 8C11.45 8 10.9792 7.80417 10.5875 7.4125C10.1958 7.02083 10 6.55 10 6C10 5.45 10.1958 4.97917 10.5875 4.5875C10.9792 4.19583 11.45 4 12 4C12.55 4 13.0208 4.19583 13.4125 4.5875C13.8042 4.97917 14 5.45 14 6C14 6.55 13.8042 7.02083 13.4125 7.4125C13.0208 7.80417 12.55 8 12 8ZM18 8C17.45 8 16.9792 7.80417 16.5875 7.4125C16.1958 7.02083 16 6.55 16 6C16 5.45 16.1958 4.97917 16.5875 4.5875C16.9792 4.19583 17.45 4 18 4C18.55 4 19.0208 4.19583 19.4125 4.5875C19.8042 4.97917 20 5.45 20 6C20 6.55 19.8042 7.02083 19.4125 7.4125C19.0208 7.80417 18.55 8 18 8Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }

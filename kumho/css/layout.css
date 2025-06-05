@@ -177,7 +177,7 @@ header.menu_over .utill .lang .lang_open::after{
 @media screen and (min-width:1025px) and (max-width:1137px){
     /******1025~1137px의 사잇 값*********/
     header .gnb .gnb_wrap ul.depth1 > li{
-        width: 7rem; /* 브라우저 사이즈가 줄어들때 글자 충돌 방지용으로 넓이를 줄여준것 */
+        width: 7em; /* 브라우저 사이즈가 줄어들때 글자 충돌 방지용으로 넓이를 줄여준것 */
     }
 }/*media*/
 @media screen and (max-width:1024px){ /* 1024 모바일 버전 */
