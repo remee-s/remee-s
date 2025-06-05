@@ -712,3 +712,54 @@ section .tit strong::after{
     background-repeat: no-repeat;
     background-size: contain;
 }
+@media screen and (max-width:1024px){ /* service 모바일1024 */
+    .service .list{
+        height: auto;/* 모바일에서는 높이 없음( auto ) */
+        display: block;
+    }
+    .service .list ul{
+        display: block;
+        width: auto; /* 높이는 가급적으로 auto를 주는것이 좋음*/
+    }
+    .service .list ul li{
+        width: auto;
+    }
+    .service .list ul li + li::before{
+        left: 50%;
+        top: -14.90em;
+        transform: rotate(90deg);
+        width: 1px;
+        height: 27.62em;
+        background-color: rgba(255, 255, 255, 0.6);   
+    }
+    .service .list ul li a{
+        display: inline-block;
+        margin: 0; 
+        padding: 3.12em 0 4em 0; /* 50 64 */
+        border: none;
+        backdrop-filter: none;
+        width: 50%;
+        min-width: 300px;
+    }
+    .service .list ul li a h3{
+        font-size: 1.87rem; /*30*/
+        margin: 0.05em 0 0.77em 0;
+    }
+    .service .list ul li a .more{
+        display: inline-block;
+        padding: 0 0 0 0.23em;
+        position: relative;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}/* media service 1024*/
+@media screen and (max-width:768px){
+    .service .list ul li + li::before{
+        left: 50%;
+        top: -79%;
+        transform: rotate(90deg);
+        width: 1px; /* 360 */
+        height: 20em;
+        background-color: rgba(255, 255, 255, 0.6);   
+    }
+
+}
