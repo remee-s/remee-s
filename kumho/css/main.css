@@ -651,6 +651,7 @@ section .tit strong::after{
     height: 29.41em;/* 500 */
     display: flex; /* ul을 list 의 높이에 위아래 가운데 정렬 */
     align-items: center;
+    transition: 0.5s;
 }
 .service .list[data-bg="bg1"] {
     background-image: url(../images/main/service02.jpg);
