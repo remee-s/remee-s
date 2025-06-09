@@ -3,9 +3,13 @@
 @import url(common.css);
 @import url(layout.css); /* header와 footer 같이 모든 페이지 공통사항 저장 */
 
+.container{
+    background-color: #000;
+}
 
 .visual{
     position: relative; /* ctrl_wrap,scroll_down정렬의 기준 */
+    
 }
 .visual .swiper-slide .photo{
     overflow: hidden;
@@ -645,6 +649,10 @@ section .tit strong::after{
         }
 }/*media*/
 
+.service{
+    background-color: #000;
+    padding: 0 0 8.82em 0 ;
+}
 .service .list{
     background: url(../images/main/service01.jpg) no-repeat center center / cover;
     text-align: center;

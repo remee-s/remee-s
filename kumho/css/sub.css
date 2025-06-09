@@ -1,0 +1,173 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
+
+/* 서브 레이아웃 요소(중복요소 - 페이지명까지) */
+
+.container {
+    background-color: #fff;
+    color: #1d1d1d;
+}   
+
+.sub_visual{
+    height: 30.35em;
+    background: url(../images/sub/sub_visual01.jpg);
+    text-align: center;
+    padding: 13.41em 0 0 0; /* 228/17 */
+}
+.sub_visual.bg1{
+    background-image: url(../images/sub/sub_visual01.jpg);
+}
+.sub_visual.bg2{
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3{
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4{
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5{
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
+.sub_visual .breadcrumb ol{
+    display: flex;
+    justify-content: center;
+    gap: 1.76em;
+    color: #fff;
+}
+.sub_visual .breadcrumb ol li.home{
+    width: 1.41em;
+    height: 1.41em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* 영역에 사이즈를 딱 아이콘 만하게 했을때만 사용 가능함 */
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_122_9' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_122_9)'%3E%3Cpath d='M23 5V19C23 19.55 22.8042 20.0208 22.4125 20.4125C22.0208 20.8042 21.55 21 21 21H18C17.7167 21 17.4792 20.9042 17.2875 20.7125C17.0958 20.5208 17 20.2833 17 20C17 19.7167 17.0958 19.4792 17.2875 19.2875C17.4792 19.0958 17.7167 19 18 19H21V5H12V5.5C12 5.78333 11.9042 6.02083 11.7125 6.2125C11.5208 6.40417 11.2833 6.5 11 6.5C10.7167 6.5 10.4792 6.40417 10.2875 6.2125C10.0958 6.02083 10 5.78333 10 5.5V4.95C10 4.41667 10.1917 3.95833 10.575 3.575C10.9583 3.19167 11.4167 3 11.95 3H21C21.55 3 22.0208 3.19583 22.4125 3.5875C22.8042 3.97917 23 4.45 23 5ZM1 12.025C1 11.6917 1.075 11.3833 1.225 11.1C1.375 10.8167 1.58333 10.5833 1.85 10.4L6.85 6.825C7.03333 6.69167 7.22083 6.59583 7.4125 6.5375C7.60417 6.47917 7.8 6.45 8 6.45C8.2 6.45 8.39583 6.47917 8.5875 6.5375C8.77917 6.59583 8.96667 6.69167 9.15 6.825L14.15 10.4C14.4167 10.5833 14.625 10.8167 14.775 11.1C14.925 11.3833 15 11.6917 15 12.025V19C15 19.55 14.8042 20.0208 14.4125 20.4125C14.0208 20.8042 13.55 21 13 21H11C10.45 21 9.97917 20.8042 9.5875 20.4125C9.19583 20.0208 9 19.55 9 19V16H7V19C7 19.55 6.80417 20.0208 6.4125 20.4125C6.02083 20.8042 5.55 21 5 21H3C2.45 21 1.97917 20.8042 1.5875 20.4125C1.19583 20.0208 1 19.55 1 19V12.025ZM3 12V19H5V16C5 15.45 5.19583 14.9792 5.5875 14.5875C5.97917 14.1958 6.45 14 7 14H9C9.55 14 10.0208 14.1958 10.4125 14.5875C10.8042 14.9792 11 15.45 11 16V19H13V12L8 8.45L3 12ZM17.5 9H18.5C18.6333 9 18.75 8.95 18.85 8.85C18.95 8.75 19 8.63333 19 8.5V7.5C19 7.36667 18.95 7.25 18.85 7.15C18.75 7.05 18.6333 7 18.5 7H17.5C17.3667 7 17.25 7.05 17.15 7.15C17.05 7.25 17 7.36667 17 7.5V8.5C17 8.63333 17.05 8.75 17.15 8.85C17.25 8.95 17.3667 9 17.5 9ZM17.5 13H18.5C18.6333 13 18.75 12.95 18.85 12.85C18.95 12.75 19 12.6333 19 12.5V11.5C19 11.3667 18.95 11.25 18.85 11.15C18.75 11.05 18.6333 11 18.5 11H17.5C17.3667 11 17.25 11.05 17.15 11.15C17.05 11.25 17 11.3667 17 11.5V12.5C17 12.6333 17.05 12.75 17.15 12.85C17.25 12.95 17.3667 13 17.5 13ZM17.5 17H18.5C18.6333 17 18.75 16.95 18.85 16.85C18.95 16.75 19 16.6333 19 16.5V15.5C19 15.3667 18.95 15.25 18.85 15.15C18.75 15.05 18.6333 15 18.5 15H17.5C17.3667 15 17.25 15.05 17.15 15.15C17.05 15.25 17 15.3667 17 15.5V16.5C17 16.6333 17.05 16.75 17.15 16.85C17.25 16.95 17.3667 17 17.5 17Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.sub_visual .breadcrumb ol li + li{
+    /* 첫번째 li 빼고 나머지 전부 선택 */
+    position: relative; /* before 정렬의 기준 */
+}
+.sub_visual .breadcrumb ol li + li::before{
+    content: "";
+    position: absolute;
+    left: -1.2em;
+    top: 5px;
+    width: 0.88em;
+    height: 0.88em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_122_29' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15'%3E%3Crect width='15' height='15' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_122_29)'%3E%3Cpath d='M9.04713 7.5L4.45338 2.90625C4.29713 2.75 4.22161 2.5651 4.22681 2.35156C4.23202 2.13802 4.31275 1.95312 4.469 1.79688C4.62525 1.64062 4.81015 1.5625 5.02369 1.5625C5.23723 1.5625 5.42213 1.64062 5.57838 1.79688L10.3753 6.60937C10.5003 6.73437 10.594 6.875 10.6565 7.03125C10.719 7.1875 10.7503 7.34375 10.7503 7.5C10.7503 7.65625 10.719 7.8125 10.6565 7.96875C10.594 8.125 10.5003 8.26563 10.3753 8.39063L5.56275 13.2031C5.4065 13.3594 5.22421 13.4349 5.01588 13.4297C4.80754 13.4245 4.62525 13.3438 4.469 13.1875C4.31275 13.0313 4.23463 12.8464 4.23463 12.6328C4.23463 12.4193 4.31275 12.2344 4.469 12.0781L9.04713 7.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.sub_visual .depth1_name{
+    font-size: 2.94rem;
+    line-height: var(--line-height);
+    margin: 0.3em 0 0 0;
+    color: #fff;
+}
+
+@media screen and (max-width:1024px){ /* sub_visual 중간값 */
+    .sub_visual{
+        height: 28.31em;
+        padding: 11.18em 0 0 0; /* 163/17 */
+    }
+    .sub_visual .breadcrumb ol li.home{
+        width: 1.3em;
+        height: 1.3em;
+    }
+    .sub_visual .depth1_name{
+        font-size: 2.5rem;/*30/16*/
+        margin: 0.27em 0 0 0;
+    }
+} /* sub_visual 1024px */
+
+@media screen and (max-width:768px){ /* sub_visual 모바일 */
+    .sub_visual{
+        height: 25.31em;
+        padding: 10.18em 0 0 0; /* 163/17 */
+    }
+    .sub_visual .breadcrumb ol li.home{
+        width: 1.25em;
+        height: 1.25em; /* 20/16 */
+    }
+    .sub_visual .depth1_name{
+        font-size: 1.87rem;/*30/16*/
+        margin: 0.23em 0 0 0;
+    }
+} /* sub_visual 768px  */
+.lnb{
+    background-color: #A60000;
+    color: #fff;
+}
+.lnb ul{
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+.lnb ul li a{
+    height: 3em; /* 60/20 */
+    line-height: 3em;
+    display: block;
+    font-size: 1.17rem; /* 20/17 */
+    padding: 0 3.42em; /* 글자 사이의 여백의 반땡 값을 좌우에 넣는것 */
+}
+.lnb ul li.active a{
+    font-weight: var(--bold-weight);
+    position: relative; /* after 정렬의 기준 */
+}
+.lnb ul li.active a::after{ /* 선택한 메뉴 밑 밑줄 넣는것. */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.29em;
+    background-color: #fff;
+}
+
+@media screen and (max-width:1024px){ /* lnb 중간값 */
+    .lnb ul li a{
+        font-size: 1.1rem; /* 16/16 */
+        padding: 0 2em; /* 글자 사이의 여백의 반땡 값을 좌우에 넣는것 */
+    }
+    .lnb ul li.active a::after{ /* 선택한 메뉴 밑 밑줄 넣는것. */
+        height: 0.2em; /*  3 /16 */  
+    }
+} /* lnb 1024px */
+
+@media screen and (max-width:768px){ /* lnb 모바일 */
+    .lnb ul{
+        justify-content: flex-start; /* 왼쪽 정렬 */
+    }
+    .lnb ul li a{
+        height: 2.81em; /* 45/16 */
+        line-height: 2.81em;
+        font-size: 1rem; /* 16/16 */
+        padding: 0 1em; /* 글자 사이의 여백의 반땡 값을 좌우에 넣는것 */
+    }
+    .lnb ul li.active a::after{ /* 선택한 메뉴 밑 밑줄 넣는것. */
+        height: 0.18em; /*  3 /16 */  
+    }
+} /* lnb 768px */
+
+.page_tit{
+    margin: 3em 0 2.22em 0;
+    font-size: 2.94rem;
+    font-weight: var(--bold-weight);
+    text-align: center;
+}
+
+@media screen and (max-width:768px){
+    .page_tit{
+        margin: 2.33em 0 1.06em 0; /* 70 0 32 0 */
+        font-size: 1.87rem; /* 30/16 */
+    }
+}
+
+.contents{
+    min-height: 20em; /* =340px */
+}

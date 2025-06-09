@@ -8,7 +8,7 @@ html, body{
     word-break: keep-all; /* 스페이스 기준 =단어별로 줄바꿈*/
     word-wrap: break-word; 
     /*단어가 너무 긴 경우 강제로 줄바꿈을 주는 경우*/
-    background-color: #000; /* 블랜딩 모드를 주기 위해 넣은거임 */
+    background-color: #fff; /* 블랜딩 모드를 주기 위해 넣은거임 */
 }
 
 .wrapper{
@@ -38,7 +38,7 @@ html, body{
 }
 @media screen and (max-width:768px){
     /*브라우저 넓이가 640px 이하에서만 작동 (유지하는 서식은 지움)*/
-    body {
+    html, body {
         font-size: 16px;
     }
 }

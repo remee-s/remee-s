@@ -1,0 +1,75 @@
+/* 회사소개 > CEO 인사말 페이지 css */
+
+.ctn_ceo{
+   position: relative; /* bofore 정렬의 기준 */ 
+}
+.ctn_ceo::before{
+    content: "";
+    position: absolute;
+    left: 5.58em;
+    top: 0;
+    width: calc(100% - 11.17em); /* 100 - 5.58*2 (양쪽여백 합친거) */
+    height: 23.52em;
+    border-radius: 1.17em;
+    background-color: #a60000;
+    z-index: 0;
+}
+.ctn_ceo .wrapper{
+    position: relative; /* photo 정렬의 기준 */
+}
+.ctn_ceo .ceo_tit {
+    padding: 5.18em 0 0 40.71%;
+    color: #fff;
+}
+.ctn_ceo .ceo_tit strong{
+    display: block;
+    color: #fff;
+}
+.ctn_ceo .ceo_tit h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height);
+    color: #fff;
+    margin: 0.32em 0 0.32em 0;
+}
+.ctn_ceo .ceo_tit p{
+    color: #fff;
+}
+.ctn_ceo .photo{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5.18em;
+    width: 35.71%;
+    height: 60.11%;
+    border-radius: 1.17em;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px 0 rgb(0, 0, 0, 0.25);
+}
+.ctn_ceo .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ctn_ceo .ceo_detial{
+    margin: 8.24em 0 8.2em 40.71%;
+}
+.ctn_ceo .ceo_detial .sign{
+    display: flex;
+    margin: 1.5em 0 0 0;
+    gap: 2em;
+    align-items: center;
+}
+
+
+/* 찾아오시는길 > 회사소개 */
+.ctn_map .map{
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+    border: 1px solid red;
+}
+.ctn_map .map iframe{
+    width: 100%;
+    height: 41.17em; /* 700px */
+}
