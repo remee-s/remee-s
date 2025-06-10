@@ -1,3 +1,5 @@
+
+
 /* 회사소개 > CEO 인사말 페이지 css */
 
 .ctn_ceo{
@@ -132,9 +134,9 @@
         font-size: 16px;
     }
 }
+/* ## CEO end ## ## CEO end ## ## CEO end ## ## CEO end ##*/
 
-
-/* 찾아오시는길 > 회사소개 25.06.10 평가시험 */
+/* (map start)!! 찾아오시는길 > 회사소개 25.06.10 평가시험 */
 .ctn_map .map{
     position: relative;
     left: calc(50% - 630px);
@@ -455,4 +457,90 @@
                 font-family: 'Pretendard';
             }
 }
-/** map 끝 ! **/
+/** ## map end ## ## map end ## ## map end ## ## map end ## **/
+
+/* (history start!!)연혁 > 회사소개 ###### */
+.ctn_history{
+    margin: 0 0 13.52em 0; /* 하단 여백 230px */
+    font-family: 'Pretendard';
+}
+.ctn_history .his_tit{
+    margin: 2.35em 0 3.23em 0; /* 상단에 내가 준 여백 40px 하단 55*/
+    text-align: center;
+    align-items: center;
+}
+.ctn_history .his_tit h2{
+    color: #A60000;
+    margin: 0 0 0.58em 0; /* 0 0 10px 0 */
+}
+.ctn_history .his_tit strong{
+    font-size: 2.64rem; /* 45px */
+    line-height: var(--line-height);
+    font-weight: var(--bold-weight);
+}
+.ctn_history .his_photo .photo{
+    overflow: hidden;
+    height: 20.58em; /* 350px */
+}
+.ctn_history .his_photo .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ctn_history .his_year_group{
+    margin: 8.82em 0 10.17em 0; /* 150 0 173 0 */
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_history .his_year_group.reverse{ /* 반대 방향인애들 */
+    flex-direction: row-reverse; /* 가로 반전 */
+}
+
+/*############ test 필요 !! 나중에 바꿔야함!!!! ############*/
+.ctn_history .his_year_group .year_tit{ 
+    width: 23.76em; /* 사진의 높이 404px */
+}
+.ctn_history .his_year_group .year_cont{
+    width: 37.11em; /* 짝때기 부터 wrapper까지의 넓이 631px */
+}
+/*###########################################################*/
+
+.ctn_history .his_year_group .year_tit h3{
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--line-height);
+}
+.ctn_history .his_year_group .year_tit p{
+    color: #3d3d3d;
+    margin: 1.76em 0 2.47em 0; /* 30px 0 42px 0 */
+}
+.ctn_history .his_year_group .year_tit .photo{
+    overflow: hidden;
+    border-radius: 1.17em; /* 20px */
+    height: 27.70em; /* 사진의 높이 471px */
+}
+.ctn_history .his_year_group .year_tit .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ctn_history .his_year_group .year_cont h4{
+    font-size: 25px;
+    font-weight: var(--bold-weight);
+    /* margin: 2em 0 0.56em 0; /* 50 0 14 0 */
+    color: #A60000;
+}
+.ctn_history .his_year_group .year_cont ul{ /* 하단 여백이 중첩 되어버림 */
+    margin: 0.82em 0 2.94em 0; /* 14 0 50 0 */
+}
+.ctn_history .his_nav{ /* 임시로 잠시 없애버림 */
+    display: none;
+}
+.ctn_history .his_year_group .year_cont strong{
+    color: #3d3d3d;
+    font-weight: var(--bold-weight);
+    line-height: 2.0;
+}
+.ctn_history .his_year_group .year_cont span{
+    line-height: 2.0;
+}
