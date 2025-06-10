@@ -533,9 +533,6 @@
 .ctn_history .his_year_group .year_cont ul{ /* 하단 여백이 중첩 되어버림 */
     margin: 0.82em 0 2.94em 0; /* 14 0 50 0 */
 }
-.ctn_history .his_nav{ /* 임시로 잠시 없애버림 */
-    display: none;
-}
 .ctn_history .his_year_group .year_cont strong{
     color: #3d3d3d;
     font-weight: var(--bold-weight);
@@ -543,4 +540,7 @@
 }
 .ctn_history .his_year_group .year_cont span{
     line-height: 2.0;
+}
+.ctn_history .his_nav{ /* 임시로 잠시 없애버림 */
+    display: none;
 }
