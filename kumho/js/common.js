@@ -1,5 +1,7 @@
 /* header,footer 공통요소에 들어가는 javascript/jquary */
 
+// common js는 모든 페이지에서 공통으로 들어갈것을 전제 하에 코딩하는것임.!!!!!!!!!!
+
 /*************************************************
  * << 공통된 사항 >>
  * pc와 mobile 버전을 구분
@@ -84,6 +86,18 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행 (새로�
         }
     })
 
+    /* ############# footer의 top 버튼을 클릭하면 상단으로 스크롤 ############# */
+
+    // top버튼을 누르면 자연스럽고 부드럽게 맨 윗쪽으로 들어가게 하기위한 jquary 코드
+    $('footer .top').on('click', function(){
+        // console.log('fffffffffffffff')
+        //$(window).scrollTop(100) = 부드럽게 올라가지 않고 한번에 휙 올라감
+
+        $('html, body').animate({ //부드럽게 올라가는 애니메이션 효과를 가진 top버튼
+            scrollTop: 0 
+        }, 500) // 500 = 0.5s
+    })
+
 })
 
 //함수의 선언 (얘는 이런일을 해요! 라는거)
@@ -114,3 +128,4 @@ function scroll_chk(){
         $('header').removeClass('fixed') 
     }
 }
+

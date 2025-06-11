@@ -1,0 +1,120 @@
+/* 상세페이지 (즉, contents) 안에 들어가는 jquary 값을 넣는 파일 */
+
+$(document).ready(function(){
+
+    let scrolling //브라우저가 스크롤 된 된값
+    let window_h //브라우저의 높이
+    let obj_name = $('.ctn_history .his_photo') 
+    let obj_photo  
+    let obj_photo_top // 상단값
+    let obj_photo_show 
+    let obj_nav = $('.ctn_history .his_nav')
+    let obj_nav_area = $('.ctn_history') // nav의 기준
+    let obj_nav_start // obj_nav 보이기 시작하는 스크롤 값
+    let obj_nav_end //보이는 마지막 스크롤 값
+
+    //.eq() = 몇번째 인지 표시해주는값 **숫자는 0부터 시작함**
+    // obj_ = var같이 변수 만드는거
+
+    //onsole.log('photo 의 갯수',obj_photo.length) //.length 이건 몇개 있는지 물어보는 것
+
+    function nav_show(){
+        obj_nav_start = obj_nav_area.offset().top
+        //console.log('스크롤', scrolling, '시작', obj_nav_start)
+        obj_nav_end = obj_nav_start + obj_nav_area.height() - window_h
+        //console.log('스크롤', scrolling, '종료', obj_nav_end)
+        if((scrolling > obj_nav_start) && (scrolling < obj_nav_end)){ 
+            //if(() && ()) = 조건이 두개 이기때문에 AND(&&)
+            obj_nav.addClass('active')
+
+        }else{
+            obj_nav.removeClass('active')
+        }
+    }
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()
+        //console.log('스크롤', scrolling,'photo_top값', obj_photo_top, '브라우저_h', window_h)
+    }
+    function resize_chk(){
+        window_h = $(window).height()
+    }
+    function photo_show(){
+        //  ↓i는 변수                     ↓ i는 1씩 증가 한다는 뜻
+        for(i = 0; i < obj_name.length; i++){
+            //console.log(i)
+            obj_photo = obj_name.eq(i)
+            obj_photo_top = obj_photo.offset().top 
+            //obj_photo_show = obj_photo_top - (window_h + scrolling) 반대로 줘도 됨
+            obj_photo_show = (window_h + scrolling ) - obj_photo_top - obj_photo.height()
+            //console.log('스크롤', scrolling,'photo_top값', obj_photo_top, '브라우저_h', window_h)
+            //console.log(obj_photo_show)
+            if(obj_photo_show > 0){
+                obj_photo.addClass('active')
+            }else{
+                obj_photo.removeClass('active')
+            }
+        }
+    }
+
+
+    $(window).scroll(function(){
+        //스크롤 할때마다 한번씩 실행
+        scroll_chk()
+        photo_show()
+        nav_show()
+    })
+    $(window).resize(function(){
+        //브라우저가 리사이즈 될때마다 한번씩 실행
+        resize_chk()
+        photo_show()
+        nav_show()
+    })
+
+    scroll_chk() // 문서가 로딩되었을때 단한번만 실행
+    resize_chk()
+    photo_show()
+    nav_show()
+
+    /* nav 메뉴 선택 클릭시 이동 */
+    //!!!!!!!!!!!!!!!!!!!!!!!다시보고 하기!!!!!!!!!!!!!!!!!!!!!!
+    let menuName = $('.ctn_history')  // 상단에 고정할 메뉴 영역 선택자
+    let menuItem = $('.ctn_history ul li') // data-link 값을 준 클릭할 요소의 선택자
+    let sectionName
+    let moveTop
+    let areaTop
+    let areaH
+    let areaName
+    let scrollTop
+
+
+    menuItem.on('click', function(){
+        sectionName = $(this).attr('data-link')
+        moveTop = $('*[data-menu="'+sectionName+'"]').offset().top - menuName.height()
+        $('html, body').animate({
+            scrollTop : moveTop
+        }, 500)
+    })
+    menuChk()
+
+    $(window).scroll(function(){
+        menuChk()
+    })
+        function menuChk(){
+            scrollTop = $(window).scrollTop()
+            $.each($('*[data-menu]'), function(idx, item){
+                areaTop = $('*[data-menu]').eq(idx).offset().top
+                areaH = $('*[data-menu]').eq(idx).height()
+                areaName = $('*[data-menu]').eq(idx).attr('data-menu')
+                if((scrollTop >= areaTop - menuName.height()) && (scrollTop < areaTop + areaH - menuName.height())){
+                    menuItem.removeClass('active')
+                    menuItem.siblings('[data-link="'+areaName+'"]').addClass('active')
+                }else if(scrollTop < $('*[data-menu]').first().offset().top){
+                    menuItem.removeClass('active')
+                }else if(scrollTop > $('*[data-menu]').last().offset().top + $('*[data-menu]').last().height()){
+                    menuItem.removeClass('active')
+                }
+            });
+        }
+
+})

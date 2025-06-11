@@ -481,7 +481,17 @@
 .ctn_history .his_photo .photo{
     overflow: hidden;
     height: 20.58em; /* 350px */
+
+/* his_photo active ( 사진이 커지는 애니메이션 넣기 위한 값을 주기 위해 ) */
+
+    width: 30%; /* 퍼센트로 주는것이 좋음 */
+    margin: 0 auto; /* 사진을 가운데로 보내기위한 여백값 */
+    transition: 0.5s;
 }
+.ctn_history .his_photo.active .photo{
+    width: 100%;
+}/* his_photo active 애니메이션값 끝 */
+
 .ctn_history .his_photo .photo img{
     width: 100%;
     height: 100%;
@@ -491,22 +501,39 @@
     margin: 8.82em 0 10.17em 0; /* 150 0 173 0 */
     display: flex;
     justify-content: space-between;
+    /* gap: 50px; */
 }
 .ctn_history .his_year_group.reverse{ /* 반대 방향인애들 */
     flex-direction: row-reverse; /* 가로 반전 */
 }
 
-/*############ test 필요 !! 나중에 바꿔야함!!!! ############*/
 .ctn_history .his_year_group .year_tit{ 
-    width: 23.76em; /* 사진의 높이 404px */
+    max-width: 23.76em; /* 사진의 높이 404px */
+    width: 35%;
 }
 .ctn_history .his_year_group .year_cont{
-    width: 37.11em; /* 짝때기 부터 wrapper까지의 넓이 631px */
+    max-width: 37.11em; /* 짝때기 부터 wrapper까지의 넓이 631px */
+    width: 55%;
+    /* margin: 47px 0 0 0; 상단에 여백이 좌우 글자가있는 높이가 다를 경우 주면됨.*/
+    padding: 0 0 0 89px;
+    /* border-left: 2px solid #D9D9D9; 이것을 풀어주면 밑에처럼 됨*/
+    border-width: 0 0 0 2px;
+    border-style: solid;
+    border-color: #ededed;
+    position: relative; /* before,after 정렬의 기준 */
 }
-/*###########################################################*/
+.ctn_history .his_year_group .year_cont::before{
+    content: "";
+    position: absolute;
+    left: -2px; /* 선의 두께 만큼 밖으로 나가야됨 */
+    top: 0;
+    width: 2px; /* 선의 두께 border 두께 */
+    height: 21px; /* 동그라미 안에 숨을때까지 높이를 줌 */
+    background-color: #fff;
+}
 
 .ctn_history .his_year_group .year_tit h3{
-    font-size: var(--tit-font-size);
+    font-size: 60px;
     font-weight: var(--bold-weight);
     line-height: var(--line-height);
 }
@@ -529,18 +556,230 @@
     font-weight: var(--bold-weight);
     /* margin: 2em 0 0.56em 0; /* 50 0 14 0 */
     color: #A60000;
+    margin: 0 0 14px 0;
+    position: relative; /* before정렬의 기준 */
 }
-.ctn_history .his_year_group .year_cont ul{ /* 하단 여백이 중첩 되어버림 */
-    margin: 0.82em 0 2.94em 0; /* 14 0 50 0 */
+.ctn_history .his_year_group .year_cont h4::before{
+    content: "";
+    position: absolute;
+    left: -95px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #A60000;
+    z-index: 10;
 }
-.ctn_history .his_year_group .year_cont strong{
+.ctn_history .his_year_group .year_cont ul + h4{ /* 인접형제선택자 */
+    margin-top: 50px;
+}
+
+.ctn_history .his_year_group .year_cont > *:last-child{
+    position: relative;
+}
+.ctn_history .his_year_group .year_cont > *:last-child::before{
+    content: "";
+    position: absolute;
+    left: -5.35em;
+    bottom: -15px; /* ???*/
+    width: 2px; /* 선의 두께 와 동일하게 하던 더 크게 하던*/
+    height: calc(133%);
+    background-color: #fff;
+}
+.ctn_history .his_year_group .year_cont ul li{ 
+    /* 하단 여백이 중첩 되어버림 */
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.ctn_history .his_year_group .year_cont ul li strong{
+    display: block;
     color: #3d3d3d;
     font-weight: var(--bold-weight);
-    line-height: 2.0;
 }
-.ctn_history .his_year_group .year_cont span{
-    line-height: 2.0;
+.ctn_history .his_year_group .year_cont ul li span{
+    display: block;
+    /* 100% - 112px strong 태그 에서 span 가기전 까지의 넓이 112px를 빼줌*/
+    width: calc(100% - 6.58em);
 }
-.ctn_history .his_nav{ /* 임시로 잠시 없애버림 */
-    display: none;
+.ctn_history .his_nav{
+    /* position: fixed; 무조건 body를 기준으로 정렬 하게됨. 그럼 body안에서 고정되서 움직여도 그 자리에 있음 */
+    position: fixed; /* stiky는 overflow:hidden 이 있으면 때려죽어도 안됨. */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5em; /* 자연스럽게 아래에서 올라오게 하기 위해 -85px*/
+    z-index: 99; /* header 바로 아랫값 */
+    max-width: 1260px; /* wrapper 싸이즈 */
+    width: calc(100% - 20px);
+    background-color: #F4F4F4;
+    border-radius: 2.94em; /* 50px */
+    padding: 0.82em 3.82em; /* 미리 상하 좌우 여백을 줘야 됨 14px 65px*/
+    transition: 0.5s;
+}
+.ctn_history .his_nav.active{
+    bottom: 1.17em; /* 20 */
+}
+.ctn_history .his_nav ul{
+    display: flex;
+    overflow-y: hidden; /* 가로 스크롤바 삭제 ( 가로 스크롤바가 생기면 위아래 스크롤바가 생기기 때문 ) */
+    overflow-x: auto; /* 넘치면 세로 스크롤바 생기도록 하기 위해 auto */
+}
+.ctn_history .his_nav ul li{
+    width: 25%; /* 4개의 버튼이 있으니까 4/1 */ 
+}
+.ctn_history .his_nav ul li button{
+    display: block;
+    text-align: center;
+    align-items: center;
+    /* button태그는 display:block;을 줘도 꽉차게 안들어가고 글자 크기만큼만 들어감.
+    (내가 준 여백 안들어감.) 그래서 넓이를 100%로 채워줘야 됨. */
+    width: 90%; 
+    margin: 0 5%; 
+    font-size: 1.17rem; /*20*/
+    font-weight: var(--bold-weight);
+    padding: 0.47em 1.76em 0.47em 1.76em; /* 8 0(최소30) 8 0(최소30) 최소값 미리주기*/ 
+    border-radius: 1.76em; /* 30 */
+    white-space: nowrap; /* 줄바꿈 금지!!!(모바일에서 두줄되는것 방지하기 위해) */
+}
+.ctn_history .his_nav ul li.active button{
+    background-color: #A60000;
+    color: #fff;
+}
+
+@media screen and (min-width:769px){ /* revers(반전되는것만) pc 버전*/
+    /* ########### 좌우반대 reverse의 경우 ############*/
+    .ctn_history .his_year_group.reverse{ /* 반대 방향인애들 */
+        flex-direction: row-reverse; /* 가로 반전 */
+    }
+    .ctn_history .his_year_group.reverse .year_cont h4::before{
+        left: auto; /* auto를 안주면 동시에 적용되서 적용이 안됨 */
+        right: -95px;
+    }
+    .ctn_history .his_year_group.reverse .year_cont{
+        text-align: right;
+        padding-right: 89px;
+        padding-left: 0;
+        border-width: 0 2px 0 0;
+    }
+    .ctn_history .his_year_group.reverse .year_cont ul li{
+        flex-direction: row-reverse; /* 좌우반전 */
+    }
+    .ctn_history .his_year_group.reverse .year_cont::before{
+        left: auto;
+        right: -2px;/* 반대 방향으로 줌 */
+    }
+    .ctn_history .his_year_group.reverse .year_cont > *:last-child::before{
+        left: auto;
+        right: -5.35em;
+    }
+    .ctn_history .his_year_group.reverse .year_cont.last > ul:last-child::before{ 
+        /* 마지막꺼 길이가 안들어가서 내가 임의로 이름 주고 만든거 */
+        left: auto;
+        right: -5.35em; /* 위에 left 값이랑 동일 하게 주면 됨  */
+        bottom: -14.41em; /* -245 */
+        height: calc(1200%);
+    }
+}/* media reverse pc버전 */
+
+@media screen and (max-width:768px){
+                .ctn_history{
+                    margin: 0 0 8.68em 0; /* 하단 여백 139px */
+                }
+                .ctn_history .his_tit{
+                    margin: 1.25em 0 2.81em 0; /* 상단에 내가 준 여백 20px 하단 45*/
+                }
+                .ctn_history .his_tit h2{
+                    margin: 0 0 0.43em 0; /* 0 0 7px 0 */
+                }
+                .ctn_history .his_tit strong{
+                    font-size: 1.87rem; /* 30px */
+                }
+                .ctn_history .his_photo .photo{
+                    height: 8.75em; /* 140px */
+                }
+                .ctn_history .his_year_group{
+                    margin: 6.75em 0 6.75em 0; /* 108 0 108 0 */
+                    display: block; /* 위아래로 들어갈것이기 때문에 flex 해제 */
+                    /* gap: 50px; */
+                }
+                .ctn_history .his_year_group .year_cont{
+                    max-width: 19.56em; /* 짝때기 부터 wrapper까지의 넓이 313 */
+                    width: auto; /*!!*/
+                    /* margin: 47px 0 0 0; 상단에 여백이 좌우 글자가있는 높이가 다를 경우 주면됨.*/
+                    padding: 45px 0 0 30px; 
+                }
+                .ctn_history .his_year_group .year_cont::before{
+                    content: "";
+                    position: absolute;
+                    left: -2px;
+                    top: 0;
+                    width: 2px;
+                    height: 63px; /* 동그라미 안에 숨을때까지 높이를 줌 */
+                    background-color: #fff; /*????????????????????????????????????*/
+                }
+                
+                .ctn_history .his_year_group .year_tit h3{
+                    font-size: 1.87rem; /* 30px */
+                }
+                .ctn_history .his_year_group .year_tit br,
+                .ctn_history .his_year_group.reverse .year_tit br{
+                    display: none;
+                }
+                .ctn_history .his_year_group .year_tit .photo{ 
+                    display: none; /* 사진 안나옴 */
+                }
+                .ctn_history .his_year_group .year_tit p{
+                    display: none;
+                }
+                .ctn_history .his_year_group .year_cont h4::before{
+                    left: -36px;
+                }
+                .ctn_history .his_year_group .year_cont ul + h4{ /* 인접형제선택자 */
+                    margin-top: 25px;
+                }
+                .ctn_history .his_year_group .year_cont > *:last-child::before{
+                    left: -2em;
+                    bottom: -0.05em;
+                    height: calc(114%);
+                    background-color: #fff;
+                }
+                .ctn_history .his_year_group .year_cont ul li{ 
+                    /* 하단 여백이 중첩 되어버림 */
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 15px 0;
+                }
+                .ctn_history .his_year_group .year_cont ul li strong{
+                    display: block;
+                    color: #3d3d3d;
+                    font-weight: var(--bold-weight);
+                }
+                .ctn_history .his_year_group .year_cont ul li span{
+                    display: block;
+                    /* 100% - 112px strong 태그 에서 span 가기전 까지의 넓이 112px를 빼줌*/
+                    width: calc(100% - 6.58em);
+                }
+                .ctn_history .his_year_group.reverse .year_cont.last > ul:last-child::before{ 
+                    /* 마지막꺼 길이가 안들어가서 내가 임의로 이름 주고 만든거 */
+                    left: -32px;
+                    bottom: 0px;
+                    height: calc(266%);
+                    background-color: #fff;
+                }
+                /* 하단의 nav 태그  */
+                .ctn_history .his_nav{
+                    padding: 0.75em 3.25em; /* 미리 상하 좌우 여백을 줘야 됨 12px 52px*/
+                }
+                .ctn_history .his_nav ul::-webkit-scrollbar{ 
+                    /* 가로스크롤바 완전히 삭제 하는 방법 */
+                    display: none;        
+                }
+                .ctn_history .his_nav ul li{
+                    width: auto;
+                }
+                .ctn_history .his_nav ul li button{
+                    width: 100%; 
+                    margin: 0; 
+                    font-size: 1rem; /*16*/
+                }    
 }

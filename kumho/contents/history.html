@@ -143,10 +143,10 @@
                         <strong>금호건설의 집념과<br>
                             도전의 반세기 역사를 소개합니다.</strong>
                     </div>
-                    <div class="his_photo"><!--애니메이션이 들어갈것이기 때문에 전체를 감쌀것이 필요함-->
+                    <div class="his_photo "><!--애니메이션이 들어갈것이기 때문에 전체를 감쌀것이 필요함-->
                         <div class="photo"><img src="../images/contents/his_tit01.jpg" alt=""></div>
                     </div>
-                    <div class="his_year_group">
+                    <div class="his_year_group"  data-menu="year2020">
                         <div class="year_tit">
                             <h3>현재 -<br>2011</h3>
                             <p>당신의 삶을 비추는 아름다움<br>
@@ -223,7 +223,7 @@
                     <div class="his_photo"><!--애니메이션이 들어갈것이기 때문에 전체를 감쌀것이 필요함-->
                         <div class="photo"><img src="../images/contents/his_tit02.jpg" alt=""></div>
                     </div> 
-                    <div class="his_year_group reverse"> <!--반대로 구성된 요소 reverse-->
+                    <div class="his_year_group reverse" data-menu="year2010"> <!--반대로 구성된 요소 reverse-->
                         <div class="year_tit">
                             <h3>2010-<br>2000</h3>
                             <p>해외로 뻗어 나가는 글로벌 기업 금호건설<br>
@@ -295,7 +295,7 @@
                         </div><!--//year_cont-->
                     </div><!--//his_year_group reverse--> <!--//반대 방향 01 끝!!!-->
 
-                    <div class="his_year_group">
+                    <div class="his_year_group" data-menu="year2000">
                         <div class="year_tit">
                             <h3>2000-<br>1991</h3>
                             <p>‘96안전환경상 우수상 수상’ 자연 친화적인 그룹</p>
@@ -369,13 +369,13 @@
                     <div class="his_photo"><!--애니메이션이 들어갈것이기 때문에 전체를 감쌀것이 필요함-->
                         <div class="photo"><img src="../images/contents/his_tit03.jpg" alt=""></div>
                     </div> 
-                    <div class="his_year_group reverse"> <!--반대로 구성된 요소 reverse 02-->
+                    <div class="his_year_group reverse" data-menu="year1990"> <!--반대로 구성된 요소 reverse 02-->
                         <div class="year_tit">
                             <h3>1990-<br>1960</h3>
                             <p>금호건설의 집념과 도전의 반세기 역사를 소개합니다.</p>
                             <div class="photo"><img src="../images/contents/his_year04.jpg" alt=""></div>
                         </div>
-                        <div class="year_cont">
+                        <div class="year_cont last"><!--마지막 짝대기 길이가 안맞아서 내가 이름을 임의로 last를 붙임-->
                             <h4>1980</h4>
                             <ul>
                                 <li>
@@ -420,10 +420,10 @@
 
                     <div class="his_nav"> <!-- 하단에 해당 버튼 바로가기 네비 바 -->
                         <ul>
-                            <li><button>현재 - 2011</button></li>
-                            <li><button>2010 - 2000</button></li>
-                            <li><button>2000 - 1991</button></li>
-                            <li><button>1990 - 1960</button></li>
+                            <li data-link="year2020"><button>현재 - 2011</button></li>
+                            <li data-link="year2010"><button>2010 - 2000</button></li>
+                            <li data-link="year2000"><button>2000 - 1991</button></li>
+                            <li data-link="year1990"><button>1990 - 1960</button></li>
                         </ul>
                     </div><!--//his_nav-->
 
