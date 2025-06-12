@@ -783,3 +783,258 @@
                     font-size: 1rem; /*16*/
                 }    
 }
+
+/*######## 재무정보 > IR > 금호건설 table 코딩 #########*/
+.contents{
+    min-height: 20em;
+}
+.contents .table_wrap table{
+    /* 테이블은 콘텐츠 만큼 넓이를 주지 않으면 꽉차게 나오지 않음 */
+    width: 100%;
+    border-collapse: collapse; /* 칸 에준 border값을 적용시키기 위한 값 */
+    border-top: 2px solid #A60000;
+}
+/* caption은 시각장애인에게 설명하기 위해 웹접근성 상 표기 하는 것이기때문에
+   안보이게 없앨것임 */
+.contents .table_wrap table caption{
+    display: none;
+}
+/* ↓모든 칸의 기본 요소. 필요한 공통요소가 있다면 여기에 넣으면 됨.!!! */
+.contents .table_wrap table th,
+.contents .table_wrap table td{
+    border: 1px solid rgba(166, 0, 0, 0.3);
+    padding: 0.94em 1.41em; /* 표 블럭 하나의 최소의 여백. 16 75*/
+    font-family: 'Pretendard';
+    text-align: center;
+}
+/*** 상단의 제목칸 ↓ ***/
+.contents .table_wrap table thead th,
+.contents .table_wrap table thead td{
+    background-color: rgba(166, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: var(--bold-weight);
+}
+/* 표의 양옆 사이드 줄 없애는 방법 ↓ */
+
+/* td,th중에 먼저 오는것이 어떤게 될지 모르니까 혹시몰라 
+둘다 first-child, last-child를 적용시키는것임*/
+.contents .table_wrap table th:first-child, 
+.contents .table_wrap table td:first-child{
+    border-left-width: 0;
+}
+.contents .table_wrap table th:last-child, 
+.contents .table_wrap table td:last-child{
+    border-right-width: 0;
+}
+/**************************************/
+.contents .table_wrap table tbody td{
+    color: #666666;
+}
+
+@media screen and (max-width:768px){
+    .contents .table_wrap{
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .contents .table_wrap table{
+        min-width: 700px; /* 찌그러지는거 방지 하기 위해 */
+    }
+    /* ↓모든 칸의 기본 요소. 필요한 공통요소가 있다면 여기에 넣으면 됨.!!! */
+    .contents .table_wrap table th,
+    .contents .table_wrap table td{
+        padding: 0.64em 1em; 
+    }
+    .contents .table_wrap table thead th,
+    .contents .table_wrap table thead td{
+        font-size: 17px;
+    }
+}/* media */
+
+
+/*######## 상담신청 > 금호뉴스 > 홍보센터 ##########*/
+.ctn_notice{
+    margin: 8.82em 0 6.47em 0; /* 150 0 110 0 */
+}
+.ctn_notice h2{
+    font-size: 30px;
+    font-weight: var(--bold-weight);
+    color: #1d1d1d;
+    line-height: var(--line-height);
+    margin-bottom: 44px;
+}
+.ctn_notice h2{
+    font-family: 'Pretendard';
+}
+.ctn_notice .agree_box{
+    border: 2px solid #A60000;
+    padding: 2.11em 2.23em; /* 36 38 */
+    height: 16.17em; /* 275 */
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: normal;
+}
+.ctn_notice .agree_chk{
+    margin: 40px 0 171px 0; /* 40 0 171 0 */
+    display: flex;
+    justify-content: center;
+    gap: 2.35em; /* 40 */
+}
+.ctn_notice .agree_chk .item input[type="radio"]{ /* 라디오 체크박스 삭제 */
+    display: none;
+}
+.ctn_notice .agree_chk .item label{
+    position: relative; /* before 정렬의 기준 */
+    padding-left: 0.76em; /* 13px */
+    cursor: pointer; /* 마우스 포인터 손바닥으로 바꾸는것 */
+}
+.ctn_notice .agree_chk .item label::before{
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: -1px;
+    width: 1em; /*17*/
+    height: 1em; /*17*/
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+}
+/* 라디오 체그박스를 선택한 경우...label을 */
+.ctn_notice .agree_chk .item input[type="radio"]:checked + label::before{
+    border-color: #A60000;
+    background-color: #A60000;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_196_137' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_196_137)'%3E%3Cpath d='M3.97872 6.3125L7.50997 2.78125C7.59331 2.69792 7.69053 2.65625 7.80164 2.65625C7.91275 2.65625 8.00997 2.69792 8.09331 2.78125C8.17664 2.86458 8.21831 2.96354 8.21831 3.07813C8.21831 3.19271 8.17664 3.29167 8.09331 3.375L4.27039 7.20833C4.18706 7.29167 4.08984 7.33333 3.97872 7.33333C3.86761 7.33333 3.77039 7.29167 3.68706 7.20833L1.89539 5.41667C1.81206 5.33333 1.77213 5.23437 1.7756 5.11979C1.77907 5.00521 1.82247 4.90625 1.90581 4.82292C1.98914 4.73958 2.0881 4.69792 2.20268 4.69792C2.31727 4.69792 2.41622 4.73958 2.49956 4.82292L3.97872 6.3125Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.ctn_notice .regist{
+    border-top: 2px solid #A60000;
+}
+.ctn_notice .regist .item{
+    border-bottom: 1px solid rgba(166, 0, 0, 0.4);
+    display: flex;
+    gap: 1.41em; /* 24px */
+}
+.ctn_notice .regist .item label{
+    max-width: 14.85em; /* 297 */
+    width: 25%;
+    font-size: 1.17em; /* 20 */
+    font-weight: var(--bold-weight);
+    text-align: center;
+    background-color: rgba(166, 0, 0, 0.2);
+    padding: 1.5em 0 0 0;
+}
+.ctn_notice .regist .item select,
+.ctn_notice .regist .item input,
+.ctn_notice .regist .item textarea{
+    margin: 1.5em 0; /* 30 */
+    border: 1px solid #A60000;
+    border-radius: 0.25em; /* 5 */
+    min-width: 2.4em; /* 상자의 최소높이 48 */
+    padding: 0.4em 1em; /* 상자안의 글자가쓸때 잘 보이게 여백 조금 줌 */
+}
+.ctn_notice .regist .item .w100{
+    min-width: calc(100% - 20.23em);
+    width: calc(75% - 1em);
+}
+.ctn_notice .regist .item .w70{
+    max-width: 41.29em; /* 702 */
+    width: calc(75% - 1em);
+}
+.ctn_notice .regist .item textarea{
+    resize: none; /* 상자 늘어나는거 막기 위해서 */
+}
+.ctn_notice .regist .item input::placeholder{
+    color: rgba(166, 0, 0, 0.6);
+}
+.ctn_notice .btn_wrap{
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_notice .btn_wrap .cancel,
+.ctn_notice .btn_wrap .ok{
+    width: 190px;
+    height: 52px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: var(--bold-weight);
+    padding-top: 12px;
+    line-height: calc(52px - 12px);
+}
+.ctn_notice .btn_wrap .cancel{
+    background-color: #ddd;
+}
+.ctn_notice .btn_wrap .ok{
+    background-color: #A60000;
+    color: #fff;
+}
+@media screen and (max-width:768px){
+    .ctn_notice{
+        margin: 3em 0 6.5em 0; /* 48 0 104 0 */
+    }
+    .ctn_notice h2{
+        font-size: 1.56rem; /* 25 */
+        margin-bottom: 1.2em; /* 30 */
+    }
+    .ctn_notice .agree_box{
+        padding: 2.11em 2.23em; /* 30 20 */
+        height: 16.17em; /* 275 */
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .ctn_notice .agree_chk{
+        margin: 1.87em 0 1.25em 0; /* 40 0 171 0 */
+    }
+    .ctn_notice .regist .item{
+        border-bottom: 0;
+        display: block;
+    }
+    .ctn_notice .regist .item label{
+        max-width: none;
+        width: auto;
+        padding: 1em 0 0.67em 0;
+        background-color: transparent;
+        text-align: left;
+        display: block;
+    }
+    .ctn_notice .regist .item select,
+    .ctn_notice .regist .item input,
+    .ctn_notice .regist .item textarea{
+        margin: 0; 
+        min-width: 2em; /* 상자의 최소높이 48 */
+    }
+    .ctn_notice .regist .item .w100{
+        min-width: calc(100% - 20.23em);
+        width: calc(75% - 1em);
+    }
+    .ctn_notice .regist .item .w70{
+        max-width: 41.29em; /* 702 */
+        width: calc(75% - 1em);
+    }
+    .ctn_notice .regist .item textarea{
+        resize: none; /* 상자 늘어나는거 막기 위해서 */
+    }
+    .ctn_notice .regist .item input::placeholder{
+        color: rgba(166, 0, 0, 0.6);
+    }
+    .ctn_notice .btn_wrap{
+        margin: 20px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .ctn_notice .btn_wrap .cancel,
+    .ctn_notice .btn_wrap .ok{
+        width: 152px;
+        height: 39px;
+        font-size: 16px;
+        padding-top: 9px;
+        line-height: calc(39px - 9px);
+    }
+    .ctn_notice .btn_wrap .cancel{
+        background-color: #ddd;
+    }
+    .ctn_notice .btn_wrap .ok{
+        background-color: #A60000;
+        color: #fff;
+    }
+}/* media */
