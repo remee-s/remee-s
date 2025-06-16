@@ -1,0 +1,23 @@
+/*웹 폰드를 선언*/
+
+/* 한글 폰트 */
+@font-face {
+	font-family: 'Paperlogy';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Paperlogy-8ExtraBold'), url(../font/ko/Paperlogy-8ExtraBold.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Paperlogy';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Paperlogy-4Regular'), url(../font/ko/Paperlogy-4Regular.woff2) format('woff2');
+}
+
+/* 영문 폰트 */
+@font-face {
+	font-family: 'dela-regular';
+	font-weight: 800;
+	font-display: swap;
+	src: local('dela-regular'), url(../font/en/dela-gothic-one-v18-latin-regular.woff2) format('woff2');
+}
