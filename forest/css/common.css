@@ -1,6 +1,6 @@
 /*모든페이지에 공통으로 들어가는 기본 스타일*/
 html, body{
-    font-family: "dela-regular","Paperlogy", sans-serif;
+    font-family: "dela-regular", "Paperlogy", sans-serif;
     /* 앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 사용 */
     font-size: 17px;
     line-height: 1.5; /*배수*/
@@ -68,8 +68,8 @@ html, body{
     display: block;
     text-align: center;
     padding: 5px 0;
-    background-color: #F0E7C6;
-    color: #1d1d1d;
+    background-color: #1d1d1d;
+    color: #08AE42;
     font-family: 'Paperlogy';
     position: absolute;
     left: 0;
@@ -87,21 +87,26 @@ html, body{
     --tit-color: #fff;
     --base-color:#1d1d1d;
     --point-color:#08AE42;
-    --bold-weight:800;
+    --bold-weight: 800;
     --line-height: 1.2;
+    --tit-size: 2.94rem;  /* 50/ 17 = 2.94 */
+    --sub-tit-size: 1.76rem; /* 30/17 = 1.76 */
+    --tit-ico: ;
 }
 @media screen and (max-width:1024px){
     :root{
         --header-h: 90px; /* header의 높이 */
         --header-h-m: -90px;
-        --tit-font-size: 2.35rem;  /* 40/ 17 = 2.35 */
+        --tit-size: 2.64rem;  /* 45/ 17 = 2.64 */
+        --sub-tit-size: 1.76rem; /* 30/17 = 1.76 */
     }
 }
 @media screen and (max-width:768px){
     :root{
         --header-h: 65px; /* header의 높이 */
         --header-h-m: -65px;
-        --tit-font-size: 1.87rem;  /* 30/ 16 = 2.94 */
+        --tit-size: 1.87rem;  /* 30/ 16 = 2.94 */
+        --sub-tit-size: 1.25rem; /* 20/16 = 1.25 */
     }
 }
 

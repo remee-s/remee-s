@@ -3,3 +3,29 @@
 @import url(common.css);
 @import url(layout.css); /* header와 footer 같이 모든 페이지 공통사항 저장 */
 
+
+.visual{
+    background-color: red;
+    color: #fff;
+}
+.tree{
+    background-color: green;
+    color: black;
+}
+.work{
+    background-color: burlywood;
+    color: blueviolet;
+}
+.story{
+    background-color: chocolate;
+    color: cornflowerblue;
+}
+footer{
+    background-color: darkgoldenrod;
+    color: darkorchid;
+    font-family: 'dela-regular';
+}
+.section{
+    text-align: center;
+    font-size: 50px;
+}
