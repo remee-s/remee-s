@@ -17,6 +17,31 @@
     height: 100%;
     object-fit: cover;
 }
+.visual .swiper .swiper-slide .visual_txt{
+    content: "";
+    position: absolute; /* swiper-slide를 기준으로 정렬 (swiper-slide에 이미 relative있음) */
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: center;
+
+}
+.visual .swiper .swiper-slide .visual_txt h3{
+    font-size: var(--display-size);
+    line-height: var(--line-height);
+    font-weight: var(--bold-weight);
+    margin: 15px 0 35px 0;
+}
+.visual .swiper .swiper-slide .visual_txt a{
+    display: inline-block;
+    font-size: 15px;
+    border: 1px solid #08AE42;
+    padding: 8px 28px;
+    border-radius: 30px;
+    background-color: rgba(8, 174, 66, 0.2);
+}
 
 #fp-nav.fp-left {
     left: 48px; /* 왼쪽에서 떨어진 거리 */
