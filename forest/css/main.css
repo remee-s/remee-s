@@ -42,6 +42,64 @@
     border-radius: 30px;
     background-color: rgba(8, 174, 66, 0.2);
 }
+.visual .swiper .paging{
+    position: absolute; /*swiper를 기준으로 정렬*/
+    left: 50%;
+    bottom: 103px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: calc(100% - 10%);
+    max-width: 1260px; /* wrapper 사이즈 이상 안넘어가게 최대 넓이를 미리 설정 */
+    color: #fff;
+    display: flex;
+}
+
+
+.visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+.visual .swiper .paging .swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+}
+.visual .swiper .paging .swiper-pagination-bullet-active { /*active*/
+    opacity: 1;
+    background: transparent; /* 투명 */
+    font-weight: var(--bold-weight);
+}
+.visual .swiper .paging .swiper-pagination-bullet {
+    width: 25%; /* 4개니까 1/4 */
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: transparent;
+    opacity: 1;
+    margin: 0;
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    padding: 0 0 10px 0;
+    position: relative; /* before 정렬의 기준으로 하기 위해 */
+}
+.visual .swiper .paging .swiper-pagination-bullet::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+}
+.visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before{
+    animation-name: visual_paging;
+    animation-duration: 5s; /* 애니메이션 작동시간 jquary 넘어가는 시간과 동일하게 줘야함 */
+    animation-iteration-count: 1; /* 한번만 실행 */
+    animation-timing-function: linear; /* 가속도 삭제 */
+    animation-fill-mode: forwards; /* 마지막을 유지 하는것.(애니메이션 후 마지막상태에서 멈춤) */
+}
+@keyframes visual_paging {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
 
 #fp-nav.fp-left {
     left: 48px; /* 왼쪽에서 떨어진 거리 */
