@@ -3,26 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <!-- 풀페이지 cdn 라이브러리 파일 ↓ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css">
-
+    <!-- swiper 라이브러리 ↓ -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- swiper 파일 ↓ -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <!-- jquary 라이브러리 파일 ↓ -->
     <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- 내가 준 파일 ↓ -->
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
-
     <title>생명의숲-미완성</title>
 </head>
-<body><!-- full page를 적용 할때는 전체를 감싸는 wrap을 주면 안됨. -->
-    <header></header>
+<body class=""><!-- full page를 적용 할때는 전체를 감싸는 wrap을 주면 안됨. -->
+    <!-- class="bg_w" 배경이 흰색이라 header나 다른 요소가 검은색이어야함.
+         모바일에서 스크롤 되면 header에 fixed 클래스 추가-->
+    <header class="">
+        <h1 class="logo"><a href="#"><span class="blind">생명의숲</span></a></h1>
+        <nav class="gnb">
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+            <div class="gnb_wrap">
+                <ul class="degth1">
+                    <li><a href="#"><span>소개</span></a></li>
+                    <li><a href="#"><span>숲활동</span></a></li>
+                    <li><a href="#"><span>참여와 후원</span></a></li>
+                    <li><a href="#"><span>자료실</span></a></li>
+                </ul>
+            </div><!--//gnb_wrap-->
+            <button class="gnb_close"><span>메뉴닫기</span></button>
+        </nav><!--//gnb-->
+        <div class="utill">
+            <a href="#" class="mypage">MYPAGE</a>
+            <div class="lang">
+                <button class="lang_open">KR</button>    
+            </div><!--//lang-->
+            <div class="search">
+                <button class="search_open"><span class="blind">검색열기</span></button>
+            </div><!--//search-->
+        </div>
+    </header><!--//utill-->
     <div id="fullpage">
+        <!-- fp-auto-height-responsive 모바일에서 높이 100% 해지 -->
         <section class="section fp-auto-height-responsive visual"><!--모바일일때 높이를 알아서 준다는것 section절대 없애면 안됨.-->
-            visual
-        </section>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="photo">
+                            <video loop muted data-autoplay playsinline> 
+                                <source src="images/main/visual01.mp4" type="video/mp4">
+                            </video>
+                        </div>   
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <strong>#서울마이트리 #내나무 #나나기 #나의 나무 나의 공원이야기</strong>
+                                <h3>Seoul My Tree</h3>
+                                <a href="#">RAISING TOGETHER</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo">
+                            <video loop muted data-autoplay playsinline> 
+                                <source src="images/main/visual02.mp4" type="video/mp4">
+                            </video>
+                        </div>    
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <strong>산불피해지 산림복원 기금 모금</strong>
+                                <h3>2025년 대형산불로 사라진<br> 
+                                    숲의 복원에 함께 해주세요</h3>
+                                <a href="#">RAISING TOGETHER</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual03.jpg"></div>
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <strong>FORREST FOR LIFE</strong>
+                                <h3>나무는 기억합니다<br>
+                                    우리가 지킨 이 순간을.</h3>
+                                <a href="#">RAISING TOGETHER</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo">
+                            <video loop muted data-autoplay playsinline> 
+                                <source src="images/main/visual04.mp4" type="video/mp4">
+                            </video>
+                        </div>    
+                        <div class="visual_txt">
+                            <div class="wrapper">
+                                <strong>Arbor</strong>
+                                <h3>HAPPY EARTH DAY</h3>
+                                <p>Our power, Our planet</p>
+                                <a href="#">RAISING TOGETHER</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                </ul>
+                <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+            </div>
+        </section><!--//visual-->
         <section class="section fp-auto-height-responsive tree">
             tree
         </section>
@@ -36,5 +127,16 @@
             footer
         </footer>
     </div>
+    <aside class="quick">
+        <button class="btn open" title="퀵메뉴 열기"><span>QUICK</span></button>
+        <div class="detail">
+            <ul>
+                <li class="kakao"><a href="#">같이 가치</a></li>
+                <li class="naver"><a href="#">해피빈</a></li>
+                <li class="green"><a href="#">그린짐</a></li>
+                <li class="top"><button>TOP</button></li>
+            </ul>
+        </div><!--//detail-->
+    </aside>
 </body>
 </html>
