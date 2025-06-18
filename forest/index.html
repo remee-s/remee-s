@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+
     <!-- 풀페이지 cdn 라이브러리 파일 ↓ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css">
+
     <!-- swiper 라이브러리 ↓ -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
     <!-- swiper 파일 ↓ -->
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
     <!-- jquary 라이브러리 파일 ↓ -->
     <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- js_count 라이브러리 -->
+    <script src="js/count.js"></script>
+
     <!-- 내가 준 파일 ↓ -->
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
@@ -63,7 +71,7 @@
                         </div>   
                         <div class="visual_txt">
                             <div class="wrapper">
-                                <strong>#서울마이트리 #내나무 #나나기 #나의 나무 나의 공원이야기</strong>
+                                <strong>#서울마이트리 #내나무 #나나기<br>#나의 나무 나의 공원이야기</strong>
                                 <h3>Seoul My Tree</h3>
                                 <a href="#">RAISING TOGETHER</a>
                             </div>
@@ -114,8 +122,21 @@
             </div>
         </section><!--//visual-->
         <section class="section fp-auto-height-responsive tree">
-            tree
-        </section>
+            <div class="wrapper">
+                <div class="tit">
+                    <h2><strong  class="counter" data-start="0" data-end="102302">102,302</strong></h2>
+                    <p>2024년 한 해동안 102,302번의 심장 뛰는 소리.<br> 
+                        나무 한 그루마다 지구의 숨이 살아났습니다.</p>
+                </div>
+                <div class="tree_ani">
+                    <img src="images/main/tree01.png" alt="나무1" class="img_tree01">
+                    <img src="images/main/tree02.png" alt="나무2" class="img_tree02">
+                    <img src="images/main/ball01.png" alt="공1" class="img_ball01">
+                    <img src="images/main/ball02.png" alt="공2" class="img_ball02">
+                    <img src="images/main/ball03.png" alt="공3" class="img_ball03">
+                </div>
+            </div>
+        </section><!--//tree-->
         <section class="section fp-auto-height-responsive work">
             work
         </section>

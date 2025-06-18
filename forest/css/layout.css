@@ -73,6 +73,13 @@ header .logo a{
         mix-blend-mode: difference;
         border-bottom: 1px solid #1d1d1d;
     }
+    body.bg_w header .utill .mypage, /** 수정해야함!!!!!!!!!!! **/
+    body.bg_w header .lang .lang_open{
+        color: #1d1d1d;
+        mix-blend-mode: difference;
+        border-bottom: 1px solid #1d1d1d;
+        font-family: 'dela-regular';
+    }
 }/* media */
 @media screen and (max-width:1024px){
     /* 1024 이하 모바일 버전 */
