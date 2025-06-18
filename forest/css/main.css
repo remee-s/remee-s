@@ -608,7 +608,7 @@ body.bg_w #fp-nav ul li a.active::before{
     height: 204px;
     border-radius: 10px;
     /* box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.4); 그림자 주는 법 */
-    padding: 144px 0 24px 24px ;
+    padding: 144px 0 24px 32px;
     font-size: 30px;
 }
 
@@ -649,7 +649,7 @@ body.bg_w #fp-nav ul li a.active::before{
 .work .list ul li a span::before{
     content: "";
     position: absolute;
-    left: 1px;
+    left: -11px;
     top: -94px;
     width: 116px;
     height: 90px;
