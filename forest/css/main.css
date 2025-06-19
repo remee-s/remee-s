@@ -1,6 +1,6 @@
 @import url(default.css);
 @import url(font.css);
-@import url(common.css);
+@import url(common.css?v=2506191759);
 @import url(layout.css); /* header와 footer 같이 모든 페이지 공통사항 저장 */
 
 
