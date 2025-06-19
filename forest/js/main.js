@@ -7,7 +7,7 @@ $(document).ready(function(){   /* id= name은 #을 붙여서 이름을 줘야�
 		navigationTooltips: ['Main', '나무심기', '숲 활동', '활동 이야기', 'footer'], /* 툴팁 이름*/
 		showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
 		
-		lockAnchors: false, /* false로 바꾸면 주소가 이름준걸로 바뀜 
+		lockAnchors: true, /* false로 바꾸면 주소가 이름준걸로 바뀜 
 								장점 - 새로 고침 했을때 처음으로 안가고 그 페이지에서 새로 고침됨*/
 		anchors: ['visual', 'tree', 'work', 'story','footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
@@ -39,7 +39,7 @@ $(document).ready(function(){   /* id= name은 #을 붙여서 이름을 줘야�
 		},
 		
 
-		responsiveWidth: 1025, /* css랑 사이즈 기준이 다르기에 내가준 (모바일 사이즈)+1을 해줘야함 fullpage를 적용시키지 않을 모바일 사이즈 */
+		responsiveWidth: 769, /* css랑 사이즈 기준이 다르기에 내가준 (모바일 사이즈)+1을 해줘야함 fullpage를 적용시키지 않을 모바일 사이즈 */
         responsiveHeight: 700 /* 브라우저 높이가 700 이하로 줄어들면, 풀페이지 js 해지 시키는것 */
 	});//myFullpage
 
@@ -94,5 +94,39 @@ $(document).ready(function(){   /* id= name은 #을 붙여서 이름을 줘야�
 
 $('.counter').counterUp(); /* 숫자 요소의 클래스명을 써준다. */
 
-/*****************************************************************/	
+/************************ story swiper : 시작 *************************/	
+
+	const story_swiper = new Swiper('.story .swiper', { /* 팝업을 감싼는 요소의 class명 */
+		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			1025: {    /* 640px 이상일때 적용 */
+				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+			769: {    /* 640px 이상일때 적용 */
+			slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 20,
+			},
+			420: {    /* 640px 이상일때 적용 */
+			slidesPerView: 1,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 16,
+			},
+		},
+		//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+		// autoplay: {  /* 팝업 자동 실행 */
+		// 	delay: 2500,
+		// 	disableOnInteraction: true,
+		// },
+		// navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+		// 	el: '.swiper-pagination', /* 해당 요소의 class명 */
+		// 	clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+		// 	type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+		// },
+	});
 })//$(document).ready!!!!!!
