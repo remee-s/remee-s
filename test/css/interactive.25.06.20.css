@@ -49,6 +49,9 @@
     overflow: hidden;
     height: 361px;
     width: 50%;
+    /* 늘어나는 이미지는 시간을 짧게 줘야함 
+       - 안그러면 이미지가 부자연스럽게 늘어나기 때문 */
+    transition: 0.2s; 
 }
 .banner .photo img{
     width: 100%;

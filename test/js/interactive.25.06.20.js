@@ -20,15 +20,29 @@ $(document).ready(function(){ //일회용
     let photo_start
     let photo_end
     let photo_scroll
+    let photo_w_start = 35 // 시작할때 넓이
+    let photo_w_end = 100 // 종료값
     let photo_w
 
     // 사진싸이즈가 스크롤 하면 커지는 애니메이션
     function photo_resize(){
         photo_top = photo.offset().top
-        photo_start = photo_top - (win_h * 0.7) // 밑에서 30%면 0.7
+        photo_start = photo_top - (win_h * 0.7) // 밑에서 30%면 0.7 ( 넓이 조정하려면 이 숫자 조절 하면 됨 )
         photo_end = photo_top + photo.height() - scrolling - (win_h * 0.7)
         photo_scroll = (scrolling - photo_top) / (photo_end - photo_start) * 100
-        console.log('start', photo_start, 'end', photo_end, 'scroll', photo_scroll)
+        //console.log('scroll', photo_scroll)
+
+        if(photo_start > scrolling){
+            //console.log('시작 전!')
+            photo.width(photo_start + '%')
+        }else if(photo_end > scrolling){
+            //console.log('애니매이션 중이다!!!')
+            photo_w = (photo_w_end - photo_w_start / 100 * photo_scroll ) + photo_w_start
+        }else{
+            //console.log('종료!')
+            photo.width(photo_w_end + '%')
+            photo_w = (photo_w_end - photo_w_start / 100 * photo_scroll ) + photo_w_end //수정
+        }
     }
 
 
@@ -52,6 +66,16 @@ $(document).ready(function(){ //일회용
         photo_resize()
     })
 
+    function scroll_chk(){ // 다회용
+        scrolling = $(window).scrollTop()
+        //console.log(' 슬로건 값!! ',scrolling)
+    }
+
+
+    function resize_chk(){
+        win_h = $(window).height()
+        //console.log('브라우저의 높이', win_h)
+    }
 
 
     $('.slogan p span').eq(1).hide() //eq(1) = 두번째 span 태그
@@ -101,16 +125,6 @@ $(document).ready(function(){ //일회용
     }
 
 
-    function scroll_chk(){ // 다회용
-        scrolling = $(window).scrollTop()
-        //console.log(' 슬로건 값!! ',scrolling)
-    }
-
-
-    function resize_chk(){
-        win_h = $(window).height()
-        //console.log('브라우저의 높이', win_h)
-    }
 
 
 
