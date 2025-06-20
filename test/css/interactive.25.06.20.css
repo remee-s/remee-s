@@ -174,3 +174,18 @@
 .icon button:hover{
     background-color: #E95A1A;
 }
+
+.fixed_bg {
+    margin: 100px 0;
+    height: 500px;
+    background: url(../images/fixed01.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.fixed_bg h2{
+    color: #fff;
+    font-size: 60px;
+    line-height: 1.2;
+}
