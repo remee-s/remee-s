@@ -617,6 +617,7 @@ body.bg_w #fp-nav ul li a.active::before{
 }
 .work .list{ /* list를 고정으로 모바일로 바꾸는 경우 - 넓이를 바꿔주면 됨 ( 모바일에서 ) */
     width: 618px;
+    margin: 0 0 28px 0;
 }
 .work .list ul {
     display: flex;
@@ -839,14 +840,14 @@ body.bg_w #fp-nav ul li a.active::before{
                 transform: translateY(21px);
             }
             .work .list ul li a{
-                height: 162px;
-                border-radius: 5px;
-                /* box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.4); 그림자 주는 법 */
-                padding: 90px 0 35px 30px;
-                font-size: 30px;
-                position: relative; /* before 정렬의 기준 */
-
-            }
+                    display: block;
+                    background-color: #1d1d1d;
+                    height: 154px;
+                    border-radius: 10px;
+                    padding: 97px 0 24px 32px;
+                    font-size: 30px;
+                    position: relative;
+                }
             .work .list ul li a::before{
                 left: -18px;
                 top: -4px;
@@ -863,7 +864,7 @@ body.bg_w #fp-nav ul li a.active::before{
             }
             .work .list ul li a span::before{
                 transform: translateX(-50%);
-                left: 50px;
+                left: 42px;
                 top: -76px;
                 width: 100px;
                 height: 80px;
@@ -1145,20 +1146,22 @@ body.bg_w #fp-nav ul li a.active::before{
     .story .more a{
         position: relative;
         display: flex;
+        position: relative;
+        display: flex;
         border-radius: 50%;
-        border: 1px solid #08AE42;
-        left: 0;
-        top: 0;
-        width: 40px;
-        height: 50px;
+        border: 4px solid #08AE42;
+        left: 322px;
+        top: -611px;
+        width: 7px;
+        height: 52px;
     }
     .story .more a::after{
         content: "";
         position: absolute;
         right: 2px;
         top: 1px;
-        width: 100%;
-        height: 100%;
+        width: 38px;
+        height: 38px;
     }
     /********** 마우스를 hover했을 경우 active추가 시작 **************/
 

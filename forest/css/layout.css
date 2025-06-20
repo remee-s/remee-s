@@ -17,6 +17,7 @@ header .logo a{
     width: 167px;
     height: 40px;
     background: url(../images/common/logo_w.png) no-repeat center center / contain;
+    object-fit: cover;
 }
 @media screen and (min-width:1025px){ /* 1024 이상 pc 버전에서만 적용 */
     header .gnb .gnb_open,
