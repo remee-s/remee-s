@@ -1,0 +1,207 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual{
+    position: relative;
+    padding: 0 0 164px 0;
+}
+.visual img{
+    width: 100%;
+}
+/* sdg start */
+.visual .roll {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.visual .roll .rolling01 p{
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    font-size: 1.47rem; /* 25px */
+    color: #000;
+    background-color: var(--point-color);
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: rolling01;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rolling01 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.15%) }
+}
+.visual .roll .rolling02 p{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 4.11rem; /* 70px */
+    color: var(--point-color);
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: rolling02;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rolling02 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50.2%); }
+}
+
+
+.sdg {
+    text-align: center;
+}
+.sdg .tit h2{
+    margin: 195px 0 11px 0 ;
+    font-family: var(--font-family-2p);
+}
+.sdg .tit h2 span{
+    color: var(--point-color);
+}
+.sdg .tit p{
+    font-size: var(--tit-font-size);
+    margin-bottom: 136px;
+}
+
+.sdg .sdg_list{
+    margin: 0 50px;
+}
+.sdg .sdg_list ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+}
+
+.sdg .sdg_list ul li{
+    width: calc(50% - 12px);
+}
+.sdg .sdg_list ul li a{
+    display: block;
+}
+.sdg .sdg_list ul li strong,
+.sdg .sdg_list ul li span{
+    display: block;
+    text-align: left;
+    margin: 20px 0 20px 0 ;
+    font-family: var(--font-family-2p);
+}
+.sdg .sdg_list ul li strong{
+    color: var(--point-color);
+}
+.sdg .sdg_list ul li img{
+    width: 100%;
+}
+
+
+
+/* ####### ceo start ###### */
+.ceo{
+    position: relative;
+}
+.ceo .ceo_wrap{
+    display: flex;
+    gap: 0 81px;
+    padding: 500px 50px 100px 50px;
+}
+.ceo .emblem{
+    content: "";
+    position: absolute;
+    left: 70%;
+    top: 61px;
+    z-index: 100;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);} /* 360은 시계방향 , -360은 반시계방향 */
+}
+
+.ceo .photo{
+    width: 40%;
+}
+.ceo .photo img{
+    width: 100%;
+}
+.ceo .photo h2{
+    font-family: var(--font-family-2p);
+    margin: 0 0 10px 0;
+}
+.ceo .photo h2 span{
+    color: var(--point-color);
+    text-align: right;
+}
+
+.ceo .txt{
+    width: 60%;
+    margin: 46px 0 0 0;
+}
+.ceo .txt h3{
+    font-size: var(--tit-font-size);
+}
+.ceo .txt h3 {
+    font-size: 35px;
+}
+.ceo .txt h4 {
+    font-size: 25px;
+}
+.ceo .txt p{
+    font-family: 'Pretendard';
+}
+.ceo .roll01{
+    transform: rotate3d(1, 1, 1, 4deg);
+    margin-top: 163px;
+}
+.ceo .roll01 .rolling01 p{
+    position: absolute;
+    font-family:var(--font-family-2p);
+    left: 0;
+    bottom: 0;
+    font-size: 1.47rem; /* 25px */
+    color: #000;
+    padding: 15px 0;
+    background-color: var(--point-color);
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: rolling01;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-top: 139px;
+}
+@keyframes rolling01 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.15%) }
+}
+.ceo .roll02{
+    transform: rotate(-4deg);
+}
+.ceo .roll02 .rolling02 p{
+    position: absolute;
+    font-family:var(--font-family-2p);
+    right: 0;
+    bottom: 0;
+    font-size: 1.47rem; /* 25px */
+    padding: 15px 0;
+    color: #000;
+    background-color: #fff;
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: rolling02;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rolling02 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50.15%) }
+}
