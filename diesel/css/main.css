@@ -28,7 +28,7 @@
     white-space: nowrap;
     text-transform: uppercase;
     animation-name: rolling01;
-    animation-duration: 30s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -45,7 +45,7 @@
     white-space: nowrap;
     text-transform: uppercase;
     animation-name: rolling02;
-    animation-duration: 25s;
+    animation-duration: 70s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -54,8 +54,7 @@
     100% { transform: translateX(50.2%); }
 }
 
-
-.sdg {
+.sdg .tit{
     text-align: center;
 }
 .sdg .tit h2{
@@ -73,33 +72,70 @@
 .sdg .sdg_list{
     margin: 0 50px;
 }
-.sdg .sdg_list ul{
+.sdg .sdg_list > ul{
     display: flex;
     flex-wrap: wrap;
     gap: 0 24px;
 }
 
-.sdg .sdg_list ul li{
+.sdg .sdg_list > ul > li{
     width: calc(50% - 12px);
 }
-.sdg .sdg_list ul li a{
+.sdg .sdg_list > ul > li > a{
     display: block;
+    position: relative; /* detail 정렬의 기준 */
 }
-.sdg .sdg_list ul li strong,
-.sdg .sdg_list ul li span{
+
+.sdg .sdg_list > ul > li strong,
+.sdg .sdg_list > ul > li span{
     display: block;
-    text-align: left;
     margin: 20px 0 20px 0 ;
     font-family: var(--font-family-2p);
 }
-.sdg .sdg_list ul li strong{
+.sdg .sdg_list > ul >  li strong{
     color: var(--point-color);
 }
-.sdg .sdg_list ul li img{
+.sdg .sdg_list > ul > li img{
     width: 100%;
 }
-
-
+.sdg .sdg_list > ul > li > a .photo_wrap{
+    position: relative;
+}
+.sdg .sdg_list > ul > li > a .photo_wrap .photo{
+    font-size: 0;
+    line-height: 0;
+}
+.sdg .sdg_list > ul > li > a .detail{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-family-2p);
+    padding: 50px 0 0 50px;
+    transition: 0.3s;
+    word-break: keep-all;
+}
+.sdg .sdg_list > ul > li > a:hover .detail{
+    display: block;
+    background-color: rgba(167, 0, 7, 0.8);
+}
+.sdg .sdg_list > ul > li > a .photo_wrap .detail h3{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+.sdg .sdg_list > ul > li > a .photo_wrap .detail ul li{
+    padding: 20px 2px;
+}
+.sdg .sdg_list > ul > li > a .photo_wrap .detail ul li::before{
+    content: "";
+    position: relative;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin-right: 15px;
+    padding: 0 10px;
+}
 
 /* ####### ceo start ###### */
 .ceo{
@@ -108,14 +144,13 @@
 .ceo .ceo_wrap{
     display: flex;
     gap: 0 81px;
-    padding: 500px 50px 100px 50px;
+    padding: 500px 50px 300px 50px;
 }
 .ceo .emblem{
     content: "";
     position: absolute;
     left: 70%;
     top: 61px;
-    z-index: 100;
     animation-name: rotate;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -165,7 +200,7 @@
     position: absolute;
     font-family:var(--font-family-2p);
     left: 0;
-    bottom: 0;
+    bottom: 240px;
     font-size: 1.47rem; /* 25px */
     color: #000;
     padding: 15px 0;
@@ -173,7 +208,7 @@
     white-space: nowrap;
     text-transform: uppercase;
     animation-name: rolling01;
-    animation-duration: 30s;
+    animation-duration: 50s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     margin-top: 139px;
@@ -189,7 +224,7 @@
     position: absolute;
     font-family:var(--font-family-2p);
     right: 0;
-    bottom: 0;
+    bottom: 220px;
     font-size: 1.47rem; /* 25px */
     padding: 15px 0;
     color: #000;
@@ -197,11 +232,162 @@
     white-space: nowrap;
     text-transform: uppercase;
     animation-name: rolling02;
-    animation-duration: 30s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 @keyframes rolling02 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50.15%) }
+}
+
+/* sns start */
+.sns{
+    position: relative;
+    padding: 380px 0 100px 0;
+}
+.sns .sns_loop .sns_photo{
+    gap: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sns .sns_loop .sns_photo .loop01 ul{
+    position:absolute;
+    left: 0;
+    top: 0;
+    display:flex;
+    gap: 24px;
+    text-transform: uppercase;
+    animation-name: sns_loof;
+    white-space: nowrap;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.sns .sns_loop .sns_photo .loop01 ul li{
+    font-size: 0;
+    line-height: 0;
+}
+@keyframes sns_loof {
+    0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+}
+.sns .sns_loop .sns_photo .loop01 ul .sns01,
+.sns .sns_loop .sns_photo .loop01 ul .sns04{
+    transform: translateY(150px);
+}
+.sns .sns_loop .sns_photo .loop01 ul .sns02,
+.sns .sns_loop .sns_photo .loop01 ul .sns05,
+.sns .sns_loop .sns_photo .loop01 ul .sns07{
+    transform: translateY(90px);
+}
+.sns .sns_loop .sns_photo .loop01 ul .sns03,
+.sns .sns_loop .sns_photo .loop01 ul .sns06{
+    transform: translateY(60px);
+}
+
+/*.sns .sns_loop .sns_photo ul li img{
+    width: 100%;
+}*/
+.sns .sns_loop .sns_txt{ /* z-index는 position 값이 없으면 적용 안됨 */
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    left: 0;
+    bottom: 217px;
+    color: #fff;
+    mix-blend-mode: difference;
+}
+.sns .sns_loop .sns_txt h2{
+    font-size: var(--tit-font-size);
+}
+.sns .sns_loop .sns_txt p{
+    margin: 23px 0 61px 0;
+    font-family: var(--font-family-2p);
+}
+.sns .sns_loop .sns_txt a{
+    font-family: var(--font-family-2p);
+    transition: 0.3s;
+}
+.sns .sns_loop .sns_txt a:hover{
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+}
+
+/* videos start */
+.videos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 247px 0 50px 0;
+}
+.videos .videos_wrap .photo{
+    line-height: 0;
+    font-size: 0;
+}
+.videos .videos_wrap .photo video{
+    width: 100%;
+    max-height: 750px;
+    object-fit: cover;
+}
+.videos .videos_wrap .visual_txt{ /* ???????? */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    mix-blend-mode: difference;
+    word-break: break-all;
+}
+.videos .videos_wrap .visual_txt h3{
+    font-size: 60px;
+}
+.videos .videos_wrap .visual_txt p{
+    font-size: 35px;
+}
+.videos .roll01 p{
+    position: absolute;
+    font-family:var(--font-family-2p);
+    left: 0;
+    top: 0;
+    font-size: 1.47rem; /* 25px */
+    color: #000;
+    padding: 15px 0;
+    background-color: #fff;
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: videos_01;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes videos_01 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.15%) }
+}
+.videos .roll02 p{
+    position: absolute;
+    font-family:var(--font-family-2p);
+    right: 0;
+    bottom: auto;
+    font-size: 1.47rem; /* 25px */
+    color: #000;
+    padding: 15px 0;
+    background-color: var(--point-color);
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: videos_02;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes videos_02 {
     0% { transform: translateX(0); }
     100% { transform: translateX(50.15%) }
 }
