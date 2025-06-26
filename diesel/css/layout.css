@@ -393,5 +393,12 @@ footer .copyright{
     footer .copyright{
         font-size: 10px;
     }
+    footer .f_info .mail{
+        display: block;
+    }
+    footer .f_txt_r p,
+    footer .f_txt p {
+        text-align: center;
+    }
 }
 

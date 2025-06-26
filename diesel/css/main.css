@@ -561,11 +561,11 @@
         font-size: 16px;
     }
     .videos .roll01 p{
-        font-size: 16px; /* 25px */
-        padding: 10px 0;
+        font-size: 13px; /* 25px */
+        padding: 5px 0;
     }
     .videos .roll02 p{
-        font-size: 16px; /* 25px */
-        padding: 10px 0;
+        font-size: 13px; /* 25px */
+        padding: 5px 0;
     }
 }
