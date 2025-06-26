@@ -100,6 +100,9 @@ header .total_menu .total_menu_wrap .total_btn ul li.location{
 header .total_menu .total_menu_wrap .photo{
     margin: 143px 0 0 27px;
 }
+header .total_menu .total_menu_wrap .photo img{
+    width: 100%;
+}
 header .total_menu .total_menu_wrap .search{
     color: #1d1d1d;
     margin: 67px 0 0 27px;
@@ -170,6 +173,26 @@ header .total_menu .total_menu_wrap .close{
         right: 150px;
         top: 100px;
     }
+    /********** 열기 ***********/
+
+            header .total_menu .total_menu_wrap{
+                position: fixed;
+                display: none; 
+                right: 0;
+                top: 0;
+                max-width: 360px;
+                width: 100%;
+                height: 100%;
+                font-size: 17px;
+                background-color: #a70007;
+                padding: 35px 10px 72px 20px;
+            }
+            header .total_menu .total_menu_wrap .total_btn ul{
+                gap: 15px;
+            }
+            header .total_menu .total_menu_wrap .photo{
+                margin: 97px 0 0 0px;
+            }
 }
 @media screen and (max-width:985px){
     header .gnb .gnb_wrap ul.depth1{
