@@ -52,6 +52,7 @@ html, body{
     --point-color:#A70007;
     --bold-weight: 800;
     --tit-font-size: 2.94rem;  /* 50/ 17 = 2.94 */
+    --min-font-size: 1rem;
     --line-height: 1.2;
     --font-family-2p: 'Press Start 2P';
 }

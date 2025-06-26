@@ -53,7 +53,33 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(50.2%); }
 }
-
+@media screen and (max-width:1350px){
+    .visual{
+        padding: 0 0 150px 0;
+    }  
+    .visual .roll .rolling01 p{
+        bottom: 90px;
+        font-size: 20px;
+    }
+    .visual .roll .rolling02 p{
+        bottom: 10px;
+        font-size: 50px; 
+    }
+}
+@media screen and (max-width:768px){
+    .visual{
+        padding: 0 0 80px 0;
+    }  
+    .visual .roll .rolling01 p{
+        bottom: 60px;
+        font-size: 16px;
+    }
+    .visual .roll .rolling02 p{
+        bottom: 15px;
+        font-size: 30px; 
+    }
+}
+/* sdg start */
 .sdg .tit{
     text-align: center;
 }
@@ -62,7 +88,7 @@
     font-family: var(--font-family-2p);
 }
 .sdg .tit h2 span{
-    color: var(--point-color);
+    color: var(--point-color);  
 }
 .sdg .tit p{
     font-size: var(--tit-font-size);
@@ -113,7 +139,7 @@
     width: 100%;
     height: 100%;
     font-family: var(--font-family-2p);
-    padding: 50px 0 0 50px;
+    padding: 50px 50px 10px 50px;
     transition: 0.3s;
     word-break: keep-all;
 }
@@ -122,21 +148,55 @@
     background-color: rgba(167, 0, 7, 0.8);
 }
 .sdg .sdg_list > ul > li > a .photo_wrap .detail h3{
-    font-size: 25px;
-    padding-bottom: 20px;
+    font-size: 25px;    
+    margin-bottom: 20px;
 }
 .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li{
-    padding: 20px 2px;
+    padding: 10px 20px;
+    position: relative;
 }
 .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li::before{
     content: "";
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 19px;
     border: 3px solid #fff;
     border-radius: 50%;
     margin-right: 15px;
-    padding: 0 10px;
+    width: 2px;
+    height: 2px;
 }
-
+@media screen and (max-width:1350px){
+    .sdg .tit h2 {
+        margin: 160px 0 11px 0;
+    }
+    .sdg .sdg_list > ul > li > a .photo_wrap .detail h3{
+        font-size: 20px;    
+    }
+    .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li {
+        padding: 10px 20px;
+        position: relative;
+        font-size: 15px;
+    }
+    .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li br{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:1083px){
+    .sdg .tit h2 {
+        margin: 130px 0 11px 0;
+        font-size: 13px;
+    }
+    .sdg .sdg_list > ul > li > a .photo_wrap .detail{
+        display: none;
+    }
+    .sdg .sdg_list > ul > li span {
+        margin: 10px 0 10px 0;
+        font-size: 15px;
+        word-break: break-all;
+    }
+}
 /* ####### ceo start ###### */
 .ceo{
     position: relative;
@@ -191,16 +251,16 @@
 }
 .ceo .txt p{
     font-family: 'Pretendard';
+    word-break: auto-phrase;
 }
 .ceo .roll01{
     transform: rotate3d(1, 1, 1, 4deg);
-    margin-top: 163px;
 }
 .ceo .roll01 .rolling01 p{
     position: absolute;
     font-family:var(--font-family-2p);
     left: 0;
-    bottom: 240px;
+    bottom: 160px;
     font-size: 1.47rem; /* 25px */
     color: #000;
     padding: 15px 0;
@@ -211,7 +271,6 @@
     animation-duration: 50s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    margin-top: 139px;
 }
 @keyframes rolling01 {
     0% { transform: translateX(0); }
@@ -224,7 +283,7 @@
     position: absolute;
     font-family:var(--font-family-2p);
     right: 0;
-    bottom: 220px;
+    bottom: 132px;
     font-size: 1.47rem; /* 25px */
     padding: 15px 0;
     color: #000;
@@ -240,20 +299,75 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(50.15%) }
 }
+@media screen and (max-width:1350px){
+    .ceo .ceo_wrap{
+        gap: 0 70px;
+        padding: 400px 50px 225px 50px;
+    }
+    .ceo .txt{
+        margin: 30px 0 0 0;
+    }
+    .ceo .txt h3 {
+        font-size: 35px;
+    }
+    .ceo .txt h4 {
+        font-size: 25px;
+    }
+    .ceo .roll01 .rolling01 p{
+        bottom: 158px;
+        font-size: 20px; /* 25px */
+        color: #000;
+        padding: 10px 0;
+    }
+    .ceo .roll02 .rolling02 p{
+        bottom: 129px;
+        font-size: 20px; /* 25px */
+        padding: 10px 0;
+    }
+}
+@media screen and (max-width:1083px){
+    .sdg .tit p {
+        margin-bottom: 50px;
+    }
+    .ceo .ceo_wrap {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 140px 0 200px 0;
+    }
+    .ceo .emblem{
+        display: none;
+    }
+    .ceo .txt h3 {
+        font-size: 30px;
+    }
+    .ceo .txt h4 {
+        font-size: 22px;
+    }
+    .ceo .roll01 .rolling01 p{
+        bottom: 130px;
+        font-size: 16px; /* 25px */
+        color: #000;
+        padding: 10px 0;
+    }
+    .ceo .roll02 .rolling02 p{
+        bottom: 102px;
+        font-size: 16px; /* 25px */
+        padding: 10px 0;
+    }
+}
+
+
 
 /* sns start */
 .sns{
     position: relative;
     padding: 380px 0 100px 0;
 }
-.sns .sns_loop .sns_photo{
-    gap: 24px;
-    display: flex;
-    justify-content: flex-start;
-}
-
 .sns .sns_loop .sns_photo .loop01 ul{
-    position:absolute;
+    position: absolute;
     left: 0;
     top: 0;
     display:flex;
@@ -291,15 +405,16 @@
     transform: translateY(60px);
 }
 
-/*.sns .sns_loop .sns_photo ul li img{
-    width: 100%;
-}*/
+.sns .sns_loop .sns_photo ul li img{
+    width: 345px;
+}
 .sns .sns_loop .sns_txt{ /* z-index는 position 값이 없으면 적용 안됨 */
     position: relative;
     text-align: center;
     z-index: 2;
     left: 0;
-    bottom: 217px;
+    bottom: 50%;
+    transform: translateY(-50%);
     color: #fff;
     mix-blend-mode: difference;
 }
@@ -319,13 +434,32 @@
     color: #000;
     padding: 10px 20px;
 }
+@media screen and (max-width:1350px){
+    .sns{
+        padding: 200px 0 80px 0;
+    }
+    .sns .sns_loop .sns_photo .loop01 ul{
+        gap: 20px;
+    }
+    .sns .sns_loop .sns_photo ul li img{
+        width: 270px; /* % 는 기준이 되는 넓이가 있어야 쓸 수 있음. 아니면 px로 높이만 주면됨. */
+    }
+}
+@media screen and (max-width:1083px){
+    .sns .sns_loop .sns_photo .loop01 ul{
+        gap: 16px;
+    }
+    .sns .sns_loop .sns_photo ul li img{
+        width: 200px; /* % 는 기준이 되는 넓이가 있어야 쓸 수 있음. 아니면 px로 높이만 주면됨. */
+    }
+}
 
 /* videos start */
 .videos{
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 247px 0 50px 0;
+    margin: 120px 0 50px 0;
 }
 .videos .videos_wrap .photo{
     line-height: 0;
@@ -336,7 +470,7 @@
     max-height: 750px;
     object-fit: cover;
 }
-.videos .videos_wrap .visual_txt{ /* ???????? */
+.videos .videos_wrap .videos_txt{ /* ???????? */
     position: absolute;
     top: 40%;
     left: 50%;
@@ -345,16 +479,18 @@
     mix-blend-mode: difference;
     word-break: break-all;
 }
-.videos .videos_wrap .visual_txt h3{
+.videos .videos_wrap .videos_txt h3{
     font-size: 60px;
+    word-break: keep-all;
 }
-.videos .videos_wrap .visual_txt p{
+.videos .videos_wrap .videos_txt p{
     font-size: 35px;
+    word-break: keep-all;
 }
 .videos .roll01 p{
     position: absolute;
     font-family:var(--font-family-2p);
-    left: 0;
+    right: 0;
     top: 0;
     font-size: 1.47rem; /* 25px */
     color: #000;
@@ -369,12 +505,12 @@
 }
 @keyframes videos_01 {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50.15%) }
+    100% { transform: translateX(50.15%) }
 }
 .videos .roll02 p{
     position: absolute;
     font-family:var(--font-family-2p);
-    right: 0;
+    left: 0;
     bottom: auto;
     font-size: 1.47rem; /* 25px */
     color: #000;
@@ -389,5 +525,47 @@
 }
 @keyframes videos_02 {
     0% { transform: translateX(0); }
-    100% { transform: translateX(50.15%) }
+    100% { transform: translateX(-50.15%) }
+}
+
+@media screen and (max-width:1350px){
+    .videos{
+        margin: 100px 0 50px 0;
+    }
+    .videos .videos_wrap .videos_txt{ /* ???????? */
+        top: 50%;
+    }
+    .videos .videos_wrap .videos_txt h3{
+        font-size: 50px;
+    }
+    .videos .videos_wrap .videos_txt p{
+        font-size: 25px;
+    }
+    .videos .roll01 p{
+        font-size: 20px; /* 25px */
+        padding: 10px 0;
+    }
+    .videos .roll02 p{
+        font-size: 20px; /* 25px */
+        padding: 10px 0;
+    }
+}
+@media screen and (max-width:1083px){
+    .videos{
+        margin: 0 0 30px 0;
+    }
+    .videos .videos_wrap .videos_txt h3{
+        font-size: 30px;
+    }
+    .videos .videos_wrap .videos_txt p{
+        font-size: 16px;
+    }
+    .videos .roll01 p{
+        font-size: 16px; /* 25px */
+        padding: 10px 0;
+    }
+    .videos .roll02 p{
+        font-size: 16px; /* 25px */
+        padding: 10px 0;
+    }
 }
