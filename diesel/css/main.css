@@ -152,7 +152,7 @@
     margin-bottom: 20px;
 }
 .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li{
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
     position: relative;
 }
 .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li::before{
@@ -178,8 +178,9 @@
         position: relative;
         font-size: 15px;
     }
-    .sdg .sdg_list > ul > li > a .photo_wrap .detail ul li br{
-        display: none;
+    .sdg .sdg_list > ul > li > a .detail{
+        padding: 20px 50px 10px 50px;
+        transition: 0.3s;
     }
     
 }
