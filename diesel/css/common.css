@@ -15,10 +15,10 @@ html, body{
 }
 #wrap{
     position: relative;
-    overflow-x: hidden;
     width: 100%; /* wrap이 줄어드는게 부담스러우면 여기에 1920px을 넣으면 됨 */
     max-width: 1920px;
-    overflow-y: hidden;
+    /*overflow-x: hidden;
+    overflow-y: hidden;*/
     margin: 0 auto;
 }
 
