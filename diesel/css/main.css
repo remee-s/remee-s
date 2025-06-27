@@ -508,7 +508,7 @@
     max-height: 750px;
     object-fit: cover;
 }
-.videos .videos_wrap .videos_txt{ /* ???????? */
+.videos .videos_wrap .videos_txt{ 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -570,7 +570,7 @@
     .videos{
         margin: 100px 0 50px 0;
     }
-    .videos .videos_wrap .videos_txt{ /* ???????? */
+    .videos .videos_wrap .videos_txt{ 
         top: 50%;
     }
     .videos .videos_wrap .videos_txt h3{
