@@ -189,6 +189,15 @@ header .total_menu .total_menu_wrap .close{
             header .total_menu .total_menu_wrap .photo{
                 margin: 97px 0 0 0px;
             }
+            header .total_menu .total_menu_wrap .search .search_input {
+                padding: 15px 40px 15px 12px;
+                font-size: 13px;
+                width: 90%;
+            }
+            header .total_menu .total_menu_wrap .search .search_btn {
+                right: 43px;
+                top: 11px;
+            }
 }
 @media screen and (max-width:985px){
     header .gnb .gnb_wrap ul.depth1{
