@@ -1,0 +1,31 @@
+@import url(layout.css);
+@import url(common.css);
+@import url(font.css);
+@import url(default.css);
+
+.visual{ /* 넓이는 알아서 들어감 안줘도 됨. */
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url(../images/main/visual_bg.jpg)no-repeat center center /cover;
+}
+.visual h2{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 8vw; /* 150px // vw / vh - 가변사이즈 (브라우저 넓이/높이를 기준으로 계산함 )*/
+    font-weight: var(--bold-weight);
+}
+@media screen and (max-width:1100px){
+    .visual{ /* 넓이는 알아서 들어감 안줘도 됨. */
+        height: 750px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background: url(../images/main/visual_bg.jpg)no-repeat center center /cover;
+    }
+    .visual h2{
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 8vw; /* 150px // vw / vh - 가변사이즈 (브라우저 넓이/높이를 기준으로 계산함 )*/
+        font-weight: var(--bold-weight);
+    }
+}

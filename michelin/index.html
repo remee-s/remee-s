@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquary 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- swiper 라이브러리 -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Michelin Guide</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="menu_open">
+            <div class="wrapper">
+                <nav class="gnb">  
+                    <div class="gnb_wrap">
+                        <ul class="depth1">
+                            <li><a href="#"><span>About</span></a></li>
+                            <li><a href="#"><span>Best guide</span></a></li>
+                            <img src="images/layout/logo.svg" alt="미쉐린로고">
+                            <li><a href="#"><span>Restaurant</span></a></li>
+                            <li><a href="#"><span>Magazine</span></a></li>
+                        </ul><!--//depth1-->
+                    </div><!--//gnb_wrap-->
+                </nav>    
+                <div class="total_menu"> 
+                    <button class="menu_open"><span class="blind">전체메뉴열기</span></button>
+                    <div class="total_menu_wrap active"><!-- 열렸을때 active-->
+                        <div class="total_btn">
+                            <ul>
+                                <li class="About"><a href="#"><span class="">About</span></a></li>
+                                <li class="Best_guide"><a href="#"><span class="">Best guide</span></a></li>
+                                <li class="Restaurant"><a href="#"><span class="">Restaurant</span></a></li>
+                                <li class="Magazine"><a href="#"><span class="">Magazine</span></a></li>
+                            </ul>
+                        </div>
+                        <button class="menu_close"><span class="blind">전체메뉴닫기</span></button>
+                    </div><!--//total_menu_wrap-->
+                </div><!--//total_menu-->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2>Join our Michelin  guide</h2>
+            </section>
+            <section class="new_rest"></section>
+            <section class="popular"></section>
+            <section class="idea"></section>
+            <section class="guide"></section>
+            <section class="magazine"></section>
+        </main>
+    </div>
+    <footer></footer>
+</body>
+</html>
