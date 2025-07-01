@@ -24,3 +24,55 @@
         background: url(../images/main/visual_bg.jpg)no-repeat center center /cover;
     }
 }
+.new_rest .rest_txt{
+    align-items: center;
+    text-align: center;
+    margin: 139px 0 150px 0;
+    font-weight: var(--bold-weight);
+}
+.new_rest .rest_txt p{
+    font-size: var(--tit-font-size);
+}
+.new_rest .rest_list{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.new_rest .rest_list{
+    position: relative;
+}
+.new_rest .rest_list h3{
+    font-size: 20px;
+    position: absolute;
+    left: 33px;
+    top: 50px;
+    color: #fff;
+}
+.new_rest .rest_list h3::before{
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #fff;
+    left: 0;
+    top: 34px;
+    width: 339px;
+}
+.new_rest .rest_list .rest02,
+.new_rest .rest_list .rest04{ /* 위로 올라가야되는 요소 */
+    transform: translateY(-81px);
+}
+.new_rest .rest_list ul li{ /* ????????? */
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.new_rest .rest_list ul li.photo a{
+    display: block;
+    width: 405px;
+    height: 482px;
+    overflow: hidden;
+}
+.new_rest .rest_list ul li.photo a img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
