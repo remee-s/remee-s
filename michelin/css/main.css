@@ -15,16 +15,33 @@
     font-size: 8vw; /* 150px // vw / vh - 가변사이즈 (브라우저 넓이/높이를 기준으로 계산함 )*/
     font-weight: var(--bold-weight);
 }
+
+.visual .txt_wrap h2{
+    transform: translateY(0);
+    animation-name: visual_txt;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition-delay: 1.8s;
+}
+@keyframes visual_txt {
+    0%{ transform: translateY(100%); }
+    100%{ transform: translateY(0); }
+}/* keyframes */
 @media screen and (max-width:1100px){
     .visual{ /* 넓이는 알아서 들어감 안줘도 됨. */
         height: 750px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        padding: 0 20px;
         background: url(../images/main/visual_bg.jpg)no-repeat center center /cover;
     }
 }
+
+/* .new_rest */
 .new_rest .rest_txt{
+    display: block;
     align-items: center;
     text-align: center;
     margin: 139px 0 150px 0;
@@ -37,42 +54,296 @@
     display: flex;
     justify-content: center;
     gap: 24px;
+    margin: 0 114px;
+    line-height: 0;
 }
-.new_rest .rest_list{
+.new_rest .rest_list a{
+    display: block;
+    overflow: hidden;
+}
+.new_rest .rest_list .txt{
     position: relative;
+    z-index: 10;
 }
-.new_rest .rest_list h3{
-    font-size: 20px;
+.new_rest .rest_list .txt .r_top{
+    align-items: center;
     position: absolute;
-    left: 33px;
-    top: 50px;
+    display: flex;
+    justify-content: space-between;
+    left: 50px;
+    top: 38px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    width: 315px;
+    padding-bottom: 10px;
+}
+.new_rest .rest_list .r_top p{
+    font-size: 20px;
     color: #fff;
 }
-.new_rest .rest_list h3::before{
+.new_rest .rest_list .r_top a{
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1087' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3Crect x='0.5' y='0.5' width='23' height='23' stroke='white' stroke-opacity='0.8'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1087)'%3E%3Cpath d='M12 21C11.7167 21 11.4792 20.9042 11.2875 20.7125C11.0958 20.5208 11 20.2833 11 20V13H4C3.71667 13 3.47917 12.9042 3.2875 12.7125C3.09583 12.5208 3 12.2833 3 12C3 11.7167 3.09583 11.4792 3.2875 11.2875C3.47917 11.0958 3.71667 11 4 11H11V4C11 3.71667 11.0958 3.47917 11.2875 3.2875C11.4792 3.09583 11.7167 3 12 3C12.2833 3 12.5208 3.09583 12.7125 3.2875C12.9042 3.47917 13 3.71667 13 4V11H20C20.2833 11 20.5208 11.0958 20.7125 11.2875C20.9042 11.4792 21 11.7167 21 12C21 12.2833 20.9042 12.5208 20.7125 12.7125C20.5208 12.9042 20.2833 13 20 13H13V20C13 20.2833 12.9042 20.5208 12.7125 20.7125C12.5208 20.9042 12.2833 21 12 21Z' fill='white' fill-opacity='0.8'/%3E%3Cpath d='M12 3.0127C12.2802 3.0127 12.5149 3.10669 12.7041 3.2959C12.8933 3.48511 12.9873 3.71981 12.9873 4V11.0127H20C20.2802 11.0127 20.5149 11.1067 20.7041 11.2959C20.8933 11.4851 20.9873 11.7198 20.9873 12C20.9873 12.2802 20.8933 12.5149 20.7041 12.7041C20.5149 12.8933 20.2802 12.9873 20 12.9873H12.9873V20C12.9873 20.2802 12.8933 20.5149 12.7041 20.7041C12.5149 20.8933 12.2802 20.9873 12 20.9873C11.7198 20.9873 11.4851 20.8933 11.2959 20.7041C11.1067 20.5149 11.0127 20.2802 11.0127 20V12.9873H4C3.71981 12.9873 3.48511 12.8933 3.2959 12.7041C3.10669 12.5149 3.0127 12.2802 3.0127 12C3.0127 11.7198 3.10669 11.4851 3.2959 11.2959C3.48511 11.1067 3.71981 11.0127 4 11.0127H11.0127V4C11.0127 3.71981 11.1067 3.48511 11.2959 3.2959C11.4851 3.10669 11.7198 3.0127 12 3.0127Z' stroke='white' stroke-opacity='0.8' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.new_rest .rest_list .r_top a:hover{
+    transform: rotate(360deg);
+    transition: 0.8s;
+}
+/*     position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.6s; */
+.new_rest .rest_list .txt .r_bottom{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 46px;
+    top: 420px;
+    gap: 20px;
+    color: #fff;
+    padding: 0 10px;
+}
+.new_rest .rest_list .txt .r_bottom::before{
     content: "";
     position: absolute;
-    border-bottom: 1px solid #fff;
-    left: 0;
-    top: 34px;
-    width: 339px;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    width: 315px;
+    left: 3px;
+    bottom: 28px;
+}
+.new_rest .rest_list .rest01 .r_bottom h3,
+.new_rest .rest_list .rest02 .r_bottom h3,
+.new_rest .rest_list .rest03 .r_bottom h3,
+.new_rest .rest_list .rest04 .r_bottom h3{
+    font-size: 30px;
+    position: relative;
+}
+.new_rest .rest_list .rest01 .r_bottom h3::after,
+.new_rest .rest_list .rest03 .r_bottom h3::after{
+    content: "";
+    position: absolute;
+    left: 66px;
+    bottom: -8px;
+    height: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+.new_rest .rest_list .rest02 .r_bottom h3::after,
+.new_rest .rest_list .rest04 .r_bottom h3::after{
+    content: "";
+    position: absolute;
+    left: 95px;
+    bottom: -8px;
+    height: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+.new_rest .rest_list .txt span{
+    position: relative;
+    left: 46px;
+    top: 450px;
+    color: #fff;
+    padding: 0 10px;
+	font-family: 'S-CoreDream';
 }
 .new_rest .rest_list .rest02,
 .new_rest .rest_list .rest04{ /* 위로 올라가야되는 요소 */
     transform: translateY(-81px);
 }
-.new_rest .rest_list ul li{ /* ????????? */
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.new_rest .rest_list ul li.photo a{
+.new_rest .rest_list .photo a{
     display: block;
-    width: 405px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     height: 482px;
-    overflow: hidden;
 }
-.new_rest .rest_list ul li.photo a img{
-    object-fit: cover;
+.new_rest .rest_list .photo a img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.new_rest .rest_list .photo a:hover img{
+    transform:scale3d(1.2,1.2,1);
+}
+/* popular */
+
+.popular {
+    background: url(../images/main/pop_bg.jpg) no-repeat center center / cover;
+    height: 400px;
+    margin: 170px 0 0 0;
+}
+.popular .p_txt{
+    color: #fff;
+    padding: 128px 0 0 12px;
+}
+.popular .p_txt h2{
+    font-size: 50px;
+    padding: 0 0 24px 0;
+}
+.popular .p_txt a{
+    display: inline-block;
+    position: relative;
+}
+.popular .p_txt a::after{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 91px;
+    bottom: 3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+}
+.popular .p_txt a:hover::after{
+    transform: translateX(5px);
+    transition: 0.5s;
+}
+/* idea */
+.idea .idea_txt{
+    margin: 139px 0 100px 0 ;
+    text-align: center;
+}
+.idea .idea_txt h2{
+    font-weight: var(--bold-weight);
+}
+.idea .idea_txt p{
+    font-weight: var(--bold-weight);
+    font-size: var(--tit-font-size);
+    margin: 12px 0 38px 0;
+}
+.idea .idea_txt span{
+    line-height: 2;
+    font-family: 'S-CoreDream';
+}
+.idea .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.idea .guide01{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1d1d1d;
+    color: #fff;
+    word-break: break-all;
+}
+.idea .guide01 .g_txt{
+    display: flex;
+    flex-direction: column;
+    padding: 203px 180px 218px 100px;
+    position: relative;
+    width: 955px;
+    text-align: center;
+} 
+.idea .guide01 .g_txt .main_txt{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: relative;
+}
+.idea .guide01 .g_txt .main_txt::after{
+    content: "";
+    position: absolute;
+    width: 399px;
+    border-bottom: 1px solid #fff;
+    left: 55px;
+    bottom: 9px;
+}
+.idea .guide01 .g_txt .main_txt h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+}   
+.idea .guide01 .g_txt .sub_txt h3{
+    font-size: 30px;
+    font-weight: var(--bold-weight);
+    padding: 45px 0 40px 0;
+}
+.idea .guide01 .g_txt .sub_txt p{
+    line-height: 2;
+}
+.idea .guide01 .g_txt a{
+    display: block;
+    position: absolute;
+    right: 110px;
+    bottom: 64px;
+    font-size: 20px;
+}
+.idea .guide01 .g_txt a::after{
+    content: "";
+    position: absolute;
+    left: 104px;
+    bottom: 2px;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.idea .guide02{
+    display: flex;
+    justify-content: center;
+    background-color: #42181B;
+    justify-content: space-between;
+    color: #fff;
+    word-break: break-all;
+    flex-direction: row-reverse;
+}
+.idea .guide02 .g_txt{
+    display: flex;
+    flex-direction: column;
+    padding: 203px 100px 218px 180px;
+    position: relative;
+    width: 960px;
+} 
+.idea .guide02 .g_txt .main_txt{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    position: relative;
+}
+.idea .guide02 .g_txt .main_txt::after{
+    content: "";
+    position: absolute;
+    width: 399px;
+    border-bottom: 1px solid #fff;
+    left: 8px;
+    bottom: 9px;
+}
+.idea .guide02 .g_txt .main_txt h2{
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+}   
+.idea .guide02 .g_txt .sub_txt h3{
+    font-size: 30px;
+    font-weight: var(--bold-weight);
+    padding: 45px 0 40px 0;
+}
+.idea .guide02 .g_txt .sub_txt p{
+    line-height: 2;
+}
+.idea .guide02 .g_txt a{
+    display: block;
+    position: absolute;
+    right: 110px;
+    bottom: 64px;
+    font-size: 20px;
+}
+.idea .guide02 .g_txt a::after{
+    content: "";
+    position: absolute;
+    left: 104px;
+    bottom: 2px;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }

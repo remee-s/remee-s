@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="open"> <!--open-->
+        <header class=""> <!--open-->
             <div class="wrapper">
                 <nav class="gnb">  
                     <div class="gnb_wrap">
@@ -28,85 +28,149 @@
                             <li><a href="#"><span>Magazine</span></a></li>
                         </ul><!--//depth1-->
                     </div><!--//gnb_wrap-->
-                </nav>    
+                </nav>   
+                <button class="open"><span class="blind">전체메뉴열기</span></button> 
                 <div class="total_menu"> 
-                    <button class="menu_open"><span class="blind">전체메뉴열기</span></button>
-                    <div class="total_menu_wrap active"><!-- 열렸을때 active-->
-                        <div class="total_btn">
+                    <div class="total_menu_wrap"><!-- 열렸을때  -->
+                        <div class="t_list">
                             <ul>
-                                <li class="About"><a href="#"><span class="blind">About</span></a></li>
-                                <li class="Best_guide"><a href="#"><span class="blind">Best guide</span></a></li>
-                                <li class="Restaurant"><a href="#"><span class="blind">Restaurant</span></a></li>
-                                <li class="Magazine"><a href="#"><span class="blind">Magazine</span></a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Best guide</a></li>
+                                <li><a href="#">Restaurant</a></li>
+                                <li><a href="#">Magazine</a></li>
                             </ul>
                         </div>
-                        <button class="menu_close"><span class="blind">전체메뉴닫기</span></button>
+                        <div class="search">
+                            <input type="text" class="search_input" placeholder="search here...">
+                            <button class="search_btn"><span class="blind">검색</span></button>
+                        </div>
+                        <button class="close"><span class="blind">전체메뉴닫기</span></button>
                     </div><!--//total_menu_wrap-->
-                </div><!--//total_menu-->
+                </div><!--//total_menu-->    
             </div>
         </header>
         <main class="container">
             <section class="visual">
-                <h2>Join our Michelin  guide</h2>
+                <div class="txt_wrap">
+                    <h2>Join our Michelin  guide</h2>
+                </div>    
             </section>
             <section class="new_rest">
-                <div class="rest_txt">
-                    <h2>Michelin Guide's</h2>
-                    <p>New Restaurant</p>
-                </div>
-                <div class="rest_list">
-                    <div class="rest01">
-                            <h3>"All of Today's Spots"</h3>
-                            <ul>
-                                <li><a href="#"><span>더보기</span></a></li>
-                                <li class="photo"><a href="#"><img src="images/main/new_rest01.jpg" alt="두리"></a></li>
-                            </ul>
-                        <div class="txt">    
-                            <strong>두리</strong>
-                            <strong>한식과 양식</strong>
-                            <span>용산구 원효로63길 27, Seoul, 04364, 한국</span>
+                        <div class="rest_txt">
+                            <h2>Michelin Guide's</h2>
+                            <p>New Restaurant</p>
                         </div>
-                    </div>
-                    <div class="rest02">
-                            <h3>“Special menu after 9pm”</h3>
-                            <ul>
-                                <li><a href="#"><span>더보기</span></a></li>
-                                <li class="photo"><a href="#"><img src="images/main/new_rest02.jpg" alt="오니바"></a></li>
-                            </ul>
-                        <div class="txt">    
-                            <strong>오니바</strong>
-                            <strong>프렌치</strong>
-                            <span>강남구 도산대로 75길 15, 지하 1층, 한국</span>
-                        </div>
-                    </div>
-                    <div class="rest03">
-                            <h3>“Refined Korean meal”</h3>
-                            <ul>
-                                <li><a href="#"><span>더보기</span></a></li>
-                                <li class="photo"><a href="#"><img src="images/main/new_rest03.jpg" alt="비움"></a></li>
-                            </ul>
-                        <div class="txt">    
-                            <strong>비움</strong>
-                            <strong>한식과 사찰음식</strong>
-                            <span>강남구 학동로 97길 41, Seoul, 한국</span>
-                        </div>
-                    </div>
-                    <div class="rest04">
-                            <h3>“Collagen Beef Bone Soup”</h3>
-                            <ul>
-                                <li><a href="#"><span>더보기</span></a></li>
-                                <li class="photo"><a href="#"><img src="images/main/new_rest04.jpg" alt="곰탕랩"></a></li>
-                            </ul>
-                        <div class="txt">    
-                            <strong>곰탕랩</strong>
-                            <strong>한식(곰탕)</strong>
-                            <span>강남구 도산대로 153, Seoul, 06037, 한국</span>
-                        </div>
-                    </div>
-                </div><!--//photo-->
+                        <div class="rest_list">
+                            <div class="rest01">
+                                <div class="txt">
+                                    <div class="r_top">
+                                        <p>"All of Today's Spots"</p>   
+                                        <a href="#"><span class="blind">더보기</span></a>
+                                    </div>
+                                    <div class="r_bottom">
+                                        <h3>두리</h3>
+                                        <p>한식과 양식</p>
+                                    </div>
+                                    <span>용산구 원효로63길 27, Seoul, 04364,한국</span>
+                                </div>
+                                <div class="photo"><a href="#"><img src="images/main/new_rest01.jpg" alt="두리"></a></div>
+                            </div>
+                            <div class="rest02">
+                                <div class="txt">
+                                    <div class="r_top">
+                                        <p>“Special menu after 9pm”</p>   
+                                        <a href="#"><span class="blind">더보기</span></a>
+                                    </div>
+                                    <div class="r_bottom">
+                                        <h3>오니바</h3>
+                                        <p>프렌치</p>
+                                    </div>
+                                    <span>강남구 도산대로 75길 15, 지하 1층,한국</span>
+                                </div>
+                                <div class="photo"><a href="#"><img src="images/main/new_rest02.jpg" alt="오니바"></a></div>
+                            </div>
+                            <div class="rest03">
+                                <div class="txt">
+                                    <div class="r_top">
+                                        <p>“Refined Korean meal”</p>   
+                                        <a href="#"><span class="blind">더보기</span></a>
+                                    </div>
+                                    <div class="r_bottom">
+                                        <h3>비움</h3>
+                                        <p>한식과 사찰음식</p>
+                                    </div>
+                                    <span>강남구 학동로 97길 41, Seoul,한국</span>
+                                </div>
+                                <div class="photo"><a href="#"><img src="images/main/new_rest03.jpg" alt="비움"></a></div>
+                            </div>
+                            <div class="rest04">
+                                <div class="txt">
+                                    <div class="r_top">
+                                        <p>“Collagen Beef Bone Soup”</p>   
+                                        <a href="#"><span class="blind">더보기</span></a>
+                                    </div>
+                                    <div class="r_bottom">
+                                        <h3>곰탕랩</h3>
+                                        <p>한식(곰탕)</p>
+                                    </div>
+                                    <span>강남구 도산대로 153, Seoul, 06037,한국</span>
+                                </div>
+                                <div class="photo"><a href="#"><img src="images/main/new_rest04.jpg" alt="곰탕랩"></a></div>
+                            </div>
+                        </div><!--//rest_list-->
             </section><!--//new_rest-->
-            <section class="popular"></section>
-            <section class="idea"></section>
+            <section class="popular">
+                <div class="wrap">
+                    <div class="wrapper">
+                        <div class="p_txt">
+                            <h2>오늘, 미각을 깨우는 특별한 한 접시</h2>
+                            <a href="#"><span>자세히 보기</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section><!--//popular-->
+            <section class="idea">
+                <div class="idea_txt">
+                    <h2>Guides d’Exception</h2>
+                    <p>미쉐린이 엄선한 최고의 미식 여정</p>
+                    <span>세계 미식의 정수를 집대성한 ‘Guides d’Exception’은 미쉐린 가이드가 직접 선정한<br> 
+                        최고의 레스토랑, 셰프, 그리고 미식 여행지들을 소개합니다.<br>
+                        정교한 기술과 창의성, 그리고 감동을 불러일으키는 맛이 만나 진정한 미식의 예술을 이룹니다.<br>
+                        지금, 전 세계 미식가들의 영감을 자극하는 미쉐린 베스트 셀렉션을 만나보세요.</span>
+                </div>
+                    <div class="guide01">
+                        <div class="photo"><img src="images/main/Guide01.jpg" alt="쌀 요리"></div>
+                        <div class="g_txt">
+                            <div class="main_txt">
+                                <h2>Best Seoul Guide</h2>
+                                <p>3 Restaurant</p>
+                            </div>
+                            <div class="sub_txt">
+                                <h3>한중일의 쌀 요리를 맛볼 수 있는 곳</h3>
+                                <p>한국과 중국, 일본은 지역적으로 가깝지만 서로 다른 쌀문화를 가지고 있습니다.<br> 
+                                    한국에서 맛볼 수 있는 동아시아 지역의 쌀 요리들을 선보이는<br> 
+                                    레스토랑 중 미쉐린이 선정한 곳들을 소개합니다.</p>
+                            </div>
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </div>  
+                <div class="guide02">
+                    <div class="photo"><img src="images/main/Guide02.jpg" alt="게장"></div>
+                    <div class="g_txt">
+                        <div class="main_txt">
+                            <h2>Best Seoul Guide</h2>
+                            <p>3 Restaurant</p>
+                        </div>
+                        <div class="sub_txt">
+                            <h3>최고의 게장을 맛볼 수 있는 곳</h3>
+                            <p>밥도둑 하면 가장 먼저 떠오르는 한국의 음식은 무엇일까요?<br>
+                                현재는 다양한 음식에 사용되는<br> 
+                                수식어이기는 하지만, 원조로 따지자면 밥도둑의 대명사는 역시 간장게장입니다.</p>
+                        </div>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </section>
             <section class="guide"></section>
             <section class="magazine"></section>
         </main>
