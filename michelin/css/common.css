@@ -10,15 +10,16 @@ html, body{
 }
 
 .wrapper{
-    width: 1260px;
+    /* width: 1260px; */
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto; /*가운데*/
 }
 #wrap{
     position: relative;
     width: 100%; /* wrap이 줄어드는게 부담스러우면 여기에 1920px을 넣으면 됨 */
-    max-width: 1920px;
-    /*overflow-x: hidden;
-    overflow-y: hidden;*/
+    overflow-x: hidden;
+    overflow-y: hidden;
     margin: 0 auto;
 }
 
