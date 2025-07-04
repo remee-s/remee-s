@@ -6,7 +6,8 @@ header{
     left:0; 
     top:0; 
     z-index: 100;
-    width:100%;
+    width: 100%;
+    height: var(--header-h);
 }
 header .gnb .gnb_wrap ul.depth1{
     display: flex;
