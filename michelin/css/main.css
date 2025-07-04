@@ -208,6 +208,7 @@
 .popular .p_txt a{
     display: inline-block;
     position: relative;
+    padding-right: 30px;
 }
 .popular .p_txt a::after{
     content: "";
@@ -281,138 +282,69 @@
     line-height: 2;
     font-family: 'S-CoreDream';
 }
-.idea .photo01 {
-    width: 960px;
+.idea .photo {
+    position: relative;
+    max-width: 50%;
+    width: calc(100% - 600px);
     height: 800px;
-    object-fit: cover;
-    background: url(../images/main/Guide_photo01.jpg) no-repeat center center / cover;
 }
-.idea .photo02 {
-    width: 960px;
-    height: 800px;
+.idea .photo img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    background: url(../images/main/Guide_photo02.jpg) no-repeat center center / cover;
 }
 
-.idea .guide01{
-    display: flex;
-    justify-content: space-between;
+.idea .guide_box{
+    display: flex;  
+}
+.idea .guide_box.black .g_txt{
     background-color: #1d1d1d;
     color: #fff;
-    word-break: break-all;
 }
-.idea .guide01 .g_txt{
-    display: flex;
-    flex-direction: column;
-    padding: 203px 75px 218px 100px;
-    position: relative;
-    width: 960px;
-    height: 800px;
-    text-align: left;
-    align-items: center;
-} 
-.idea .guide01 .g_txt .main_txt {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    position: relative;
-    left: -20px;
-    top: 0;
-}
-.idea .guide01 .g_txt .main_txt::after {
-    content: "";
-    position: absolute;
-    width: 402px;
-    border-bottom: 1px solid #fff;
-    left: 5px;
-    bottom: 9px;
-}
-.idea .guide01 .g_txt .main_txt h2{
-    font-size: var(--tit-font-size);
-    font-weight: var(--bold-weight);
-}   
-.idea .guide01 .g_txt .sub_txt h3{
-    font-size: 30px;
-    font-weight: var(--bold-weight);
-    padding: 45px 0 40px 0;
-}
-.idea .guide01 .g_txt .sub_txt p{
-    line-height: 2;
-}
-.idea .guide01 .g_txt a{
-    display: block;
-    position: absolute;
-    right: 110px;
-    bottom: 64px;
-    font-size: 20px;
-}
-.idea .guide01 .g_txt a::after{
-    content: "";
-    position: absolute;
-    left: 104px;
-    bottom: 2px;
-    width: 30px;
-    height: 30px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-}
-
-.idea .guide02{
-    display: flex;
-    justify-content: center;
-    background-color: #42181B;
-    justify-content: space-between;
-    color: #fff;
-    word-break: break-all;
+.idea .guide_box.brown{
     flex-direction: row-reverse;
 }
-.idea .guide02 .g_txt{
-    display: flex;
-    flex-direction: column;
-    padding: 203px 100px 218px 100px;
+.idea .guide_box.brown .g_txt{
+    background-color: #42181B;
+    color: #fff;
+}
+.idea .guide_box .g_txt{
+    padding: 203px 0 0 0;
     position: relative;
-    width: 960px;
+    width: 50%;
+    min-width: 600px;
     height: 800px;
-    align-items: center;
+    text-align: center;
 } 
-.idea .guide02 .g_txt .main_txt {
+.idea .guide_box .g_txt .main_txt {
     display: flex;
+    justify-content: center;
     align-items: baseline;
     gap: 20px;
     position: relative;
-    left: -8px;
-    top: 0;
 }
-.idea .guide02 .g_txt .main_txt::after{
-    content: "";
-    position: absolute;
-    width: 408px;
-    border-bottom: 1px solid #fff;
-    left: 4px;
-    bottom: 9px;
-}
-.idea .guide02 .g_txt .main_txt h2{
+.idea .guide_box .g_txt .main_txt h2{
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    line-height: 1;
 }   
-.idea .guide02 .g_txt .sub_txt h3{
+.idea .guide_box .g_txt .sub_txt h3{
     font-size: 30px;
     font-weight: var(--bold-weight);
     padding: 45px 0 40px 0;
 }
-.idea .guide02 .g_txt .sub_txt p{
+.idea .guide_box .g_txt .sub_txt p{
     line-height: 2;
 }
-.idea .guide02 .g_txt a{
+.idea .guide_box .g_txt a{
     display: block;
     position: absolute;
     right: 110px;
     bottom: 64px;
     font-size: 20px;
 }
-.idea .guide02 .g_txt a::after{
+.idea .guide_box .g_txt a::after{
     content: "";
     position: absolute;
     left: 104px;
@@ -424,107 +356,82 @@
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
-@media screen and (max-width:1380px){
-    .idea .guide01 .photo01 {
-        width: auto;
-        height: 218px;
-        object-fit: cover;
-        background: url(../images/main/Guide_photo01.jpg) no-repeat center center / cover;
-    }
-    .idea .guide02 .photo02 {
-        width: auto;
-        height: 218px;
-        object-fit: cover;
-        background: url(../images/main/Guide_photo02.jpg) no-repeat center center / cover;
-    }
-    
-    .idea .guide01,
-    .idea .guide02{
-        display: block;
-    }
-    .idea .guide01 .g_txt,
-    .idea .guide02 .g_txt{
-        display: flex;
-        flex-direction: column;
-        padding: 43px 75px 176px 100px;
-        position: relative;
-        width: auto;
-        height: 218px;
-        align-items: flex-start
-    } 
-    .idea .guide01 .g_txt .main_txt,
-    .idea .guide02 .g_txt .main_txt{
-        display: flex;
-        align-items: baseline;
-        gap: 20px;
-        position: relative;
-    }
-    .idea .guide01 .g_txt .main_txt::after,
-    .idea .guide02 .g_txt .main_txt::after{
-        display: none;
-    }
-    .idea .guide01 .g_txt .main_txt h2,
-    .idea .guide02 .g_txt .main_txt h2{
-        font-size: var(--tit-font-size);
-        font-weight: var(--bold-weight);
-    }   
-    .idea .guide01 .g_txt .sub_txt h3,
-    .idea .guide02 .g_txt .sub_txt h3{
-        font-size: 20px;
-        font-weight: 400;
-        padding: 6px 0px 16px 0;
-    }
-    .idea .guide01 .g_txt .sub_txt p,
-    .idea .guide02 .g_txt .sub_txt p{
-        line-height: 2;
-        display: none;
-    }
-    .idea .guide01 .g_txt a,
-    .idea .guide02 .g_txt a{
-        display: block;
-        position: absolute;
-        right: 110px;
-        bottom: 64px;
-        font-size: 20px;
-    }  
-}
 @media screen and (max-width:768px){
-    .idea .idea_txt {
-        margin: 80px 20px 75px 20px;
+    .idea .idea_txt{
+        margin: 70px 20px 54px 20px;
     }
     .idea .idea_txt p br{
         display: block;
     }
-    .idea .guide01 .g_txt, .idea .guide02 .g_txt {
-        padding: 38px 0 0 31px;
+    .idea .idea_txt p{
+        margin: 12px 0 38px 0;
     }
-    .idea .guide01 .g_txt a, .idea .guide02 .g_txt a {
-        left: 34px;
-        bottom: 25px;
+    .idea .idea_txt span{
+        display: none;
+    }
+    .idea .photo {
+        position: relative;
+        width: auto;
+        height: 218px;
+        max-width: 100%;
+    }
+
+    .idea .guide_box{
+        display: block;  
+    }
+    .idea .guide_box .g_txt{
+        padding: 21px 0 0 20px;
+        position: relative;
+        width: 100%;
+        min-width: 304px;
+        height: 218px;
+        text-align: left;
+    } 
+    .idea .guide_box .g_txt .main_txt {
+        display: flex;
+        justify-content: left;
+        align-items: baseline;
+        gap: 20px;
+        position: relative;
+    }
+    .idea .guide_box .g_txt .main_txt h2{
+        font-size: 20px;
+        font-weight: var(--bold-weight);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+        line-height: 1;
+    }   
+    .idea .guide_box .g_txt .main_txt p {
+        display: none;
+    }
+    .idea .guide_box .g_txt .sub_txt h3{
+        font-size: 20px;
+        font-weight: 400;
+        padding: 16px 0 40px 0;
+    }
+    .idea .guide_box .g_txt .sub_txt p{
+        display: none;
+    }
+    .idea .guide_box .g_txt a{
+        display: block;
+        position: absolute;
+        right: 46px;
+        bottom: 20px;
         font-size: 16px;
     }
-    .idea .guide01 .g_txt a::after,
-    .idea .guide02 .g_txt a::after {
+    .idea .guide_box .g_txt a::after{
         content: "";
         position: absolute;
-        left: 84px;
-        bottom: 4px;
-        width: 20px;
-        height: 20px;
-    }
-    .idea .idea_txt span,
-    .idea .idea_txt p {
-        word-break: break-all;
-    }
-    .idea .guide01 .g_txt .main_txt{
-        display: flex;
-        gap: 10px;
-        position: relative;
-        flex-direction: column;
-        padding: 6px 0px 0 20px;
-        flex-direction: row;
+        left: 90px;
+        bottom: 2px;
+        width: 24px;
+        height: 24px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_79_1108' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect width='28' height='28' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_79_1108)'%3E%3Cpath d='M14.7009 14.0003L10.1509 9.45026C9.93702 9.23637 9.83008 8.96415 9.83008 8.63359C9.83008 8.30304 9.93702 8.03082 10.1509 7.81693C10.3648 7.60304 10.637 7.49609 10.9676 7.49609C11.2981 7.49609 11.5704 7.60304 11.7842 7.81693L17.1509 13.1836C17.2676 13.3003 17.3502 13.4266 17.3988 13.5628C17.4474 13.6989 17.4717 13.8447 17.4717 14.0003C17.4717 14.1558 17.4474 14.3016 17.3988 14.4378C17.3502 14.5739 17.2676 14.7003 17.1509 14.8169L11.7842 20.1836C11.5704 20.3975 11.2981 20.5044 10.9676 20.5044C10.637 20.5044 10.3648 20.3975 10.1509 20.1836C9.93702 19.9697 9.83008 19.6975 9.83008 19.3669C9.83008 19.0364 9.93702 18.7641 10.1509 18.5503L14.7009 14.0003Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
 }
+
 /* guide */
 .guide{
     margin: 0 40px;
