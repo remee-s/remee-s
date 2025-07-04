@@ -383,6 +383,9 @@
 .idea .idea_txt h2{
     font-weight: var(--bold-weight);
 }
+.idea .idea_txt p br{
+    display: none;
+}
 .idea .idea_txt p{
     font-weight: var(--bold-weight);
     font-size: var(--tit-font-size);
@@ -598,6 +601,9 @@
 @media screen and (max-width:768px){
     .idea .idea_txt {
         margin: 80px 20px 75px 20px;
+    }
+    .idea .idea_txt p br{
+        display: block;
     }
     .idea .guide01 .g_txt, .idea .guide02 .g_txt {
         padding: 38px 0 0 31px;
