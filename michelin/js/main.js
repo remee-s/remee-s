@@ -18,11 +18,11 @@ $(document).ready(function(){
 			spaceBetween: 16,
 			},
 			768: {    /* 640px 이상일때 적용 */
-				slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 				spaceBetween: 16,
 			},
 			1260: {    /* 640px 이상일때 적용 */
-			slidesPerView: 5,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 			spaceBetween: 20,
 			},
 			1500: {    /* 640px 이상일때 적용 */
