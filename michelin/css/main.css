@@ -289,11 +289,12 @@
         box-shadow: none;
         height: 145px;
     }
-    .new_rest .rest_list .photo a img{
-        width: 320px;
+    .new_rest .rest_list .photo a img {
+        width: 355px;
         height: 100%;
         object-fit: cover;
         transition: 0.5s;
+        border-radius: 5px;
     }
     .new_rest .rest_list .photo a:hover img{
         transform: none;
@@ -799,8 +800,10 @@
 .magazine .photo a{
     display: block;
 }
-.magazine .photo a img{
+.magazine .photo a img {
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
 }
 .magazine .photo:first-child{
     margin-left: 24px;
@@ -839,7 +842,6 @@
 }
 @media screen and (max-width:768px){
     .magazine{
-
         padding: 175px 0 65px 0;
     }
     .magazine .magazine_txt{
@@ -864,7 +866,7 @@
         display: block;
     }
     .magazine .photo a img{
-        border-radius: 10px;
+        border-radius: 5px;
     }
     .magazine .photo:first-child{
         margin: 0 64px;
