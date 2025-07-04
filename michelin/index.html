@@ -5,125 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jquary 라이브러리 -->
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
+
     <!-- swiper 라이브러리 -->
     <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css?v=2507041211">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>MICHELIN GUIDE</title>
 </head>
 <body>
     <div id="wrap">
         <header class=""> <!--open-->
-            <div class="h_wrap">
-                <a href="#"><img src="images/layout/logo.svg" alt="미쉐린로고"></a></li>
-                <div class="h_inner">
-                    <button class="open"><span class="blind">전체메뉴열기</span></button>     
-                    <nav class="gnb">  
-                        <div class="gnb_wrap">
-                            <ul class="depth1">
-                                <li><a href="#"><span>About</span></a></li>
-                                <li><a href="#"><span>Best guide</span></a></li>
-                                <li><a href="#"><img src="images/layout/logo.svg" alt="미쉐린로고"></a></li>
-                                <li><a href="#"><span>Restaurant</span></a></li>
-                                <li><a href="#"><span>Magazine</span></a></li>
-                            </ul><!--//depth1-->
-                        </div><!--//gnb_wrap-->
-                    </nav>  
-                </div>
-            </div>
-                <div class="total_menu"> 
-                    <div class="total_menu_wrap"><!-- 열렸을때  -->
-                        <div class="t_list">
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Best guide</a></li>
-                                <li><a href="#">Restaurant</a></li>
-                                <li><a href="#">Magazine</a></li>
-                            </ul>
-                        </div>
-                        <div class="search">
-                            <input type="text" class="search_input" placeholder="search here...">
-                            <button class="search_btn"><span class="blind">검색</span></button>
-                        </div>
-                        <button class="close"><span class="blind">전체메뉴닫기</span></button>
-                    </div><!--//total_menu_wrap-->
-                </div><!--//total_menu-->    
+            <h1 class="logo"><a href="#"><img src="images/layout/logo.svg" alt="미쉐린로고"></a></h1>
+            <nav class="gnb">
+                <button class="open"><span class="blind">메뉴열기</span></button>     
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li><a href="#"><span>About</span></a></li>
+                        <li><a href="#"><span>Best guide</span></a></li>
+                        <li><a href="#"><span>Restaurant</span></a></li>
+                        <li><a href="#"><span>Magazine</span></a></li>
+                    </ul><!--//depth1-->
+                </div><!--//gnb_wrap-->
+            </nav> 
+            <div class="total_menu "><!-- 모바일 메뉴 show 클래스가 추가되면 보임  -->
+                <div class="total_menu_wrap">
+                    <nav class="t_list">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Best guide</a></li>
+                            <li><a href="#">Restaurant</a></li>
+                            <li><a href="#">Magazine</a></li>
+                        </ul>
+                    </nav>
+                    <div class="search">
+                        <input type="text" class="search_input" placeholder="search here...">
+                        <button class="search_btn"><span class="blind">검색</span></button>
+                    </div>
+                    <button class="close"><span class="blind">전체메뉴닫기</span></button>
+                </div><!--//total_menu_wrap-->
+            </div><!--//total_menu-->
         </header>
         <main class="container">
             <section class="visual">
                 <div class="txt_wrap">
-                    <h2>Join our Michelin  guide</h2>
+                    <h2>Join our Michelin guide</h2>
                 </div>    
             </section>
             <section class="new_rest">
-                        <div class="rest_txt" data-aos="fade-up">
-                            <h2>Michelin Guide's</h2>
-                            <p>New Restaurant</p>
-                        </div>
-                        <div class="rest_list" data-aos="fade-up">
-                            <div class="rest01">
-                                <div class="txt">
-                                    <div class="r_top">
-                                        <p>"All of Today's Spots"</p>   
-                                        <a href="#"><span class="blind">더보기</span></a>
+                <div class="tit" data-aos="fade-up">
+                    <h2>Michelin Guide's</h2>
+                    <p>New Restaurant</p>
+                </div>
+                <div class="list" data-aos="fade-up">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/main/new_rest01.jpg" alt="두리"></div>
+                                    <div class="list_top"> "All of Today's Spots"</div>
+                                    <div class="list_sub">                              
+                                        <div class="name">
+                                            <strong>두리</strong>
+                                            <span>한식과 양식</span>
+                                        </div>
+                                        <div class="local">용산구 원효로63길 27, Seoul, 04364, 한국</div>
                                     </div>
-                                    <div class="r_bottom">
-                                        <h3>두리</h3>
-                                        <p>한식과 양식</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide up">
+                                <a href="#">
+                                    <div class="photo"><img src="images/main/new_rest02.jpg" alt="오니바"></div>
+                                    <div class="list_top">“Special menu after 9pm”</div>
+                                    <div class="list_sub">                              
+                                        <div class="name">
+                                            <strong>오니바</strong>
+                                            <span>프렌치</span>
+                                        </div>
+                                        <div class="local">강남구 도산대로 75길 15, 지하 1층, 한국</div>
                                     </div>
-                                    <span>용산구 원효로63길 27, Seoul, 04364,한국</span>
-                                </div>
-                                <div class="photo"><a href="#"><img src="images/main/new_rest01.jpg" alt="두리"></a></div>
-                            </div>
-                            <div class="rest02">
-                                <div class="txt">
-                                    <div class="r_top">
-                                        <p>“Special menu after 9pm”</p>   
-                                        <a href="#"><span class="blind">더보기</span></a>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/main/new_rest03.jpg" alt="비움"></div>
+                                    <div class="list_top">“Refined Korean meal”</div>
+                                    <div class="list_sub">                              
+                                        <div class="name">
+                                            <strong>비움</strong>
+                                            <span>한식과 사찰음식</span>
+                                        </div>
+                                        <div class="local">강남구 학동로 97길 41, Seoul, 한국</div>
                                     </div>
-                                    <div class="r_bottom">
-                                        <h3>오니바</h3>
-                                        <p>프렌치</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide up">
+                                <a href="#">
+                                    <div class="photo"><img src="images/main/new_rest04.jpg" alt="곰탕랩"></div>
+                                    <div class="list_top">“Collagen Beef Bone Soup”</div>
+                                    <div class="list_sub">                              
+                                        <div class="name">
+                                            <strong>곰탕랩</strong>
+                                            <span>한식(곰탕)</span>
+                                        </div>
+                                        <div class="local">강남구 도산대로 153, Seoul, 06037, 한국</div>
                                     </div>
-                                    <span>강남구 도산대로 75길 15, 지하 1층,한국</span>
-                                </div>
-                                <div class="photo"><a href="#"><img src="images/main/new_rest02.jpg" alt="오니바"></a></div>
-                            </div>
-                            <div class="rest03">
-                                <div class="txt">
-                                    <div class="r_top">
-                                        <p>“Refined Korean meal”</p>   
-                                        <a href="#"><span class="blind">더보기</span></a>
-                                    </div>
-                                    <div class="r_bottom">
-                                        <h3>비움</h3>
-                                        <p>한식과 사찰음식</p>
-                                    </div>
-                                    <span>강남구 학동로 97길 41, Seoul,한국</span>
-                                </div>
-                                <div class="photo"><a href="#"><img src="images/main/new_rest03.jpg" alt="비움"></a></div>
-                            </div>
-                            <div class="rest04">
-                                <div class="txt">
-                                    <div class="r_top">
-                                        <p>“Collagen Beef Bone Soup”</p>   
-                                        <a href="#"><span class="blind">더보기</span></a>
-                                    </div>
-                                    <div class="r_bottom">
-                                        <h3>곰탕랩</h3>
-                                        <p>한식(곰탕)</p>
-                                    </div>
-                                    <span>강남구 도산대로 153, Seoul, 06037,한국</span>
-                                </div>
-                                <div class="photo"><a href="#"><img src="images/main/new_rest04.jpg" alt="곰탕랩"></a></div>
-                            </div>
-                        </div><!--//rest_list-->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="progress"></div>
+                </div><!--//list-->
             </section><!--//new_rest-->
             <script>// 반드시 콘텐츠 하단에 배치해야 한다.
                 AOS.init({
@@ -230,7 +227,7 @@
             <script>// 반드시 콘텐츠 하단에 배치해야 한다.
                 AOS.init({
                 offset: 200, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
-                duration: 600, // 애니메이션 효과가 작동되는 시간
+                duration: 500, // 애니메이션 효과가 작동되는 시간
                 easing: 'ease', // 가속도
                 });
             </script>

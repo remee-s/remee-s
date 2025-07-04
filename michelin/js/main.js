@@ -1,19 +1,25 @@
 $(document).ready(function(){
-	//header .total_menu .open
-    //header .total_menu .total_menu_wrap .close
-    $('header .open').on('click', function(){
-		$('header .total_menu .total_menu_wrap').addClass('active');	
+	
+	/* 모바일 메뉴 열기
+	
+	header .gnb .open 를 클릭하면 header .total_menu에 show라는 클래스를 추가 
+	header .total_menu .close 를 클릭하면 header .total_menu에 show라는 클래스를 삭제
+	*/
+
+	$('header .gnb .open').on('click', function(){
+		$('header .total_menu').addClass('show');	
 	});
-    $('header .total_menu .total_menu_wrap .close').on('click', function(){
-		$('header .total_menu .total_menu_wrap').removeClass('active');	
+
+	$('header .total_menu .close').on('click', function(){
+		$('header .total_menu').removeClass('show');
 	});
 
 
 	const magazine_swiper = new Swiper('.magazine .magazine_swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-			450: {    /* 640px 이상일때 적용 */
+		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			463: {    /* 640px 이상일때 적용 */
 			slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 			spaceBetween: 16,
 			},
@@ -39,5 +45,26 @@ $(document).ready(function(){
 			dragSize: 'auto',
 		},
 	});
+
+
+	/****** new_rest swiper 시작 *****/
+	const rest_swiper = new Swiper('.new_rest .swiper', { /* 팝업을 감싼는 요소의 class명 */
+		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			768: {    /* 640px 이상일때 적용 */
+				slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+		},
+		//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+		//loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+		pagination: {
+			el: ".new_rest .progress",
+			type: "progressbar",
+		},
+
+	});
+	/****** new_rest swiper 끝 *****/
 })
 

@@ -5,21 +5,29 @@ header{
     z-index: 100;
     width: 100%;
     color: #fff;
-    font-weight: var(--bold-weight);
+}
+
+header h1.logo {
+    position: absolute;
+    display: block;
+    top: 59px;
+    left: calc(50% - 113px);
 }
 header .gnb ul.depth1{
     display: flex;
     justify-content: center;
+    margin-left: 40px;
 }
 header .gnb ul.depth1 li a{
     display: block;
     margin: 2.17em 3.52em; /* 37 60 */
+    font-weight: var(--bold-weight);
+}
+header .gnb_wrap ul.depth1 li:nth-child(3){
+    margin-left: 250px;
 }
 header .gnb ul.depth1 ul li img{
     width: auto;
-}
-header .h_wrap a{
-    display: none;
 }
 /* 모바일 메뉴 */
 header .total_menu{
@@ -28,43 +36,30 @@ header .total_menu{
 
 @media screen and (max-width:1100px){
     header{
+        display: flex;
+        justify-content: space-between;
         padding: 20px 20px;
     }
-    header .h_wrap{
-        position: relative;
-    }
-    header .h_wrap a{
-        display: inline-block;
-    }
-    header .h_wrap .h_inner {
-        display: flex;
-        padding: 0 16px;
-        flex-direction: row-reverse;
-        align-items: center;
+    header h1.logo{
+        position: static;
     }
     header .gnb ul.depth1 li img{
         display: none;
     }
-    header .open{ /* 위치 조정 해야됨???? */
+    header .gnb .open{ 
         display: block;
-        right: 0;
-        top: 0;
-        position: absolute;
         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_94_2241' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_94_2241)'%3E%3Cpath d='M5 21.25C4.64583 21.25 4.34896 21.1302 4.10938 20.8906C3.86979 20.651 3.75 20.3542 3.75 20C3.75 19.6458 3.86979 19.349 4.10938 19.1094C4.34896 18.8698 4.64583 18.75 5 18.75H20C20.3542 18.75 20.651 18.8698 20.8906 19.1094C21.1302 19.349 21.25 19.6458 21.25 20C21.25 20.3542 21.1302 20.651 20.8906 20.8906C20.651 21.1302 20.3542 21.25 20 21.25H5ZM7.5 16.25C7.14583 16.25 6.84896 16.1302 6.60938 15.8906C6.36979 15.651 6.25 15.3542 6.25 15C6.25 14.6458 6.36979 14.349 6.60938 14.1094C6.84896 13.8698 7.14583 13.75 7.5 13.75H22.5C22.8542 13.75 23.151 13.8698 23.3906 14.1094C23.6302 14.349 23.75 14.6458 23.75 15C23.75 15.3542 23.6302 15.651 23.3906 15.8906C23.151 16.1302 22.8542 16.25 22.5 16.25H7.5ZM10 11.25C9.64583 11.25 9.34896 11.1302 9.10938 10.8906C8.86979 10.651 8.75 10.3542 8.75 10C8.75 9.64583 8.86979 9.34896 9.10938 9.10938C9.34896 8.86979 9.64583 8.75 10 8.75H25C25.3542 8.75 25.651 8.86979 25.8906 9.10938C26.1302 9.34896 26.25 9.64583 26.25 10C26.25 10.3542 26.1302 10.651 25.8906 10.8906C25.651 11.1302 25.3542 11.25 25 11.25H10Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
         width: 30px;
         height: 30px;
         background-position: center center;
         background-repeat: no-repeat;
     } 
-    header .gnb{
-        display: flex;
+    header .gnb .gnb_wrap{
+        display: none;
     }
     header .gnb ul.depth1{
         display: flex;
         justify-content: flex-start;
-    }
-    header .gnb ul.depth1 li a span{
-        display: none;
     }
     header .gnb ul.depth1 img{
         display: block;
@@ -75,9 +70,6 @@ header .total_menu{
         display: block;
     }
     /* 모바일 메뉴 열렸을때 */
-    header .total_menu{
-        display: block;
-    }
     header .total_menu .close{
         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_95_18' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_95_18)'%3E%3Cpath d='M15 16.75L8.875 22.875C8.64583 23.1042 8.35417 23.2188 8 23.2188C7.64583 23.2188 7.35417 23.1042 7.125 22.875C6.89583 22.6458 6.78125 22.3542 6.78125 22C6.78125 21.6458 6.89583 21.3542 7.125 21.125L13.25 15L7.125 8.875C6.89583 8.64583 6.78125 8.35417 6.78125 8C6.78125 7.64583 6.89583 7.35417 7.125 7.125C7.35417 6.89583 7.64583 6.78125 8 6.78125C8.35417 6.78125 8.64583 6.89583 8.875 7.125L15 13.25L21.125 7.125C21.3542 6.89583 21.6458 6.78125 22 6.78125C22.3542 6.78125 22.6458 6.89583 22.875 7.125C23.1042 7.35417 23.2188 7.64583 23.2188 8C23.2188 8.35417 23.1042 8.64583 22.875 8.875L16.75 15L22.875 21.125C23.1042 21.3542 23.2188 21.6458 23.2188 22C23.2188 22.3542 23.1042 22.6458 22.875 22.875C22.6458 23.1042 22.3542 23.2188 22 23.2188C21.6458 23.2188 21.3542 23.1042 21.125 22.875L15 16.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
         width: 30px;
@@ -88,9 +80,8 @@ header .total_menu{
         right: 30px;
         top: 30px;
     } 
-    header .total_menu .total_menu_wrap{
+    header .total_menu{
         position: fixed;
-        display: none; 
         right: 0;
         top: 0;
         max-width: 350px;
@@ -98,23 +89,23 @@ header .total_menu{
         height: 100%;
         font-size: 30px;
         padding: 30px 35px 170px 35px;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: #1d1d1d;
     }
-    header .total_menu .total_menu_wrap.active{
+    header .total_menu.show{
         display: block;
     }
-    header .total_menu .total_menu_wrap.active .t_list{
+    header .total_menu .total_menu_wrap .t_list{
         margin: 109px 70px 23px 0;
     }
-    header .total_menu .total_menu_wrap.active .t_list ul li{
+    header .total_menu .total_menu_wrap .t_list ul li{
         margin: 30px 0;
         color: rgba(255, 255, 255, 0.6);
     }
-    header .total_menu .total_menu_wrap.active .t_list ul li:hover{
+    header .total_menu .total_menu_wrap .t_list ul li:hover{
         color: #fff;
         transition: 0.5s;
     }
-    header .total_menu .total_menu_wrap.active .search_input{
+    header .total_menu .total_menu_wrap .search_input{
         width: 100%;
         height: 100%;
         font-size: 17px;
@@ -125,7 +116,7 @@ header .total_menu{
     input::placeholder {
         color: rgba(255, 255, 255, 0.6); 
     }
-    header .total_menu .total_menu_wrap.active .search_btn{
+    header .total_menu .total_menu_wrap .search_btn{
         width: 24px;
         height: 24px;
         background-position: center center;
