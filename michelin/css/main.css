@@ -23,6 +23,7 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     transition-delay: 1.8s;
+    opacity: 1;
 }
 @keyframes visual_txt {
     0%{ transform: translateY(100%); }
@@ -491,18 +492,20 @@
     height: 800px;
     align-items: center;
 } 
-.idea .guide02 .g_txt .main_txt{
+.idea .guide02 .g_txt .main_txt {
     display: flex;
     align-items: baseline;
     gap: 20px;
     position: relative;
+    left: -8px;
+    top: 0;
 }
 .idea .guide02 .g_txt .main_txt::after{
     content: "";
     position: absolute;
-    width: 399px;
+    width: 408px;
     border-bottom: 1px solid #fff;
-    left: 8px;
+    left: 4px;
     bottom: 9px;
 }
 .idea .guide02 .g_txt .main_txt h2{

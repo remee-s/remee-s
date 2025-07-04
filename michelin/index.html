@@ -9,9 +9,12 @@
     <!-- swiper 라이브러리 -->
     <script src="js/swiper-bundle.min.js"></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/main.css?v=2507041152">
+    <link rel="stylesheet" href="css/main.css?v=2507041211">
     <title>MICHELIN GUIDE</title>
 </head>
 <body>
@@ -59,11 +62,11 @@
                 </div>    
             </section>
             <section class="new_rest">
-                        <div class="rest_txt">
+                        <div class="rest_txt" data-aos="fade-up">
                             <h2>Michelin Guide's</h2>
                             <p>New Restaurant</p>
                         </div>
-                        <div class="rest_list">
+                        <div class="rest_list" data-aos="fade-up">
                             <div class="rest01">
                                 <div class="txt">
                                     <div class="r_top">
@@ -122,6 +125,13 @@
                             </div>
                         </div><!--//rest_list-->
             </section><!--//new_rest-->
+            <script>// 반드시 콘텐츠 하단에 배치해야 한다.
+                AOS.init({
+                offset: 200, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+                duration: 500, // 애니메이션 효과가 작동되는 시간
+                easing: 'ease', // 가속도
+                });
+            </script>
             <section class="popular">
                 <div class="wrap">
                     <div class="wrapper">
@@ -135,7 +145,7 @@
             <section class="idea">
                 <div class="wrap">
                     <div class="wrapper">
-                        <div class="idea_txt">
+                        <div class="idea_txt" data-aos="fade-up">
                             <h2>Guides d’Exception</h2>
                             <p>미쉐린이 엄선한<br> 최고의 미식 여정</p>
                             <span>세계 미식의 정수를 집대성한 ‘Guides d’Exception’은 미쉐린 가이드가 직접 선정한<br> 
@@ -146,38 +156,45 @@
                         <div class="guide01">
                             <div class="photo01"></div>
                             <div class="g_txt">
-                                <div class="main_txt">
+                                <div class="main_txt" data-aos="fade-up">
                                     <h2>Best Seoul Guide</h2>
                                     <p>3 Restaurant</p>
                                 </div>
-                                <div class="sub_txt">
+                                <div class="sub_txt" data-aos="fade-up">
                                     <h3>한중일의 쌀 요리를 맛볼 수 있는 곳</h3>
                                     <p>한국과 중국, 일본은 지역적으로 가깝지만 서로 다른 쌀문화를 가지고 있습니다.<br> 
                                         한국에서 맛볼 수 있는 동아시아 지역의 쌀 요리들을 선보이는<br> 
                                         레스토랑 중 미쉐린이 선정한 곳들을 소개합니다.</p>
                                 </div>
-                                <a href="#">자세히 보기</a>
+                                <a href="#" data-aos="fade-up">자세히 보기</a>
                             </div>
                         </div>  
                         <div class="guide02">
                             <div class="photo02"></div>
                             <div class="g_txt">
-                                <div class="main_txt">
+                                <div class="main_txt" data-aos="fade-up">
                                     <h2>Best Seoul Guide</h2>
                                     <p>3 Restaurant</p>
                                 </div>
-                                <div class="sub_txt">
+                                <div class="sub_txt" data-aos="fade-up">
                                     <h3>최고의 게장을 맛볼 수 있는 곳</h3>
                                     <p>밥도둑 하면 가장 먼저 떠오르는 한국의 음식은 무엇일까요?<br>
                                         현재는 다양한 음식에 사용되는<br> 
                                         수식어이기는 하지만, 원조로 따지자면 밥도둑의 대명사는 역시 간장게장입니다.</p>
                                 </div>
-                                <a href="#">자세히 보기</a>
+                                <a href="#" data-aos="fade-up">자세히 보기</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <script>// 반드시 콘텐츠 하단에 배치해야 한다.
+                AOS.init({
+                offset: 200, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+                duration: 500, // 애니메이션 효과가 작동되는 시간
+                easing: 'ease', // 가속도
+                });
+            </script>
             <section class="guide">
                 <div class="guide_wrap">
                     <div class="g_txt">
@@ -186,21 +203,21 @@
                             최고의 레스토랑과 특별함을 발견해 보세요.</p>
                     </div>
                     <div class="g_group">
-                        <div class="g_photo">
+                        <div class="g_photo" data-aos="fade-up" data-aos-delay="300">
                             <a href="#"><img src="images/main/Guide01.jpg" alt="Vietnam"></a>
                             <div class="g_list">
                                 <h3>Vietnam</h3>
                                 <p>181 Restaurant</p>
                             </div>
                         </div>        
-                        <div class="g_photo02">
+                        <div class="g_photo02" data-aos="fade-up" data-aos-delay="500">
                             <a href="#"><img src="images/main/Guide02.jpg" alt="Canada"></a>
                             <div class="g_list02">
                                 <h3>Canada</h3>
                                 <p>275 Restaurant</p>
                             </div>
                         </div>        
-                        <div class="g_photo">
+                        <div class="g_photo" data-aos="fade-up" data-aos-delay="300">
                             <a href="#"><img src="images/main/Guide03.jpg" alt="Turkey"></a>
                             <div class="g_list">
                                 <h3>Turkey</h3>
@@ -210,6 +227,13 @@
                     </div>    
                 </div>
             </section>
+            <script>// 반드시 콘텐츠 하단에 배치해야 한다.
+                AOS.init({
+                offset: 200, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+                duration: 600, // 애니메이션 효과가 작동되는 시간
+                easing: 'ease', // 가속도
+                });
+            </script>
             <section class="magazine">
                 <div class="magazine_txt">
                     <h2>Issue Magazine</h2>
