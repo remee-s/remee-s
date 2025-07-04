@@ -628,11 +628,13 @@
     .idea .idea_txt p {
         word-break: break-all;
     }
-    .idea .guide01 .g_txt .main_txt, .idea .guide02 .g_txt .main_txt {
+    .idea .guide01 .g_txt .main_txt, 
+    .idea .guide02 .g_txt .main_txt {
         display: flex;
         gap: 10px;
         position: relative;
         flex-direction: column;
+        padding-left: 20px;
     }
 }
 /* guide */
