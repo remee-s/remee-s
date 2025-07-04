@@ -850,18 +850,19 @@
 }
 @media screen and (max-width:768px){
     .magazine{
-        padding: 175px 0 65px 0;
+        padding: 153px 0 40px 0;
     }
     .magazine .magazine_txt{
         position: absolute;
-        left: 86px;
-        top: 70px;
+        top: 88px;
+        left: 50%;
+        transform: translate(-50%, -50%);
         padding: 0;
         z-index: 2;
     }
     .magazine .magazine_txt h2{ 
         color: #fff;
-        font-size: var(--tit-font-size);
+        font-size: 25px;
         font-weight: var(--bold-weight);
         border-bottom: 1px solid #fff;
         line-height: 1;
