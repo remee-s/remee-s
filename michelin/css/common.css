@@ -10,9 +10,9 @@ html, body{
 }
 
 .wrapper{
-    /* width: 1260px; */
-    width: 100%;
-    max-width: 100%;
+    width: 1260px;
+     /* width: 100%; 
+    max-width: 100%;*/
     margin: 0 auto; /*가운데*/
 }
 #wrap{
@@ -38,6 +38,10 @@ html, body{
     /*브라우저 넓이가 640px 이하에서만 작동 (유지하는 서식은 지움)*/
     html, body {
         font-size: 16px;
+    }
+    .wrapper{
+        width: auto;
+        margin: 0 20px; /*가운데*/
     }
 }
 

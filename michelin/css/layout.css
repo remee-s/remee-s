@@ -17,6 +17,7 @@ header .gnb ul.depth1{
     display: flex;
     justify-content: center;
     margin-left: 40px;
+    color: rgba(255, 255, 255, 0.8);
 }
 header .gnb ul.depth1 li a{
     display: block;
@@ -131,20 +132,23 @@ header .total_menu{
 
 footer{
     background-color: #1d1d1d;
-    padding: 80px 330px 85px 330px;
+    padding: 80px 0 85px 0;
     color: rgba(255, 255, 255, 0.8);
 }
-footer .footer_a{
+footer .wrapper{
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
-footer .f_left{
-    display: flex;
-    flex-direction: column;
+footer .f_left {
+    margin: 30px 0 0 0;
 }
-footer .f_left .f_nav ul{
+footer .f_left .f_nav{
+    margin: 20px 0;
+}
+footer .f_left .f_nav ul {
     display: flex;
-    gap: 30px;
+    gap: 1px 36px;
 }
 footer .f_left .f_nav ul li span{
     font-weight: var(--bold-weight);
@@ -152,7 +156,6 @@ footer .f_left .f_nav ul li span{
 }
 footer .f_left .f_nav ul li{
     position: relative;
-    padding-bottom: 20px;
 }
 footer .f_left .f_nav ul li a{
     display: block;
@@ -173,16 +176,13 @@ footer .f_left .f_nav ul li::after{
 footer .f_left .f_nav ul li:first-child:after{
     display: none;
 }
-footer .f_left .f_info {
-    padding: 0 0 20px 0;
+footer .f_left .f_info .f_info01,
+footer .f_left .f_info .f_info02{
     display: flex;
-    flex-direction: column;
+    gap: 1px 33px;
 }
-footer .f_left .f_info .f_info01{
-    margin-bottom: 20px;
-}
-footer .f_left .f_info span{
-    margin-right: 20px;
+footer .f_left .f_info .f_info02{
+    padding: 20px 0;
 }
 footer .f_left .copyright{
     color: rgba(255, 255, 255, 0.6);
@@ -191,9 +191,6 @@ footer .f_right{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-footer .f_right .logo{
-    transform: translateY(-30px);
 }
 footer .f_right .sns ul{
     display: flex;
@@ -219,71 +216,54 @@ footer .f_right .sns ul li.facebook a{
 footer .f_right .sns ul li.tictik a{
     background-image: url("data:image/svg+xml,%3Csvg width='37' height='37' viewBox='0 0 37 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.94 -0.00195312H9.13C4.08765 -0.00195312 0 4.08566 0 9.12802V26.938C0 31.9804 4.08765 36.068 9.13 36.068H26.94C31.9824 36.068 36.07 31.9804 36.07 26.938V9.12802C36.07 4.08566 31.9824 -0.00195312 26.94 -0.00195312Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.7086 15.2073C24.1486 16.2373 25.9186 16.8473 27.8286 16.8473V13.1773C27.4686 13.1773 27.1086 13.1373 26.7486 13.0673V15.9573C24.8386 15.9573 23.0686 15.3473 21.6286 14.3173V21.8173C21.6286 25.5673 18.5886 28.6073 14.8386 28.6073C13.4386 28.6073 12.1386 28.1873 11.0586 27.4573C12.2886 28.7173 14.0086 29.4973 15.9186 29.4973C19.6686 29.4973 22.7086 26.4573 22.7086 22.7073V15.2073ZM24.0386 11.4973C23.2986 10.6873 22.8186 9.64734 22.7086 8.49734V8.02734H21.6886C21.9486 9.48734 22.8186 10.7373 24.0386 11.4973ZM13.4286 24.5773C13.0186 24.0373 12.7986 23.3773 12.7986 22.6973C12.7986 20.9773 14.1886 19.5873 15.9086 19.5873C16.2286 19.5873 16.5486 19.6373 16.8486 19.7373V15.9773C16.4886 15.9273 16.1286 15.9073 15.7686 15.9173V18.8373C15.4686 18.7373 15.1486 18.6873 14.8286 18.6873C13.1086 18.6873 11.7186 20.0773 11.7186 21.7973C11.7186 23.0073 12.4186 24.0573 13.4286 24.5673V24.5773Z' fill='%23EE1D52'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.6294 14.3073C23.0694 15.3373 24.8394 15.9473 26.7494 15.9473V13.0573C25.6794 12.8273 24.7394 12.2773 24.0294 11.4973C22.8194 10.7373 21.9394 9.48734 21.6794 8.02734H18.9994V22.6973C18.9994 24.4073 17.5994 25.7973 15.8894 25.7973C14.8794 25.7973 13.9794 25.3173 13.4194 24.5673C12.4094 24.0573 11.7094 23.0073 11.7094 21.7973C11.7094 20.0773 13.0994 18.6873 14.8194 18.6873C15.1494 18.6873 15.4694 18.7373 15.7594 18.8373V15.9173C12.0694 15.9973 9.10938 19.0073 9.10938 22.7073C9.10938 24.5573 9.84938 26.2273 11.0494 27.4573C12.1294 28.1873 13.4294 28.6073 14.8294 28.6073C18.5794 28.6073 21.6194 25.5673 21.6194 21.8173V14.3173L21.6294 14.3073Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M26.7591 13.0567V12.2767C25.7991 12.2767 24.8591 12.0067 24.0391 11.4967C24.7591 12.2867 25.7091 12.8367 26.7591 13.0567ZM21.6891 8.02673C21.6691 7.88673 21.6491 7.74672 21.6291 7.60672V7.13672H17.9291V21.8167C17.9291 23.5267 16.5391 24.9167 14.8191 24.9167C14.3191 24.9167 13.8391 24.7967 13.4191 24.5867C13.9891 25.3367 14.8791 25.8167 15.8891 25.8167C17.5991 25.8167 18.9891 24.4267 18.9991 22.7167V8.04672H21.6791L21.6891 8.02673ZM15.7691 15.9167V15.0867C15.4591 15.0467 15.1491 15.0267 14.8391 15.0267C11.0891 15.0267 8.03906 18.0667 8.03906 21.8167C8.03906 24.1667 9.23907 26.2367 11.0491 27.4567C9.84907 26.2367 9.10907 24.5567 9.10907 22.7067C9.10907 19.0067 12.0691 15.9967 15.7591 15.9167H15.7691Z' fill='%2369C9D0'/%3E%3C/svg%3E%0A");
 }
-@media screen and (max-width:1490px){
+
+@media screen and (max-width: 1272px){
     footer{
-        padding: 80px 100px 85px 100px;
-    }
-}
-@media screen and (max-width:1020px){
-    footer{
-        padding: 50px 40px 70px 40px;
-    }
-    footer .footer_a{
+        padding: 72px 0 70px 0;
         display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
+        justify-content: center;
     }
-    footer .f_left{
-        margin-top: 20px;
-        align-items: center;
+    footer .wrapper{
+        display: block;
     }
     footer .f_left .f_nav ul{
-        gap: 20px;
+        gap: 1px 17px;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     footer .f_left .f_nav ul li a{
         display: block;
     }
-    footer .f_left .f_nav ul li::after {
-        content: "";
-        position: absolute;
+    footer .f_left .f_nav ul li::after{
         left: -9px;
-        top: 5px;
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        height: 10px;
+        top: 4px;
+        height: 11px;
     }
     footer .f_left .f_nav ul li:first-child:after{
         display: none;
     }
     footer .f_left .f_info {
-        padding: 0 0 20px 0;
-        display: flex;
-        flex-direction: column;
+        padding: 0;
     }
     footer .f_left .f_info .f_info01,
     footer .f_left .f_info .f_info02{
-        margin-bottom: 20px;
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
-    footer .f_left .f_info span{
-        margin-right: 20px;
-        font-size: 16px;
-    }
     footer .f_left .copyright{
-        font-size: 16px;
+        text-align: center;
     }
     footer .f_right{
         align-items: center;
-    }
-    footer .f_right .logo{
-        margin-top: 50px;
+        gap: 20px 0;
     }
     footer .f_right .sns ul{
-        gap: 20px;
+        display: flex;
+        gap: 24px;
     }
-    footer .f_right .sns ul li a {
-        width: 30px;
-        height: 30px;
+}
+@media screen and (max-width: 400px){
+    footer{
+        display: block;
     }
 }
