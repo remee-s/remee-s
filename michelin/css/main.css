@@ -393,6 +393,10 @@
         left: 0;
         bottom: 4px;
     }
+    .new_rest .list .list_sub .name strong::after {
+        top: 5px;
+        height: 17px;
+    }
     .idea .guide_box .g_txt .main_txt p {
         display: none;
     }
