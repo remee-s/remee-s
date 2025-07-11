@@ -1,6 +1,6 @@
 /*모든페이지에 공통으로 들어가는 기본 스타일*/
 html, body{
-    font-family: "EditorialNew","S-CoreDream", sans-serif;
+    font-family: "Lush_Bold","GmarketSansMedium", sans-serif;
     font-size: 17px;
     line-height: 1.5;
     color: #1d1d1d;
@@ -10,7 +10,7 @@ html, body{
 }
 
 .wrapper{
-    width: 1260px;
+    width: 1600px;
      /* width: 100%; 
     max-width: 100%;*/
     margin: 0 auto; /*가운데*/
@@ -64,14 +64,14 @@ html, body{
 :root{
     --header-h: 100px; /* header의 높이 */
     --header-h-m: -100px; /* header 높이의 반대값 */
-    --tit-color: #fff;
-    --base-color:#1d1d1d;
-    --point-color:#42181B;
-    --bold-weight: 600;
+    --tit-color: #1d1d1d;
+    --base-color:#FAE8EC;
+    --point-color:#EB3C87;
+    --bold-weight: 800;
     --tit-font-size: 2.94rem;  /* 50/ 17 = 2.94 */
     --min-font-size: 1rem;
     --line-height: 1.2;
-    --font-family-2p: 'S-CoreDream';
+    --font-family-G: 'GmarketSansMedium';
 }
 @media screen and (max-width:1024px){
     :root{
