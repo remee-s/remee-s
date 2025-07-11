@@ -2,3 +2,150 @@
 @import url(common.css);
 @import url(font.css);
 @import url(default.css);
+
+.visual ul li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* custom 시작 */
+.custom{
+    margin: 133px 0 457px 0; 
+}
+.custom .txt01 h2{
+    text-align: center;
+    font-size: 30px;
+}
+.custom .txt01 p{
+    text-align: center;
+    font-size: 100px;
+    color: var(--point-color);
+    margin-bottom: 105px;
+}
+/* 카드 돌아가는 swiper */
+.custom .swiper{
+    width: 495px;
+    height: 591px;
+}
+.custom .swiper-slide{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom .swiper-slide:nth-child(1n){
+    background: url(../images/main/card01.jpg);
+}
+.custom .swiper-slide:nth-child(2n){
+    background: url(../images/main/card02.jpg);
+}
+.custom .swiper-slide:nth-child(3n){
+    background: url(../images/main/card03.jpg);
+}
+.custom .swiper-slide:nth-child(4n){
+    background: url(../images/main/card04.jpg);
+}
+.custom .swiper-slide:nth-child(5n){
+    background: url(../images/main/card05.jpg);
+}
+.custom .swiper-slide:nth-child(6n){
+    background: url(../images/main/card06.jpg);
+}
+.custom .txt02{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.custom .txt02 h3{
+    margin: 44px 0 19px 0;
+    font-size: var(--tit-font-size);
+    text-align: center;
+}
+.custom .txt02 p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.custom .txt02 button a{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    background-color: var(--point-color);
+    color: #fff;
+    padding: 9px 23px;
+    font-family: 'Lush_Bold';
+}
+/* loop 적용한거 ↓ */
+.custom .loop{
+    position: relative;
+    margin-top: 118px;
+}
+.custom .loop .move_img{
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    left: 0;
+    bottom: -181px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation-name: loop;
+    animation-duration: 90s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50.15%) }
+}
+/* gallery 시작 */
+.gallery .txt h2{
+    font-size: 30px;
+}
+.gallery .txt h2 span{
+    color: var(--point-color);
+}
+.gallery .txt p{
+    font-size: var(--tit-font-size);
+    font-family: 'S-GmarketSansBold';
+    font-weight: 800;
+    margin: 20px 0;
+}
+.gallery .swiper{
+    width: calc(50% + 900px);
+    left: calc(50% - 900px);
+}
+.gallery .swiper ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery .swiper ul li .name{
+    position: absolute;
+    bottom: 0;
+}
+.gallery .swiper ul li .photo a {
+    display: block;
+    width: 439px;
+    height: 558px;
+}
+.gallery .swiper ul li .photo{
+    position: relative;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
+}
+.gallery .swiper ul li .photo a img{ /* 수정해야됨  */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: 0.5s;
+}
+.gallery .swiper ul li .photo a:hover img{
+    transform:scale3d(1.2,1.2,1);
+}
+/* 월요일에 해야할것. 
+1. img 확대 하는거 수정 
+2. js 메뉴 누르기 수정 
+3. gallery swiper 왼쪽 넓이 수정
+4. .gallery .name 위치 position: absolute;가 맞는지 확인 해보기
+ */

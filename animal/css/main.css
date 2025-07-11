@@ -88,8 +88,7 @@ header.fixed .logo a{
         header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2 > li > a{
             display: block;
             white-space: nowrap; /* 줄바꿈 금지 */
-            padding: 15px 24px;
-            
+            padding: 15px 24px; 
         }
         header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2 > li > a[target="_blank"] > span{
             /* 속성 선택자 a[target="_blank"] 라는 속성이 있는 a태그만 선택하는것*/
