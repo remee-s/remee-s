@@ -68,6 +68,7 @@ header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
 header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2 > li > a{
     display: block;
     white-space: nowrap; /* 줄바꿈 금지 */
+    padding: 15px 24px; 
 }
 header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2 > li > a[target="_blank"] > span{
     display: block;
