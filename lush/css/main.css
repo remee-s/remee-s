@@ -92,14 +92,14 @@
 /* loop 적용한거 ↓ */
 .custom .loop{
     position: relative;
-    margin-top: 118px;
+    margin-top: 236px;
 }
 .custom .loop .move_img{
     position: absolute;
     display: flex;
     gap: 16px;
     left: 0;
-    bottom: -181px;
+    bottom: 0;
     white-space: nowrap;
     text-transform: uppercase;
     animation-name: loop;
@@ -143,11 +143,10 @@
     /* loop 적용한거 ↓ */
     .custom .loop{
         position: relative;
-        margin-top: 50px;
+        margin-top: 200px;
     }
     .custom .loop .move_img{
         height: 100px;
-        bottom: -181px;
     }
 }
 @media screen and (max-width: 768px){
@@ -187,12 +186,10 @@
     /* loop 적용한거 ↓ */
     .custom .loop{
         position: relative;
-        margin-top: 50px;
+        margin-top: 150px;
     }
     .custom .loop .move_img{
         height: 66px;
-        left: 0;
-        bottom: -70px;
     }
 }
 /* gallery 시작 */
@@ -215,35 +212,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
-
-.gallery .swiper ul li .photo{
-    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
-}
-.gallery .swiper ul li .photo a {
+.gallery .swiper ul li a {
     display: block;
 }
-.gallery .swiper ul li .photo a img{ 
+.gallery .swiper ul li a .photo{
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
+}
+.gallery .swiper ul li a .photo img{ 
     width: 100%;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
 }
-.gallery .swiper ul li .name{
+.gallery .swiper ul li a .name{
     text-align: center;
-    position: absolute;
-    bottom: 20px;
     line-height: 1.2;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
+    padding: 15px 0;
 }
-.gallery .swiper ul li .name p{
+.gallery .swiper ul li a .name p{
     font-size: 30px;
 }
-.gallery .swiper ul li .name h3 {
+.gallery .swiper ul li a .name h3 {
     color: var(--point-color);
 }
-.gallery .swiper ul li .name strong span{
+.gallery .swiper ul li a .name strong span{
     font-size: 13px;
     color: #767676;
 }
@@ -257,15 +253,11 @@
     .gallery .swiper{
         padding-bottom: 15px;
     }
-    .gallery .swiper ul li .name{
-        bottom: 0;
+    .gallery .swiper ul li a .name{
+        padding: 10px 0;
     }
-    .gallery .swiper ul li .name p{
+    .gallery .swiper ul li a .name p{
         font-size: 25px;
-    }
-    .gallery .swiper ul li .name strong span{
-        font-size: 13px;
-        color: #767676;
     }
 }
 @media screen and (max-width: 768px){
@@ -275,16 +267,13 @@
     .gallery .txt p{
         margin: 7px 0 30px 0;
     }
-    .gallery .swiper ul li .name{
-        text-align: center;
-        position: absolute;
-        bottom: 5px;
-        line-height: 1.2;
+    .gallery .swiper ul li a .name{
+        padding: 8px 0;
     }
-    .gallery .swiper ul li .name p{
+    .gallery .swiper ul li a .name p{
         font-size: 18px;
     }
-    .gallery .swiper ul li .name strong{
+    .gallery .swiper ul li a .name strong{
         display: none;
     }
 }
@@ -300,8 +289,7 @@
 }
 .gift .photo {
     position: relative;
-    max-width: 50%;
-    width: calc(100% - 600px);
+    width: 50%;
     height: 480px;
 }
 .gift .photo img{
@@ -314,9 +302,9 @@
 .gift .gift_box.gray .g_txt{
     background-color: #FAE8EC;
     text-align: center;
-    width: 800px;
+    width: 50%;
     height: 480px;
-    padding: 55px 98px;
+    padding: 55px 0;
 }
 .gift .gift_box.gray .g_txt{
     background-color: #F2F4F3;
@@ -353,15 +341,14 @@
         margin-top: 16px;
     }
     .gift .photo {
-        max-width: 100%;
-        width: auto;
+        width: 100%;
         height: 300px;
     }
     .gift .gift_box.pink .g_txt,
     .gift .gift_box.gray .g_txt{
-        width: auto;
+        width: 100%;
         height: 300px;
-        padding: 18px 80px;
+        padding: 18px 0;
     }
     .gift .gift_box .g_txt .main_txt h2{
         font-size: 40px;
@@ -388,7 +375,7 @@
     .gift .gift_box.pink .g_txt,
     .gift .gift_box.gray .g_txt{
         height: 161px;
-        padding: 7px 32px;
+        padding: 16px 0;
     }
     .gift .gift_box .g_txt .main_txt h2{
         font-size: 25px;
@@ -400,7 +387,7 @@
         display: none;
     }
     .gift .gift_box .g_txt a{
-        padding: 8px 35px;
+        padding: 7px 35px;
         font-size: 16px;
     }
 }
