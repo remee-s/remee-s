@@ -234,7 +234,8 @@
 .gallery .swiper ul li .name{
     text-align: center;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
+    line-height: 1.2;
 }
 .gallery .swiper ul li .name p{
     font-size: 30px;
@@ -577,12 +578,12 @@
 .benner .b_wrap .photo .txt p{
     font-size: 50px;
     color: #fff;
-    margin: 10px 0 ;
+    margin: 5px 0 ;
     font-weight: var(--bold-weight);
 }
 .benner .b_wrap .photo .txt a{
     display: inline-block;
-    padding: 10px 19px;
+    padding: 5px 12px;
     background-color: #F6D1D9;
     transition: 0.3s;
 }
