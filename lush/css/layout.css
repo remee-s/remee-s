@@ -28,9 +28,9 @@ header.fixed .gnb .gnb_wrap ul.depth1 > li > a::before{
 /***********************/
 header .gnb .gnb_wrap .depth1{
     display: flex;
+    gap: 10px;
 }
 header .gnb .gnb_wrap ul.depth1 > li{
-    width: 6rem;
     text-align: center;
     position: relative;
 }
@@ -38,7 +38,6 @@ header .gnb .gnb_wrap ul.depth1 > li > a{
     background-color: #fff;
     border: 2px solid #1d1d1d;
     padding: 2px 7px 2px 36px;
-    height: 38px;
     position: relative;
     transition: 0.3s;
 }
