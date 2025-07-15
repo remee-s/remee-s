@@ -302,6 +302,14 @@ footer .sns ul li.naver_blog a{
         display: flex;
         gap: 20px;
     }
+    footer .f_nav ul li a::after {
+        content: "";
+        position: absolute;
+        right: -14px;
+        top: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        height: 8px;
+    }
     footer .f_info{
         margin: 15px 0;
     }
