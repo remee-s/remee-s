@@ -219,14 +219,12 @@
     box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
 }
 .gallery .swiper ul li a .photo{
-    height: 100%;
     overflow: hidden;
+    font-size: 0;
+    line-height: 0;
 }
 .gallery .swiper ul li a .photo img{ 
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
 }
 .gallery .swiper ul li a .name{
     text-align: center;
@@ -306,7 +304,6 @@
     background-color: #FAE8EC;
     text-align: center;
     width: 50%;
-    height: 480px;
     padding: 55px 0 0 0;
 }
 .gift .gift_box.gray .g_txt{
@@ -350,8 +347,7 @@
     .gift .gift_box.pink .g_txt,
     .gift .gift_box.gray .g_txt{
         width: 100%;
-        height: 300px;
-        padding: 18px 0 0 0;
+        padding: 18px 0 18px 0;
     }
     .gift .gift_box .g_txt .main_txt h2{
         font-size: 40px;
@@ -377,8 +373,7 @@
     }
     .gift .gift_box.pink .g_txt,
     .gift .gift_box.gray .g_txt{
-        height: 161px;
-        padding: 16px 0 0 0;
+        padding: 16px 0 16px 0;
     }
     .gift .gift_box .g_txt .main_txt h2{
         font-size: 25px;
@@ -545,20 +540,17 @@
 .benner .b_wrap{
     display: flex;
 }
-.benner .b_wrap .photo{
-    position: relative;
+.benner .b_wrap .donation{
+    background: url(../images/main/benner01.jpg) no-repeat center center / cover;
+    width: 50%;
 }
-.benner .b_wrap .photo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
+.benner .b_wrap .peace{
+    background: url(../images/main/benner02.jpg) no-repeat center center / cover;
+    width: 50%;
 }
 .benner .b_wrap .photo .txt{
-    position: absolute;
-    left: 60px;
-    top: 66px;
     line-height: 1.2;
+    padding: 97px 0 86px 60px;
 }
 .benner .b_wrap .photo .txt h2{
     font-size: 30px;
@@ -588,11 +580,14 @@
     .benner .b_wrap{
         display: block;
     }
-    .benner .b_wrap .photo{
-        line-height: 0;
+    .benner .b_wrap .donation{
+        width: 100%;
+    }
+    .benner .b_wrap .peace{
+        width: 100%;
     }
     .benner .b_wrap .photo .txt{
-        top: 30px;
+        padding: 46px 0 65px 50px;
     }
     .benner .b_wrap .photo .txt h2{
         font-size: 25px;
@@ -606,8 +601,7 @@
         margin: 55px 0 85px 0;
     }
     .benner .b_wrap .photo .txt{
-        left: 42px;
-        top: 27px;
+        padding: 20px 0 49px 20px;
     }
     .benner .b_wrap .photo .txt h2{
         font-size: 16px;
