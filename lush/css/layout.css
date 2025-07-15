@@ -55,7 +55,7 @@ header .gnb .gnb_wrap ul.depth1 > li > a::before{
     background-repeat: no-repeat;
     background-size: contain;
 }
-/* 2차 메뉴 열렸을때 */
+
 header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
     display: none;
     transition: 0.3s;
@@ -67,24 +67,25 @@ header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
     background-color: #fff;
     border: 2px solid #1d1d1d;
 }
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2.open{
+/* 2차 메뉴 열렸을때 open*/
+header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2{
     display: block;
 }
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2.open > li {
+header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 > li {
     margin: 5px 0;
 }
-header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2.open > li > a{
+header .gnb .gnb_wrap ul.dapth1 > li.open > ul.dapth2 > li > a{
     display: block;
     white-space: nowrap; /* 줄바꿈 금지 */
     transition: 0.3s;
 }
-header .gnb .gnb_wrap ul.dapth1 > li > ul.dapth2.open > li > a[target="_blank"] > span{
+header .gnb .gnb_wrap ul.dapth1 > li.open > ul.dapth2 > li > a[target="_blank"] > span{
     display: block;
 }
-header .gnb .gnb_wrap ul.depth1.open > li > ul.depth2.open > li > a{
+header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 > li > a{
     display: block;
 }
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2.open > li > a:hover{
+header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 > li > a:hover{
     color: var(--point-color);
 }
 header .gnb_open,
@@ -205,6 +206,10 @@ footer .f_nav ul {
 footer .f_nav ul li a{
     display: block;
     position: relative;
+    transition: 0.3s;
+}
+footer .f_nav ul li a:hover{
+    color: var(--point-color);
 }
 footer .f_nav ul li a::after{
     content: "";
@@ -274,6 +279,7 @@ footer .sns ul li a{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: 0.3s;
 }
 footer .sns ul li.youtube a{
     background-image: url("data:image/svg+xml,%3Csvg width='37' height='26' viewBox='0 0 37 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37 8.15238C37 3.65714 33.357 0 28.879 0H8.12108C3.64313 0 0 3.65714 0 8.15238V17.8476C0 22.3429 3.62416 26 8.12108 26H28.879C33.357 26 37 22.3619 37 17.8476V8.15238ZM24.7995 13.7143L15.502 18.3429C15.1415 18.5333 13.8892 18.2667 13.8892 17.8667V8.38094C13.8892 7.9619 15.1415 7.69523 15.502 7.90475L24.401 12.7619C24.7805 12.9714 25.16 13.5238 24.7805 13.7143H24.7995Z' fill='%231D1D1D' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
@@ -290,6 +296,7 @@ footer .sns ul li.naver_blog a{
 @media screen and (max-width: 1223px){
     footer{
         padding: 46px 0 43px 0;
+        font-size: 13px;
     }
     footer .f_nav ul {
         display: flex;

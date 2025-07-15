@@ -46,17 +46,25 @@ $(document).ready(function(){
 		}
 	}
 	/* 2차 메뉴 열리고 닫히는 js */
-    //$('header .gnb .gnb_wrap ul.depth1 > li').on('click', function(){
-        //if(device_status == 'pc'){
-            //$('header').addClass('open')
-            //$('header .gnb .gnb_wrap ul.dapth1 > li > a').removeClass('open')
-            //$(this).addClass('open')
-        //}
-    //})
-    //$('header .gnb').on('click', function(){
-       // $('header').removeClass('open')
-       // $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-    //})
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){
+            $('header .gnb .gnb_wrap ul.depth1').addClass('open')
+            $('header .gnb .gnb_wrap ul.depth1 > li > a > ul.depth2 > li').removeClass('open')
+            $(this).addClass('open')
+        }
+    })
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $('header .gnb .gnb_wrap ul.depth1').removeClass('open')
+        $('header .gnb .gnb_wrap ul.depth1 > li > a > ul.depth2 > li').removeClass('open')
+		$(this).removeClass('open')
+    })
+	$('header .gnb .gnb_wrap ul.depth1 > li:has(ul.dapth2) > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault()
+            $(this).parents('li').toggleClass('open')
+        }
+    })
+
 
 	/* visual 팝업 시작 ! */
 	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
