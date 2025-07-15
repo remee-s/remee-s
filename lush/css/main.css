@@ -217,11 +217,12 @@
     position: relative;
 }
 
-.gallery .swiper ul li .photo a {
-    display: block;
-}
+
 .gallery .swiper ul li .photo{
     box-shadow: 5px 5px 10px rgb(0 0 0 / 0.1);
+}
+.gallery .swiper ul li .photo a {
+    display: block;
 }
 .gallery .swiper ul li .photo a img{ 
     width: 100%;
