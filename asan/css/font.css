@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'NEXONLv1_Bold';
+    src: url('../font/NEXONLv1GothicOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	font-weight: 700;
+}
+@font-face {
+    font-family: 'NEXONLv1_Regular';
+    src: url('../font/NEXONLv1GothicOTFregular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	font-weight: 400;
+}
