@@ -206,7 +206,7 @@ header .txt2 span{
 /* contents */
 .contents{
     text-transform: uppercase;
-    padding: 144px 0 0 85px;
+    padding: 144px 0 40px 0;
     color: #1d1d1d;
     background: url(../images/contents_bg.png)no-repeat center center / cover;
 }
@@ -214,41 +214,53 @@ header .txt2 span{
     font-size: 150px;
     color: #fff;
     mix-blend-mode: difference;
+    padding: 0 0 0 85px;
 }
 .contents .loop01 {
     white-space: nowrap;
     text-transform: uppercase;
-    animation-name: loop0;
-    animation-duration: 20s;
+    animation-name: loop01;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 .contents .loop01 p{
+    display: inline-block;
     font-size: 30px;
     color: #fff;
+    background-color: #1d1d1d;
 }
 @keyframes loop01 {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-80.15%)
+        transform: translateX(-50.15%)
     }
 }
 .contents .loop02 {
     white-space: nowrap;
     text-transform: uppercase;
-    animation-name: loop0;
-    animation-duration: 20s;
+    animation-name: loop02;
+    animation-duration: 40s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-@keyframes loop02 {
+/*.contents .loop02 .loop02_txt{
+} 각도 바꾸기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.contents .loop02 .loop02_txt p{
+    display: inline-block;
+    font-size: 30px;
+    background-color: #fff;
+}
+/* transform은 같은 속성이라 동시에 넣으면 하나가 취소가 됨 
+    div class를 하나 더 줘서 거기에 적용 시켜야 중첩이 안된다고함 */
+@keyframes loop02 { 
     0% {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
     100% {
-        transform: translateX(80.15%)
+        transform: translateX(-30.15%);
     }
 }
 .contents .txt{
@@ -258,7 +270,7 @@ header .txt2 span{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 30px;
+    gap: 81px;
     margin-top: 40px;
 }
 .contents .txt ul li a{
@@ -269,17 +281,24 @@ header .txt2 span{
     font-size: 80px;
     color: #fff;
     transition: 0.3s;
+    border-bottom: 1px solid #1d1d1d;
+    width: 542px;
+    text-align: right;
 }
+
 .contents .txt ul li.diesel a:hover p{
     color: #a70007;
 }
+.contents .txt ul li.mechelin a:hover p{
+    color: #42181B;
+}
+.contents .txt ul li.lush a:hover p{
+    color: #EB3C87;
+}
+
 .contents .txt ul li a h3{
     font-size: 30px;
     position: absolute;
-}
-.contents .txt ul li.diesel a h3{
-    left: -330px;
-    top: -50px;
 }
 .contents .txt ul li a h3::before{
     content: "";
@@ -289,25 +308,66 @@ header .txt2 span{
     border-bottom: 1px solid #1d1d1d;
     width: 186px;
 }
+.contents .txt ul li.diesel a h3{
+    left: -2px;
+    top: -50px;
+}
 .contents .txt ul li.mechelin a h3{
-    left: -190px;
+    left: 2px;
     top: -50px;
 }
 .contents .txt ul li.lush a h3{
-    left: -393px;
+    left: 0px;
     top: -50px;
 }
 
-
-
-
-
-
-
-
-
+.contents .txt ul li a h3::after{
+    content: "";
+    position: absolute;
+    border-right: 1px solid #1d1d1d;
+    height: 40px;
+    transform: rotate3d(1, 1, 1, -70deg);
+}
+.contents .txt ul li.diesel a h3::after{
+    right: -86px;
+    bottom: -8px;
+}
+.contents .txt ul li.mechelin a h3::after{
+    right: -42px;
+    bottom: -8px;
+}
+.contents .txt ul li.lush a h3::after{
+    right: -79px;
+    bottom: -8px;
+}
 
 
 footer{
-    margin: 1000px 0 0 0;
+    padding: 100px 0;
+    background: url(../images/footer.png)no-repeat center center/cover;
+}
+footer .f_txt{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+footer .f_txt h2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 2px solid #fff;
+    width: 200px;
+}
+footer .f_txt p{
+    transform: translateY(100px);
+}
+footer .f_txt p::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: 2px solid #fff;
+    width: 250px;
 }
