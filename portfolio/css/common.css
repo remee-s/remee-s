@@ -6,7 +6,6 @@ html, body{
     color: #fff;
     word-break: keep-all; 
     word-wrap: break-word; 
-    overflow-x: hidden;
 }
 
 .wrapper{
@@ -15,14 +14,8 @@ html, body{
 }
 #wrap{
     position: relative; /*header 정렬의 기준*/
-    overflow-x: auto;  /* 가로 스크롤바 삭제 */
-    width: 100%; 
-}
-@media screen and (max-width:1920px){  /* wrapper 가 해지되는 사이즈 */
-    .wrapper{
-        width: auto; 
-        margin: 0 10%;
-    }
+    min-width: 1920px;
+    overflow: hidden;
 }
 
 /*글자를 숨겨야 하는 경우 blind클래스를 적용*/
